@@ -1,0 +1,25 @@
+[project]
+name = "jacobian-guide"
+version = "0.1.0"
+description = "Code behind the zero-to-Jacobian-Conjecture visual guide"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "matplotlib",
+    "sympy",
+    "pillow",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+manim = ["manim>=0.18"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
