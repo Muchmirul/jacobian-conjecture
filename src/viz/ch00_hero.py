@@ -1,4 +1,4 @@
-"""Figures for chapter 0 — the hook and the roadmap (all animated)."""
+"""Figures for chapter 0, the hook and the roadmap (all animated)."""
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -21,7 +21,7 @@ def hero_gif():
     animate_map(TANGLED, VARS, OUT / "hero.gif", xlim=(-1, 1), ylim=(-1, 1),
                 spacing=0.2, view=((-1.7, 5.3), (-1.7, 2.4)), frames=54,
                 hold_frames=12, figsize=(7.6, 4.6),
-                title="this scramble can be perfectly undone — that's the easy part of the story")
+                title="this scramble can be perfectly undone, and that is the easy part")
 
 
 def roadmap_gif(step_frames=4, fps=14, hold=22):
@@ -58,8 +58,8 @@ def roadmap_gif(step_frames=4, fps=14, hold=22):
             ax.add_patch(ar)
             group.append(ar)
         groups.append(group)
-    ax.set_title("the journey — 13 small ideas, one per chapter, "
-                 "from «what is a function» to the fall of the conjecture",
+    ax.set_title("the journey: 13 small ideas, one per chapter, "
+                 "from 'what is a function' to the fall of the conjecture",
                  color=INK2, fontsize=11.5)
 
     total = len(CHAPTERS) * step_frames + hold

@@ -1,4 +1,4 @@
-"""Figures for chapter 12 — the 2026 counterexample: collision card + GIF."""
+"""Figures for chapter 12, the 2026 counterexample: collision card + GIF."""
 
 import numpy as np
 import matplotlib.colors
@@ -17,7 +17,7 @@ POINTS = ["( 0,  0,  −1/4 )", "( 1,  −3/2,  13/2 )", "( −1,  3/2,  13/2 )"
 
 def collision_card_gif(fps=14, step=7, travel=26, hold=30):
     """The collision, played out: three starting points appear, three dots
-    ride the arrows — and all of them arrive at the SAME landing spot."""
+    ride the arrows, and all of them arrive at the SAME landing spot."""
     from matplotlib.patches import FancyBboxPatch
 
     fig, ax = plt.subplots(figsize=(9.8, 5.2))
@@ -84,7 +84,7 @@ def collision_card_gif(fps=14, step=7, travel=26, hold=30):
 
 def collision_gif(frames=56, fps=18, hold=16):
     """The fall, animated in 3D: each of the three inputs travels straight
-    to its output under the counterexample map — and all three outputs are
+    to its output under the counterexample map, and all three outputs are
     the SAME point (−1/4, 0, 0).  The camera drifts to make the depth read."""
     starts = np.array([[0.0, 0.0, -0.25], [1.0, -1.5, 6.5], [-1.0, 1.5, 6.5]])
     target = np.array([-0.25, 0.0, 0.0])
@@ -125,7 +125,7 @@ def collision_gif(frames=56, fps=18, hold=16):
                 color=RED, fontsize=10.5, ha="center")
         titles = ("the 2026 counterexample: local volume factor −2 at EVERY "
                   "point of 3D space…",
-                  "…yet three different points land on ONE spot — "
+                  "…yet three different points land on ONE spot: "
                   "no undo machine can exist")
         ax.set_title(titles[0] + "\n" + (titles[1] if t > 0.55 else ""),
                      color=INK2, fontsize=11)

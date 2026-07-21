@@ -1,4 +1,4 @@
-"""Figures for chapter 7 — the microscope: Jacobian = the local straight map."""
+"""Figures for chapter 7, the microscope: Jacobian = the local straight map."""
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -56,8 +56,8 @@ def zoom1d_gif(frames=56, fps=16, hold=12):
 def microscope_gif(frames=64, fps=16, hold=10):
     """A real microscope move: the camera stays locked on the dot F(p) with a
     fixed (equal) aspect and simply narrows its field of view, so the only
-    motion is a pure zoom.  The grid refines as we go deeper — finer lines
-    (aligned to p, so they subdivide the coarse ones) fade in — and under
+    motion is a pure zoom.  The grid refines as we go deeper, finer lines
+    (aligned to p, so they subdivide the coarse ones) fade in, and under
     magnification everything straightens out."""
     fig, ax = plt.subplots(figsize=(6.2, 6.2))
     r0, r1 = 1.1, 0.035              # source-window radius, start -> end
@@ -110,7 +110,7 @@ def microscope_gif(frames=64, fps=16, hold=10):
         R = camera_radius(r)
         style_axes(ax, (q[0] - R, q[0] + R), (q[1] - R, q[1] + R),
                    show_axes=False)
-        ax.set_title("zooming in on one dot — the bent grid straightens out",
+        ax.set_title("zooming in on one dot: the bent grid straightens out",
                      color=INK2, fontsize=12)
         ax.text(0.03, 0.03, f"zoom ×{r0 / r:.0f}", transform=ax.transAxes,
                 fontsize=11, color=MUTED, style="italic")
@@ -123,7 +123,7 @@ def microscope_gif(frames=64, fps=16, hold=10):
 
 def det_heatmaps_gif(frames=88, fps=16):
     """A probe wanders over two maps at once.  Over the shear its local area
-    factor reads 1.00 wherever it goes; over the fold the readout is 2x —
+    factor reads 1.00 wherever it goes; over the fold the readout is 2x , 
     positive, negative, and exactly 0 on the crease."""
     fig, axes = plt.subplots(1, 2, figsize=(11.6, 5.1))
     dfuns = []
@@ -142,7 +142,7 @@ def det_heatmaps_gif(frames=88, fps=16):
         style_axes(ax, (-2, 2), (-2, 2), show_axes=False)
         ax.set_title(title, color=INK2, fontsize=11.5)
     axes[1].plot([0, 0], [-2, 2], ls="--", lw=2, color=RED)
-    axes[1].text(0.12, -1.75, "area factor 0 — the crease", color=RED,
+    axes[1].text(0.12, -1.75, "area factor 0: the crease", color=RED,
                  fontsize=10.5, rotation=90)
     cb = fig.colorbar(im, ax=axes, shrink=0.85, pad=0.02)
     cb.outline.set_visible(False)
@@ -162,7 +162,7 @@ def det_heatmaps_gif(frames=88, fps=16):
             probe.set_data([px], [py])
             v = float(dfun(px, py))
             if abs(v) < 0.12:
-                read.set_text("area factor here = 0 — crushed!")
+                read.set_text("area factor here = 0, crushed!")
                 read.set_color(RED)
             else:
                 read.set_text(f"area factor here = {v:+.2f}")

@@ -1,4 +1,4 @@
-"""Figures for chapter 9 — the statement card + the question as a GIF."""
+"""Figures for chapter 9, the statement card + the question as a GIF."""
 
 import matplotlib.colors
 import matplotlib.pyplot as plt
@@ -38,10 +38,10 @@ def statement_card_gif(step=11, fps=14, hold=34):
                  "Jacobian) is\nthe SAME nonzero constant at every single "
                  "point.", fontsize=12.5, color=INK, va="center")],
         [ax.text(0.95, 3.3, "?", fontsize=18, color=VIOLET, weight="bold"),
-         ax.text(1.55, 3.3, "Must the map then be perfectly invertible —\n"
+         ax.text(1.55, 3.3, "Must the map then be perfectly invertible,\n"
                  "with an undo map that is itself polynomial?", fontsize=13.5,
                  color=VIOLET, va="center", weight="bold")],
-        [ax.text(5, 1.6, "«yes» was believed, but never proved, for 87 years",
+        [ax.text(5, 1.6, "'yes' was believed, but never proved, for 87 years",
                  ha="center", fontsize=11, color=MUTED, style="italic")],
     ]
     for g in groups:
@@ -65,7 +65,7 @@ def statement_card_gif(step=11, fps=14, hold=34):
 def conjecture_gif(frames=42, fps=18, hold=16):
     """The whole question in one motion: a polynomial map scrambles the
     plane while its local area factor stays pinned at 1 (watch the yellow
-    patch keep its area) — must the scrambling always be undoable?"""
+    patch keep its area), must the scrambling always be undoable?"""
     F = lambdify_map(TANGLED, VARS)
     lines = grid_polylines((-1, 1), (-1, 1), spacing=0.2)
     starts = [(pts[:, 0], pts[:, 1]) for pts in lines]
@@ -86,9 +86,9 @@ def conjecture_gif(frames=42, fps=18, hold=16):
 
     titles = (
         "take a polynomial map whose LOCAL area factor is exactly 1\n"
-        "at every point — the yellow patch bends but never changes area…",
+        "at every point: the yellow patch bends but never changes area…",
         "…must a polynomial undo map always exist?\n"
-        "Keller, 1939: believed «yes» — unproven for 87 years",
+        "Keller, 1939: believed yes, unproven for 87 years",
     )
 
     def ease(t):

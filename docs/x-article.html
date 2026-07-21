@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>X Article source — The Rise and Fall of the Jacobian Conjecture</title>
+<title>X Article source - The Rise and Fall of the Jacobian Conjecture</title>
 <style>
   body { margin: 0; background: #fcfcfb; color: #0b0b0b;
          font: 17px/1.6 -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
@@ -23,40 +23,40 @@
 <main>
 
 <div class="howto">
-<h2>How to publish this as an X Article (don’t paste this box)</h2>
+<h2>How to publish this as an X Article (do not paste this box)</h2>
 <ol>
-  <li>Select everything <strong>below this box</strong> (from “Look at this animation” to the end) and copy. Paste into the X Article body — headings, bold, italics, lists and quotes carry over as tidy rich text. All math is plain Unicode, so nothing breaks.</li>
+  <li>Select everything <strong>below this box</strong> (from “Look at this animation” to the end) and copy. Paste into the X Article body. Headings, bold, italics, lists and quotes carry over as tidy rich text. All math is plain text, so nothing breaks.</li>
   <li>Type the title into X’s title field: <strong>The Rise and Fall of the Jacobian Conjecture</strong>.</li>
-  <li>The animations don’t paste — X only takes media via its own uploader. Wherever you see an orange marker line like “▶ upload animation 3 here — collision.gif”, click X’s image button, upload that GIF, then delete the marker line. Download all 28 GIFs from the <a href="https://github.com/Muchmirul/jacobian-conjecture/tree/main/guide">guide folders</a> (each marker names its file and chapter folder).</li>
+  <li>The animations do not paste, because X only takes media through its own uploader. Wherever you see an orange marker line like “▶ upload animation 3 here: collision.gif”, click X’s image button, upload that GIF, then delete the marker line. Download all 28 GIFs from the <a href="https://github.com/Muchmirul/jacobian-conjecture/tree/main/guide">guide folders</a>. Each marker names its file and chapter folder.</li>
 </ol>
 </div>
 
 <h1>The Rise and Fall of the Jacobian Conjecture</h1>
 
-<p><i>A step-by-step guide, starting from zero, to a famous math problem that stayed open for 87 years — and fell in July 2026. Every idea is shown as an animation, and you can check the final discovery yourself.</i></p>
+<p><i>A step-by-step guide, starting from zero, to a famous math problem that stayed open for 87 years and then fell in July 2026. Every idea is shown as an animation, and you can check the final discovery yourself.</i></p>
 
 <figure>
   <img src="https://raw.githubusercontent.com/Muchmirul/jacobian-conjecture/main/guide/00-start-here/hero.gif" alt="">
-  <figcaption>▶ upload animation 1 here — hero.gif (folder 00-start-here) — then delete this line</figcaption>
+  <figcaption>▶ upload animation 1 here: hero.gif (folder 00-start-here), then delete this line</figcaption>
 </figure>
 
 <p>Look at this animation. A flat grid gets bent into a strange curved shape. It looks like the grid is ruined.</p>
 
-<p>It is not. <b>This bending can be perfectly undone.</b> There is a second simple rule that moves every point exactly back to where it started. Nothing is lost.</p>
+<p>It is not. <b>This bending can be perfectly undone.</b> There is a second simple rule that moves every point back to exactly where it started. Nothing is lost.</p>
 
 <p>In 1939, a mathematician named Ott-Heinrich Keller asked a simple question about maps like this one. His question became one of the most famous unsolved problems in mathematics. Many mathematicians published proofs. <b>Every proof turned out to be wrong.</b></p>
 
-<p>The problem stayed open for 87 years. Then, in July 2026, it fell — partly, and in a way nobody expected. (The original two-dimensional case is <i>still</i> open.)</p>
+<p>The problem stayed open for 87 years. Then, in July 2026, it fell. Only partly, and in a way nobody expected. (The original two-dimensional case is still open.)</p>
 
 <p>This article explains the whole story from zero. You do not need any math background. Each chapter is one small idea, explained with a picture first. At the end, you can check the 2026 discovery <b>with your own hands</b>, using simple arithmetic.</p>
 
 <p>(Everything here is backed by an open repository: github.com/Muchmirul/jacobian-conjecture. It contains the code for every animation and a test suite that re-checks every mathematical claim.)</p>
 
-<p>Here is the plan. Chapters 1–8 build the ideas one by one. Chapter 9 states the famous question. Chapters 10–12 tell what happened to it:</p>
+<p>Here is the plan. Chapters 1 to 8 build the ideas one by one. Chapter 9 states the famous question. Chapters 10 to 12 tell what happened to it.</p>
 
 <figure>
   <img src="https://raw.githubusercontent.com/Muchmirul/jacobian-conjecture/main/guide/00-start-here/roadmap.gif" alt="">
-  <figcaption>▶ upload animation 2 here — roadmap.gif (folder 00-start-here) — then delete this line</figcaption>
+  <figcaption>▶ upload animation 2 here: roadmap.gif (folder 00-start-here), then delete this line</figcaption>
 </figure>
 
 <h2>1 · Functions are machines</h2>
@@ -67,61 +67,57 @@
 
 <figure>
   <img src="https://raw.githubusercontent.com/Muchmirul/jacobian-conjecture/main/guide/01-functions-are-machines/machine.gif" alt="">
-  <figcaption>▶ upload animation 3 here — machine.gif (folder 01-functions-are-machines) — then delete this line</figcaption>
+  <figcaption>▶ upload animation 3 here: machine.gif (folder 01-functions-are-machines), then delete this line</figcaption>
 </figure>
 
-<p>The machine above uses the rule: <i>double the number, then add 1.</i> Feed it 3, you get 7. Feed it 0, you get 1. Feed it 10, you get 21.</p>
+<p>The machine above uses the rule “double the number, then add 1.” Feed it 3, you get 7. Feed it 0, you get 1. Feed it 10, you get 21.</p>
 
-<p>Two rules make a machine a function:</p>
-<ol>
-  <li>It always gives an answer.</li>
-  <li>The same input always gives the same output. No randomness, no “it depends”.</li>
-</ol>
+<p>Two rules make a machine a function. First, it always gives an answer. Second, the same input always gives the same output, with no randomness and no “it depends”.</p>
 
-<p>Now one change of viewpoint, which we will use for the rest of the article. Instead of feeding the machine one number at a time, imagine it moving <b>every number on the number line at the same time</b>:</p>
+<p>Now one change of viewpoint, which we will use for the rest of the article. Instead of feeding the machine one number at a time, imagine it moving <b>every number on the number line at the same time</b>.</p>
 
 <figure>
   <img src="https://raw.githubusercontent.com/Muchmirul/jacobian-conjecture/main/guide/01-functions-are-machines/numberline.gif" alt="">
-  <figcaption>▶ upload animation 4 here — numberline.gif (folder 01-functions-are-machines) — then delete this line</figcaption>
+  <figcaption>▶ upload animation 4 here: numberline.gif (folder 01-functions-are-machines), then delete this line</figcaption>
 </figure>
 
-<p>Same machine, new picture: a function <i>moves the whole line</i>. Keep this picture in mind. We will soon use it on bigger spaces.</p>
+<p>Same machine, new picture: a function moves the whole line. Keep this picture in mind. We will soon use it on bigger spaces.</p>
 
-<p>One piece of notation, and it is the only one we need. Mathematicians name a machine with a letter like f and write its rule as f(x) = 2x + 1. Read it as: “f takes a number x and returns 2x + 1.” The letter x is just a placeholder for the input.</p>
+<p>One piece of notation, and it is the only one we need. Mathematicians name a machine with a letter like f and write its rule as f(x) = 2x + 1. Read it as “f takes a number x and returns 2x + 1.” The letter x is just a placeholder for the input.</p>
 
-<blockquote><p><b>The one thing to remember:</b> a function is a machine that turns each input into exactly one output — and you can picture it moving every number at once.</p></blockquote>
+<blockquote><p><b>The one thing to remember:</b> a function is a machine that turns each input into exactly one output, and you can picture it moving every number at once.</p></blockquote>
 
 <h2>2 · The undo machine</h2>
 
-<p>A machine moves every number. Next question: can the move be <i>reversed</i>? This small idea is the seed of the whole story.</p>
+<p>A machine moves every number. The next question is whether the move can be reversed. This small idea is the seed of the whole story.</p>
 
-<p>The machine “double it” sends 3 to 6. The machine “halve it” sends 6 back to 3. Run one after the other, and every number ends up exactly where it started:</p>
+<p>The machine “double it” sends 3 to 6. The machine “halve it” sends 6 back to 3. Run one after the other, and every number ends up exactly where it started.</p>
 
 <figure>
   <img src="https://raw.githubusercontent.com/Muchmirul/jacobian-conjecture/main/guide/02-the-undo-machine/undo.gif" alt="">
-  <figcaption>▶ upload animation 5 here — undo.gif (folder 02-the-undo-machine) — then delete this line</figcaption>
+  <figcaption>▶ upload animation 5 here: undo.gif (folder 02-the-undo-machine), then delete this line</figcaption>
 </figure>
 
-<p>When a second machine brings every output back to its original input, it is called the <b>inverse</b> — the <i>undo machine</i>. Doubling and halving undo each other. So do “add 5” and “subtract 5”.</p>
+<p>When a second machine brings every output back to its original input, it is called the <b>inverse</b>, or the undo machine. Doubling and halving undo each other. So do “add 5” and “subtract 5”.</p>
 
-<p>Now try to undo “square it” (multiply the number by itself):</p>
+<p>Now try to undo “square it”, which multiplies the number by itself.</p>
 
 <figure>
   <img src="https://raw.githubusercontent.com/Muchmirul/jacobian-conjecture/main/guide/02-the-undo-machine/collision.gif" alt="">
-  <figcaption>▶ upload animation 6 here — collision.gif (folder 02-the-undo-machine) — then delete this line</figcaption>
+  <figcaption>▶ upload animation 6 here: collision.gif (folder 02-the-undo-machine), then delete this line</figcaption>
 </figure>
 
 <p>Feed it −3: you get 9. Feed it 3: you also get 9. Now stand at 9 and try to walk back. <b>Which input did you come from?</b> You cannot know. The information “was it negative?” is gone.</p>
 
-<p>An undo machine cannot exist when:</p>
+<p>An undo machine cannot exist when either of two things happens:</p>
 <ol>
-  <li><b>Collisions</b> — two different inputs land on the same output. (−3 and 3 both land on 9.)</li>
-  <li><b>Gaps</b> — some outputs are never produced, so the undo machine would have nothing to say there. (Squaring never outputs −4.)</li>
+  <li><b>Collisions:</b> two different inputs land on the same output. (−3 and 3 both land on 9.)</li>
+  <li><b>Gaps:</b> some outputs are never produced, so the undo machine would have nothing to say there. (Squaring never outputs −4.)</li>
 </ol>
 
 <p>If there are no collisions and no gaps, then every output has exactly one origin, and “walk back where you came from” is a well-defined machine.</p>
 
-<p><i>(The official words, if you want them: no collisions is called injective, no gaps is called surjective, both together is called invertible. You can forget these words — “no collisions, no gaps” is all you need.)</i></p>
+<p><i>(The official words, if you want them: no collisions is called injective, no gaps is called surjective, both together is called invertible. You can forget these words. “No collisions, no gaps” is all you need.)</i></p>
 
 <blockquote><p><b>The one thing to remember:</b> a machine can be undone exactly when no two inputs share an output and no output is missing. Undoing fails the moment information is destroyed.</p></blockquote>
 
@@ -129,28 +125,28 @@
 
 <p>So far a machine could use any rule. The famous problem is about one specific family of machines: the ones built from nothing but plus and times.</p>
 
-<p>Take an input x. Allow yourself only two operations: <b>add</b> and <b>multiply</b> (numbers, or pieces you already built). Any machine you can build this way is called a <b>polynomial</b>.</p>
+<p>Take an input x. Allow yourself only two operations, adding and multiplying, using numbers or pieces you have already built. Any machine you can build this way is called a <b>polynomial</b>.</p>
 
 <ul>
-  <li>2x + 1 — double, then add one. Polynomial.</li>
-  <li>x² — x times x. Polynomial. (A power is just repeated multiplication.)</li>
-  <li>x³ − 2x — build x·x·x, build 2x, subtract. Polynomial. (Subtracting is adding a negative.)</li>
+  <li>2x + 1 doubles and then adds one. It is a polynomial.</li>
+  <li>x² is x times x. It is a polynomial, since a power is just repeated multiplication.</li>
+  <li>x³ − 2x builds x·x·x, builds 2x, and subtracts. It is a polynomial, since subtracting is adding a negative.</li>
 </ul>
 
-<p>Here are their graphs. For each input x along the bottom, the height of the curve shows the output:</p>
+<p>Here are their graphs. For each input x along the bottom, the height of the curve shows the output.</p>
 
 <figure>
   <img src="https://raw.githubusercontent.com/Muchmirul/jacobian-conjecture/main/guide/03-polynomials/gallery.gif" alt="">
-  <figcaption>▶ upload animation 7 here — gallery.gif (folder 03-polynomials) — then delete this line</figcaption>
+  <figcaption>▶ upload animation 7 here: gallery.gif (folder 03-polynomials), then delete this line</figcaption>
 </figure>
 
-<p>The dashed gray curves — sin x, 1/x, √x — are <b>not</b> polynomials. Each one needs an operation we did not allow: dividing by the input, or an infinite process.</p>
+<p>The dashed gray curves, sin x, 1/x, and √x, are <b>not</b> polynomials. Each one needs an operation we did not allow: dividing by the input, or an infinite process.</p>
 
-<p>Why focus on polynomials? Because they are the machines you can run <b>exactly, with pencil and paper, in a finite number of steps</b>. No approximation, no “undefined at zero”, no infinite sums. They are the most concrete and most checkable machines in mathematics.</p>
+<p>Why focus on polynomials? Because they are the machines you can run <b>exactly, with pencil and paper, in a finite number of steps</b>. There is no approximation, no “undefined at zero”, and no infinite sums. They are the most concrete and most checkable machines in mathematics.</p>
 
-<p>That is what makes the coming problem so surprising: it is a question about the simplest machines we have, and it defeated everyone for 87 years.</p>
+<p>That is what makes the coming problem so surprising. It is a question about the simplest machines we have, and it defeated everyone for 87 years.</p>
 
-<p>One more word: the <b>degree</b> of a polynomial is its biggest power. x³ − 2x has degree 3. This word becomes important in chapter 10.</p>
+<p>One more word: the <b>degree</b> of a polynomial is its biggest power. So x³ − 2x has degree 3. This word becomes important in chapter 10.</p>
 
 <blockquote><p><b>The one thing to remember:</b> a polynomial is any machine built using only plus and times. These are the most finite, most checkable machines there are.</p></blockquote>
 
@@ -158,27 +154,27 @@
 
 <p>Machines that eat one number were the warm-up. Now our machines eat <b>points</b>.</p>
 
-<p>A <b>point</b> of the plane is a pair of numbers (x, y): how far right, how far up. A <b>plane map</b> is a machine that takes a point and returns a point. Since a point is two numbers, the machine has two output slots, and each slot may use both inputs: F(x, y) = (first rule using x and y, second rule using x and y).</p>
+<p>A <b>point</b> of the plane is a pair of numbers (x, y): how far right, and how far up. A <b>plane map</b> is a machine that takes a point and returns a point. Since a point is two numbers, the machine has two output slots, and each slot may use both inputs. So F(x, y) is (a rule using x and y, another rule using x and y).</p>
 
-<p>In chapter 1, a machine moved the whole number line. A plane map moves the <b>whole plane</b>. To see it, draw a grid on the plane and watch the map carry it:</p>
+<p>In chapter 1, a machine moved the whole number line. A plane map moves the <b>whole plane</b>. To see it, draw a grid on the plane and watch the map carry it.</p>
 
 <figure>
   <img src="https://raw.githubusercontent.com/Muchmirul/jacobian-conjecture/main/guide/04-maps-of-the-plane/rubbersheet.gif" alt="">
-  <figcaption>▶ upload animation 8 here — rubbersheet.gif (folder 04-maps-of-the-plane) — then delete this line</figcaption>
+  <figcaption>▶ upload animation 8 here: rubbersheet.gif (folder 04-maps-of-the-plane), then delete this line</figcaption>
 </figure>
 
 <p>The plane moves like a rubber sheet. The two dots are examples: each one is picked up at (x, y) and put down at F(x, y).</p>
 
-<p>Here are six basic plane maps, all moving at once:</p>
+<p>Here are six basic plane maps, all moving at once.</p>
 
 <figure>
   <img src="https://raw.githubusercontent.com/Muchmirul/jacobian-conjecture/main/guide/04-maps-of-the-plane/gallery.gif" alt="">
-  <figcaption>▶ upload animation 9 here — gallery.gif (folder 04-maps-of-the-plane) — then delete this line</figcaption>
+  <figcaption>▶ upload animation 9 here: gallery.gif (folder 04-maps-of-the-plane), then delete this line</figcaption>
 </figure>
 
-<p>Slide, turn, grow, lean — these keep the grid lines straight. The last one, <i>bend</i>, does not: its rule uses y² and x², and squaring is what bends lines. This connects to chapter 3:</p>
+<p>Slide, turn, grow, and lean all keep the grid lines straight. The last one, bend, does not, because its rule uses y² and x², and squaring is what bends lines. This connects back to chapter 3.</p>
 
-<blockquote><p>A <b>polynomial map</b> of the plane is a map where both output rules are polynomials — built from x and y using only plus and times. Example: F(x, y) = (x + ¼y², y + ¼x²), the “bend” panel above.</p></blockquote>
+<blockquote><p>A <b>polynomial map</b> of the plane is a map where both output rules are polynomials, built from x and y using only plus and times. For example, F(x, y) = (x + ¼y², y + ¼x²) is the “bend” panel above.</p></blockquote>
 
 <p>The rest of this article is about exactly these: polynomial maps of flat space.</p>
 
@@ -188,255 +184,248 @@
 
 <p>Before we let maps bend anything, we need one number from the simplest maps. It is the most useful number in this story.</p>
 
-<p>Some plane maps are perfectly regular: grid lines stay <b>straight</b>, stay <b>parallel</b>, stay <b>evenly spaced</b>, and the center point does not move. These are called <b>linear maps</b> — we will say <i>straight maps</i>. The turns, grows, squeezes and leans of the last chapter are all straight maps.</p>
+<p>Some plane maps are perfectly regular. Grid lines stay <b>straight</b>, stay <b>parallel</b>, and stay <b>evenly spaced</b>, and the center point does not move. These are called <b>linear maps</b>, and we will call them straight maps. The turns, grows, squeezes, and leans of the last chapter are all straight maps.</p>
 
-<p>Watch what each one does to the yellow square, which starts with area 1:</p>
+<p>Watch what each one does to the yellow square, which starts with area 1.</p>
 
 <figure>
   <img src="https://raw.githubusercontent.com/Muchmirul/jacobian-conjecture/main/guide/05-straight-maps-and-area/gallery.gif" alt="">
-  <figcaption>▶ upload animation 10 here — gallery.gif (folder 05-straight-maps-and-area) — then delete this line</figcaption>
+  <figcaption>▶ upload animation 10 here: gallery.gif (folder 05-straight-maps-and-area), then delete this line</figcaption>
 </figure>
 
-<p>There is a pattern here. A straight map scales the yellow square’s area by some factor — and it scales <b>every</b> piece of the plane, everywhere, by that <b>same</b> factor:</p>
+<p>There is a pattern here. A straight map scales the yellow square’s area by some factor, and it scales <b>every</b> piece of the plane, everywhere, by that <b>same</b> factor.</p>
 
 <ul>
-  <li>turn: area ×1 · squeeze: area ×1 · lean: area ×1</li>
-  <li>grow (everything doubled): area ×4</li>
-  <li>mirror: area ×1, but the square comes out <b>flipped</b>, like a page turned over</li>
-  <li>squash: area ×0 — the whole plane lands on a single line</li>
+  <li>turn, squeeze, and lean each give area × 1</li>
+  <li>grow, which doubles everything, gives area × 4</li>
+  <li>mirror gives area × 1, but the square comes out flipped, like a page turned over</li>
+  <li>squash gives area × 0, and the whole plane lands on a single line</li>
 </ul>
 
-<p>This one number — the area-scaling factor — is called the map’s <b>determinant</b>. For the mirror, we record the flip with a minus sign: determinant −1. So the determinant tells you two things at once: <i>how much area is scaled</i>, and <i>whether the plane got flipped over</i>.</p>
+<p>This one number, the area-scaling factor, is called the map’s <b>determinant</b>. For the mirror we record the flip with a minus sign, so its determinant is −1. The determinant therefore tells you two things at once: how much area is scaled, and whether the plane got flipped over.</p>
 
-<p>Determinant zero is the disaster case:</p>
+<p>Determinant zero is the disaster case.</p>
 
 <figure>
   <img src="https://raw.githubusercontent.com/Muchmirul/jacobian-conjecture/main/guide/05-straight-maps-and-area/squash.gif" alt="">
-  <figcaption>▶ upload animation 11 here — squash.gif (folder 05-straight-maps-and-area) — then delete this line</figcaption>
+  <figcaption>▶ upload animation 11 here: squash.gif (folder 05-straight-maps-and-area), then delete this line</figcaption>
 </figure>
 
-<p>Watch the three dots. When the determinant is 0, the plane is pressed flat onto a line. Different points land on the same spot — <b>collisions</b>, everywhere. Chapter 2 told us what that means: information destroyed, undo impossible.</p>
+<p>Watch the three dots. When the determinant is 0, the plane is pressed flat onto a line. Different points land on the same spot, which means collisions everywhere. Chapter 2 told us what that means: information destroyed, undo impossible.</p>
 
-<p>And if the determinant is <i>not</i> zero? Then a straight map has no collisions and no gaps, and it has an undo map, which is also straight. For straight maps, one number decides everything:</p>
+<p>And if the determinant is not zero? Then a straight map has no collisions and no gaps, and it has an undo map, which is also straight. For straight maps, one number decides everything:</p>
 
-<blockquote><p><b>A straight map can be undone ⟺ its determinant ≠ 0.</b></p></blockquote>
+<blockquote><p><b>A straight map can be undone exactly when its determinant is not zero.</b></p></blockquote>
 
 <p><i>(Where the number comes from: a straight map is fully described by four numbers, F(x, y) = (ax + by, cx + dy), and its determinant is ad − bc. You will never need to compute this by hand here.)</i></p>
 
-<blockquote><p><b>The one thing to remember:</b> a straight map scales all areas by one fixed factor — the determinant. Factor nonzero: it can be undone. Factor zero: the plane is crushed and information is lost.</p></blockquote>
+<blockquote><p><b>The one thing to remember:</b> a straight map scales all areas by one fixed factor, the determinant. If the factor is nonzero, the map can be undone. If the factor is zero, the plane is crushed and information is lost.</p></blockquote>
 
 <h2>6 · Bending the grid</h2>
 
-<p>Now we let polynomial maps bend things, and we compare two kinds: maps that bend the plane but never squeeze it, and maps that somewhere press area down to zero. This difference is the center of the whole story.</p>
+<p>Now we let polynomial maps bend things, and we compare two kinds. Some maps bend the plane but never squeeze it. Others press area down to zero somewhere. This difference is the center of the whole story.</p>
 
-<p>First kind. Here is the <b>shear</b>: F(x, y) = (x + y², y). In words: <i>slide each horizontal row to the right by y².</i> Rows near the middle barely move; rows far away move a lot. Watch the yellow square as the plane bends:</p>
+<p>Start with the first kind. Here is the <b>shear</b>: F(x, y) = (x + y², y). In words, it slides each horizontal row to the right by y². Rows near the middle barely move, and rows far away move a lot. Watch the yellow square as the plane bends.</p>
 
 <figure>
   <img src="https://raw.githubusercontent.com/Muchmirul/jacobian-conjecture/main/guide/06-bending-the-grid/shear.gif" alt="">
-  <figcaption>▶ upload animation 12 here — shear.gif (folder 06-bending-the-grid) — then delete this line</figcaption>
+  <figcaption>▶ upload animation 12 here: shear.gif (folder 06-bending-the-grid), then delete this line</figcaption>
 </figure>
 
-<p>The grid bends, but nothing is squeezed or stretched: every small piece keeps <b>exactly its area</b>. And this map is easy to undo — each row slid right by y², so slide it back: G(x, y) = (x − y², y). G undoes F perfectly, and G is itself a polynomial map. This is our first interesting <b>polynomial map with a polynomial undo</b>.</p>
+<p>The grid bends, but nothing is squeezed or stretched, so every small piece keeps <b>exactly its area</b>. This map is easy to undo. Each row slid right by y², so to undo it you slide it back: G(x, y) = (x − y², y). G undoes F perfectly, and G is itself a polynomial map. This is our first interesting <b>polynomial map with a polynomial undo</b>.</p>
 
 <p>You can stack shears to build much wilder maps. Do a vertical shear, then a horizontal one. The two steps together form one polynomial map: H(x, y) = (x + (y + x²)², y + x²).</p>
 
 <figure>
   <img src="https://raw.githubusercontent.com/Muchmirul/jacobian-conjecture/main/guide/06-bending-the-grid/tangled.gif" alt="">
-  <figcaption>▶ upload animation 13 here — tangled.gif (folder 06-bending-the-grid) — then delete this line</figcaption>
+  <figcaption>▶ upload animation 13 here: tangled.gif (folder 06-bending-the-grid), then delete this line</figcaption>
 </figure>
 
-<p>This is the bending from the very first animation of the article. It looks hopeless, but you know its secret: it is two simple shears, one after the other. To undo it, undo the layers in reverse order — like taking off shoes, then socks. Its undo map is again a polynomial. (In chapter 10 the computer will find it for us.)</p>
+<p>This is the bending from the very first animation of the article. It looks hopeless, but you know its secret: it is two simple shears, one after the other. To undo it, undo the layers in reverse order, like taking off your shoes and then your socks. Its undo map is again a polynomial, and in chapter 10 the computer will find it for us.</p>
 
-<p>Stack as many shears and straight maps as you like: the result looks more and more complicated, and it always stays perfectly undoable.</p>
+<p>You can stack as many shears and straight maps as you like. The result looks more and more complicated, and it always stays perfectly undoable.</p>
 
-<p>Second kind. Some polynomial maps destroy information.</p>
+<p>Now the second kind. Some polynomial maps destroy information.</p>
 
 <figure>
   <img src="https://raw.githubusercontent.com/Muchmirul/jacobian-conjecture/main/guide/06-bending-the-grid/fold.gif" alt="">
-  <figcaption>▶ upload animation 14 here — fold.gif (folder 06-bending-the-grid) — then delete this line</figcaption>
+  <figcaption>▶ upload animation 14 here: fold.gif (folder 06-bending-the-grid), then delete this line</figcaption>
 </figure>
 
-<p>F(x, y) = (x², y) <b>folds</b> the plane like closing a book: the left half lands exactly on the right half. The two dots show a collision — two different points, one landing spot. This map cannot be undone.</p>
+<p>F(x, y) = (x², y) <b>folds</b> the plane like closing a book, so the left half lands exactly on the right half. The two dots show a collision: two different points reach one landing spot. This map cannot be undone.</p>
 
 <figure>
   <img src="https://raw.githubusercontent.com/Muchmirul/jacobian-conjecture/main/guide/06-bending-the-grid/crush.gif" alt="">
-  <figcaption>▶ upload animation 15 here — crush.gif (folder 06-bending-the-grid) — then delete this line</figcaption>
+  <figcaption>▶ upload animation 15 here: crush.gif (folder 06-bending-the-grid), then delete this line</figcaption>
 </figure>
 
-<p>F(x, y) = (x, x·y) <b>crushes</b>: the entire vertical center line collapses onto one single point. Also impossible to undo.</p>
+<p>F(x, y) = (x, x·y) <b>crushes</b>, so the entire vertical center line collapses onto one single point. It also cannot be undone.</p>
 
-<p>Compare the two kinds:</p>
+<p>Compare the two kinds. The shear and stacked shears bend but never crush, so they can be undone, with a polynomial undo. The fold and crush press area down to zero somewhere, which causes collisions, so they have no undo.</p>
 
-<ul>
-  <li>Shear and stacked shears: <b>bend but never crush</b> → can be undone, with a polynomial undo.</li>
-  <li>Fold and crush: somewhere, area is <b>pressed down to zero</b> → collisions → no undo.</li>
-</ul>
+<p>This looks like chapter 5’s rule, that a map can be undone exactly when its area factor is nonzero, trying to extend from straight maps to bent maps. But a bent map stretches area by different amounts in different places. So what plays the role of “the” area factor? For that we need a microscope.</p>
 
-<p>This looks like chapter 5’s rule (“can be undone ⟺ area factor ≠ 0”) trying to extend from straight maps to bent maps. But a bent map stretches area by different amounts in different places. So what plays the role of “the” area factor? For that we need a microscope.</p>
-
-<blockquote><p><b>The one thing to remember:</b> stacked shears bend the plane into complicated shapes that are still easy to undo — while folds and crushes press area to zero somewhere and can never be undone.</p></blockquote>
+<blockquote><p><b>The one thing to remember:</b> stacked shears bend the plane into complicated shapes that are still easy to undo, while folds and crushes press area to zero somewhere and can never be undone.</p></blockquote>
 
 <h2>7 · The microscope</h2>
 
-<p>Now the word that sounds the scariest in this subject — the <b>Jacobian</b>. It is just a microscope.</p>
+<p>Now the word that sounds the scariest in this subject: the <b>Jacobian</b>. It is just a microscope.</p>
 
-<p>Take the curved graph of y = x² and zoom in on one point:</p>
+<p>Take the curved graph of y = x² and zoom in on one point.</p>
 
 <figure>
   <img src="https://raw.githubusercontent.com/Muchmirul/jacobian-conjecture/main/guide/07-the-microscope/zoom1d.gif" alt="">
-  <figcaption>▶ upload animation 16 here — zoom1d.gif (folder 07-the-microscope) — then delete this line</figcaption>
+  <figcaption>▶ upload animation 16 here: zoom1d.gif (folder 07-the-microscope), then delete this line</figcaption>
 </figure>
 
-<p>Under the microscope, the curve <i>straightens out</i>. Zoom in enough and it looks exactly like a straight line. The slope of that line (here: 2) is called the <i>derivative</i> at that point. This one observation — “smooth things look straight up close” — is all the calculus you need today.</p>
+<p>Under the microscope, the curve straightens out. Zoom in enough and it looks exactly like a straight line. The slope of that line, here 2, is called the derivative at that point. This one observation, that smooth things look straight up close, is all the calculus you need today.</p>
 
-<p>Now do the same with a bent grid. Take the stacked-shear map H from the last chapter, pick the point p = (0.5, 0.5), and zoom in on what H does near p:</p>
+<p>Now do the same with a bent grid. Take the stacked-shear map H from the last chapter, pick the point p = (0.5, 0.5), and zoom in on what H does near p.</p>
 
 <figure>
   <img src="https://raw.githubusercontent.com/Muchmirul/jacobian-conjecture/main/guide/07-the-microscope/microscope.gif" alt="">
-  <figcaption>▶ upload animation 17 here — microscope.gif (folder 07-the-microscope) — then delete this line</figcaption>
+  <figcaption>▶ upload animation 17 here: microscope.gif (folder 07-the-microscope), then delete this line</figcaption>
 </figure>
 
-<p>Straight. Parallel. Evenly spaced. Exactly what chapter 5 described. <b>Up close, a bent polynomial map looks just like a straight map.</b></p>
+<p>Straight. Parallel. Evenly spaced. This is exactly what chapter 5 described. <b>Up close, a bent polynomial map looks just like a straight map.</b></p>
 
 <blockquote><p>The <b>Jacobian</b> of F at a point p is the straight map you see when you zoom in on F near p.</p></blockquote>
 
-<p>Different points show different straight maps under the microscope — the Jacobian <i>depends on where you look</i>. (Computers find it by a mechanical rule, a small table of derivatives. You will never compute one by hand here.)</p>
+<p>Different points show different straight maps under the microscope, so the Jacobian depends on where you look. (Computers find it by a mechanical rule, a small table of derivatives. You will never compute one by hand here.)</p>
 
-<p>Here is why this matters. Straight maps have a determinant — an area factor. So:</p>
+<p>Here is why this matters. Straight maps have a determinant, an area factor. So at <b>every point</b> p, the map has a <i>local area factor</i>, written “det J at p”. It is the determinant of the straight map seen under the microscope at p. It says how strongly the map stretches or squeezes <i>tiny</i> pieces right at p, and whether it flips them.</p>
 
-<blockquote><p>At <b>every point</b> p, the map has a <i>local area factor</i>: “det J at p”, the determinant of the straight map seen under the microscope at p. It says how strongly the map stretches or squeezes <i>tiny</i> pieces right at p — and whether it flips them.</p></blockquote>
-
-<p>Let us paint this number over the whole plane for two maps, and send a probe dot to read it out:</p>
+<p>Let us paint this number over the whole plane for two maps, and send a probe dot to read it out.</p>
 
 <figure>
   <img src="https://raw.githubusercontent.com/Muchmirul/jacobian-conjecture/main/guide/07-the-microscope/det_heatmaps.gif" alt="">
-  <figcaption>▶ upload animation 18 here — det_heatmaps.gif (folder 07-the-microscope) — then delete this line</figcaption>
+  <figcaption>▶ upload animation 18 here: det_heatmaps.gif (folder 07-the-microscope), then delete this line</figcaption>
 </figure>
 
 <ul>
-  <li>The shear (x + y², y): local area factor <b>exactly 1 at every point</b>. At every location, under every zoom, it is a perfect area-preserving straight map. That is the precise meaning of “bends but never crushes”.</li>
-  <li>The fold (x², y): local area factor 2x. Positive on the right half (blue), <b>negative on the left half</b> (that half got flipped — red), and <b>zero exactly on the fold line</b>. The picture shows exactly where the map destroys information.</li>
+  <li>The shear (x + y², y) has local area factor <b>exactly 1 at every point</b>. At every location, under every zoom, it is a perfect area-preserving straight map. That is the precise meaning of “bends but never crushes”.</li>
+  <li>The fold (x², y) has local area factor 2x. It is positive on the right half (blue), negative on the left half where that half got flipped (red), and exactly zero on the fold line. The picture shows exactly where the map destroys information.</li>
 </ul>
 
-<blockquote><p><b>The one thing to remember:</b> zoom in anywhere on a smooth map and you see a straight map — the Jacobian at that point. Its determinant is the local area factor, and the places where this factor is 0 are exactly the places where the map crushes.</p></blockquote>
+<blockquote><p><b>The one thing to remember:</b> zoom in anywhere on a smooth map and you see a straight map, the Jacobian at that point. Its determinant is the local area factor, and the places where this factor is 0 are exactly the places where the map crushes.</p></blockquote>
 
 <h2>8 · Local vs global</h2>
 
 <p>The microscope looks like the perfect tool. Here is the trap at the heart of the subject: a map can look perfect under every microscope and still be broken.</p>
 
-<p>The tempting shortcut: to know if a map can be undone, check the local area factor everywhere. If it is never zero, the map never crushes anything — so surely it can be undone?</p>
+<p>The tempting shortcut goes like this. To know if a map can be undone, check the local area factor everywhere. If it is never zero, the map never crushes anything, so surely it can be undone. Can it?</p>
 
-<p>Part of this is true. If the local factor at a point p is not zero, the map <i>can</i> be undone <b>near p</b>: zoom in enough and it is a healthy straight map. This fact is called the <i>inverse function theorem</i>, and it is solid.</p>
+<p>Part of this is true. If the local factor at a point p is not zero, the map can be undone <b>near p</b>, because if you zoom in enough it is a healthy straight map. This fact is called the inverse function theorem, and it is solid.</p>
 
 <p>But look at what it does <b>not</b> promise.</p>
 
-<p>Take the polynomial map F(x, y) = (x² − y², 2xy) and apply it to a ring around the center. Blue half on the right, gold half on the left:</p>
+<p>Take the polynomial map F(x, y) = (x² − y², 2xy) and apply it to a ring around the center. The blue half is on the right, and the gold half is on the left.</p>
 
 <figure>
   <img src="https://raw.githubusercontent.com/Muchmirul/jacobian-conjecture/main/guide/08-local-vs-global/wrap.gif" alt="">
-  <figcaption>▶ upload animation 19 here — wrap.gif (folder 08-local-vs-global) — then delete this line</figcaption>
+  <figcaption>▶ upload animation 19 here: wrap.gif (folder 08-local-vs-global), then delete this line</figcaption>
 </figure>
 
-<p>Each half maps smoothly — no creases, no crushing; near every single point the microscope says “all clear”. But the blue half covers the <b>entire</b> target ring… and the gold half covers <b>the same ring again</b>. Every target point is hit <b>twice</b>, by two points far away from each other (watch the blue and gold dots collide).</p>
+<p>Each half maps smoothly, with no creases and no crushing, and near every single point the microscope says “all clear”. But the blue half covers the <b>entire</b> target ring, and the gold half covers <b>the same ring again</b>. Every target point is hit <b>twice</b>, by two points far away from each other. Watch the blue and gold dots collide.</p>
 
-<p>These are collisions — but not local ones. Each collision pairs two points from <i>opposite sides of the plane</i>. No microscope can see both at once. <b>Locally fine everywhere; globally broken.</b></p>
+<p>These are collisions, but not local ones. Each collision pairs two points from opposite sides of the plane. No microscope can see both at once. So the map is locally fine everywhere, yet globally broken.</p>
 
-<p>How many bad points caused this? On the whole plane, this map’s local area factor is 4(x² + y²):</p>
+<p>How many bad points caused this? On the whole plane, this map’s local area factor is 4(x² + y²).</p>
 
 <figure>
   <img src="https://raw.githubusercontent.com/Muchmirul/jacobian-conjecture/main/guide/08-local-vs-global/one_bad_point.gif" alt="">
-  <figcaption>▶ upload animation 20 here — one_bad_point.gif (folder 08-local-vs-global) — then delete this line</figcaption>
+  <figcaption>▶ upload animation 20 here: one_bad_point.gif (folder 08-local-vs-global), then delete this line</figcaption>
 </figure>
 
-<p>It is zero at <b>one single point</b> — the center — and healthy everywhere else. One bad point out of infinitely many, and the map uses it to wrap the plane around twice. That is how sensitive this game is.</p>
+<p>It is zero at <b>one single point</b>, the center, and healthy everywhere else. One bad point out of infinitely many, and the map uses it to wrap the plane around twice. That is how sensitive this game is.</p>
 
-<p><i>(It gets worse: there are smooth non-polynomial maps whose local factor is nonzero at every point, with no exception at all, that still hit target points infinitely often. So for general smooth maps, “locally fine everywhere” is very far from “globally undoable”. If any hope remains, it must come from using very special machines — like polynomials.)</i></p>
+<p><i>(It gets worse. There are smooth non-polynomial maps whose local factor is nonzero at every point, with no exception at all, that still hit target points infinitely often. So for general smooth maps, “locally fine everywhere” is very far from “globally undoable”. If any hope remains, it must come from using very special machines, such as polynomials.)</i></p>
 
-<p>So “local factor never zero” is not enough on its own. If we want a local condition to guarantee global undoability, we must add something. Keller’s choice: demand the strongest possible local condition — the local area factor is not just nonzero but <b>the same constant at every point</b> — and demand that the map be <b>polynomial</b>. Is <i>that</i> enough?</p>
+<p>So “local factor never zero” is not enough on its own. If we want a local condition to guarantee global undoability, we must add something. Keller’s choice was to demand the strongest possible local condition, that the local area factor is not just nonzero but <b>the same constant at every point</b>, and to demand that the map be <b>polynomial</b>. Is that enough?</p>
 
 <p>That is the Jacobian Conjecture. The next chapter states it fully.</p>
 
-<blockquote><p><b>The one thing to remember:</b> the microscope only checks a map <i>near each point</i>. Points far apart can still collide — local undoability everywhere does not give global undoability.</p></blockquote>
+<blockquote><p><b>The one thing to remember:</b> the microscope only checks a map near each point. Points far apart can still collide, so local undoability everywhere does not give global undoability.</p></blockquote>
 
 <h2>9 · The conjecture</h2>
 
 <p>You now have every piece:</p>
 
 <ol>
-  <li><b>Undoable</b> = no collisions, no gaps (chapter 2).</li>
-  <li><b>Polynomial maps</b> = machines built from plus and times only (chapters 3–4).</li>
-  <li><b>Determinant</b> = the area factor of a straight map; zero means crushed (chapter 5).</li>
-  <li><b>Jacobian</b> = the straight map seen under the microscope; det J = the <i>local</i> area factor at each point (chapter 7).</li>
-  <li><b>The trap</b>: a nonzero local factor everywhere still does not force global undoability (chapter 8).</li>
+  <li><b>Undoable</b> means no collisions and no gaps (chapter 2).</li>
+  <li><b>Polynomial maps</b> are machines built from plus and times only (chapters 3 and 4).</li>
+  <li><b>Determinant</b> is the area factor of a straight map, where zero means crushed (chapter 5).</li>
+  <li><b>Jacobian</b> is the straight map seen under the microscope, and det J is the local area factor at each point (chapter 7).</li>
+  <li><b>The trap</b> is that a nonzero local factor everywhere still does not force global undoability (chapter 8).</li>
 </ol>
 
-<p>Keller’s question, from 1939: do not just ask the local area factor to avoid zero. Ask it to be <b>the same nonzero constant at every single point</b> — like the shear and the stacked shears, where the factor is exactly 1 everywhere. And keep the maps polynomial, the simplest machines there are.</p>
+<p>Here is Keller’s question, from 1939. Do not just ask the local area factor to avoid zero. Ask it to be <b>the same nonzero constant at every single point</b>, like the shear and the stacked shears, where the factor is exactly 1 everywhere. And keep the maps polynomial, the simplest machines there are.</p>
 
 <p>Surely such a map must be undoable, with a polynomial undo?</p>
 
 <figure>
   <img src="https://raw.githubusercontent.com/Muchmirul/jacobian-conjecture/main/guide/09-the-conjecture/statement_card.gif" alt="">
-  <figcaption>▶ upload animation 21 here — statement_card.gif (folder 09-the-conjecture) — then delete this line</figcaption>
+  <figcaption>▶ upload animation 21 here: statement_card.gif (folder 09-the-conjecture), then delete this line</figcaption>
 </figure>
 
-<p>The same question, in motion — the condition first, then the question:</p>
+<p>Here is the same question in motion, with the condition first and then the question.</p>
 
 <figure>
   <img src="https://raw.githubusercontent.com/Muchmirul/jacobian-conjecture/main/guide/09-the-conjecture/conjecture.gif" alt="">
-  <figcaption>▶ upload animation 22 here — conjecture.gif (folder 09-the-conjecture) — then delete this line</figcaption>
+  <figcaption>▶ upload animation 22 here: conjecture.gif (folder 09-the-conjecture), then delete this line</figcaption>
 </figure>
 
-<p>That is the <b>Jacobian Conjecture</b>. Not a theorem — a conjecture: a statement everyone believed and nobody could prove.</p>
+<p>That is the <b>Jacobian Conjecture</b>. It is not a theorem but a conjecture: a statement everyone believed and nobody could prove.</p>
 
 <p><b>Three details, for completeness:</b></p>
 
 <ul>
-  <li><b>All dimensions.</b> The question is asked not only for the plane but for 3-dimensional space, 4-dimensional space, and so on — each output coordinate a polynomial in all the input coordinates. Our pictures are 2D because that is what eyes can see.</li>
-  <li><b>Complex numbers.</b> Officially the conjecture is asked over the complex numbers, a larger number system where every polynomial equation has solutions. Over the complex numbers, “the local factor is never zero” and “the local factor is a nonzero constant” turn out to be the same condition. Chapter 11 shows that over the ordinary real numbers the conjecture is actually <b>false</b> — so this choice of number system genuinely matters.</li>
-  <li><b>Only collisions matter.</b> A deep theorem (Ax–Grothendieck) says: if a complex polynomial map has no collisions, then it automatically has no gaps, and its undo map is automatically a polynomial. So the entire 87-year battle was about one question: <b>can two different points share an output?</b></li>
+  <li><b>All dimensions.</b> The question is asked not only for the plane but for 3-dimensional space, 4-dimensional space, and so on, with each output coordinate a polynomial in all the input coordinates. Our pictures are 2D because that is what eyes can see.</li>
+  <li><b>Complex numbers.</b> Officially the conjecture is asked over the complex numbers, a larger number system where every polynomial equation has solutions. Over the complex numbers, “the local factor is never zero” and “the local factor is a nonzero constant” turn out to be the same condition. Chapter 11 shows that over the ordinary real numbers the conjecture is actually <b>false</b>, so this choice of number system genuinely matters.</li>
+  <li><b>Only collisions matter.</b> A deep theorem, called Ax–Grothendieck, says that if a complex polynomial map has no collisions, then it automatically has no gaps, and its undo map is automatically a polynomial. So the entire 87-year battle was about one question: <b>can two different points share an output?</b></li>
 </ul>
 
-<p>Why did it look provable? Every no-crush map we met satisfies the condition (factor 1 everywhere) and can be undone. The next chapter shows that every example anyone ever built confirmed the conjecture — and that for degree-2 maps it was actually proved. It looked close to certain.</p>
+<p>Why did it look provable? Every no-crush map we met satisfies the condition, with factor 1 everywhere, and can be undone. The next chapter shows that every example anyone ever built confirmed the conjecture, and that for degree-2 maps it was actually proved. It looked close to certain.</p>
 
 <p>Nobody proved it, from 1939 to 2026.</p>
 
-<blockquote><p><b>The one thing to remember — the Jacobian Conjecture:</b> <i>if a polynomial map’s local area factor is the same nonzero constant at every point, must the map be undoable, with a polynomial undo?</i></p></blockquote>
+<blockquote><p><b>The one thing to remember, the Jacobian Conjecture:</b> if a polynomial map’s local area factor is the same nonzero constant at every point, must the map be undoable, with a polynomial undo?</p></blockquote>
 
 <h2>10 · Test it yourself</h2>
 
-<p>Before seeing what happened to the conjecture, you can test it — with a computer doing exact algebra, not approximations.</p>
+<p>Before seeing what happened to the conjecture, you can test it, using a computer that does exact algebra rather than approximations.</p>
 
-<p>Python’s sympy library works with polynomials <i>exactly</i>, the way you would with a pencil and unlimited patience. Ask it for the local area factor of the stacked-shear map H(x, y) = (x + (y + x²)², y + x²), and it answers: <b>constant 1</b>. At every one of the infinitely many points, certified by algebra. So H satisfies Keller’s condition.</p>
+<p>Python’s sympy library works with polynomials exactly, the way you would with a pencil and unlimited patience. Ask it for the local area factor of the stacked-shear map H(x, y) = (x + (y + x²)², y + x²), and it answers <b>constant 1</b>, at every one of the infinitely many points, certified by algebra. So H satisfies Keller’s condition.</p>
 
-<p>Now the real test — ask the computer to <i>invert</i> H. It returns an explicit polynomial undo, G(x, y) = (x − y², y − (x − y²)²). And composing G after H simplifies to exactly (x, y), the do-nothing map. The round trip is perfect — every point walks back home:</p>
+<p>Now the real test. Ask the computer to invert H. It returns an explicit polynomial undo, G(x, y) = (x − y², y − (x − y²)²), and composing G after H simplifies to exactly (x, y), the do-nothing map. The round trip is perfect, and every point walks back home.</p>
 
 <figure>
   <img src="https://raw.githubusercontent.com/Muchmirul/jacobian-conjecture/main/guide/10-kicking-the-tires/roundtrip.gif" alt="">
-  <figcaption>▶ upload animation 23 here — roundtrip.gif (folder 10-kicking-the-tires) — then delete this line</figcaption>
+  <figcaption>▶ upload animation 23 here: roundtrip.gif (folder 10-kicking-the-tires), then delete this line</figcaption>
 </figure>
 
-<p>For contrast, the fold (x², y) has local area factor 2x — <b>not</b> constant, so it never satisfied the condition. The conjecture makes no promise about it. Consistent.</p>
+<p>For contrast, the fold (x², y) has local area factor 2x, which is not constant, so it never satisfied the condition. The conjecture makes no promise about it. That is consistent.</p>
 
 <p>The score after decades of such tests:</p>
 
 <ul>
-  <li>shear (x + y², y): factor 1 → undoable; degree 2, undo has degree 2</li>
-  <li>stacked map H: factor 1 → undoable; degree 4, undo has degree 4</li>
-  <li>triple-stacked H₃: factor 1 → undoable; degree 4, undo has degree 4</li>
-  <li>fold (x², y): factor 2x — does not qualify; not undoable</li>
+  <li>shear (x + y², y): factor 1, undoable, degree 2 with undo of degree 2</li>
+  <li>stacked map H: factor 1, undoable, degree 4 with undo of degree 4</li>
+  <li>triple-stacked H₃: factor 1, undoable, degree 4 with undo of degree 4</li>
+  <li>fold (x², y): factor 2x, does not qualify, not undoable</li>
 </ul>
 
 <p>Every example anyone ever built agreed with the conjecture. Theory added more:</p>
 
 <ul>
   <li><b>Degree up to 2 was proved</b> (Wang, 1980): every degree-2 map satisfying the condition, in any dimension, can be undone.</li>
-  <li><b>Degree 3 contains the whole problem</b> (Bass–Connell–Wright, 1982): if the conjecture holds for all degree-3 maps, it holds for all degrees. The entire problem was compressed into degree 3 — and still nobody could prove it.</li>
+  <li><b>Degree 3 contains the whole problem</b> (Bass–Connell–Wright, 1982): if the conjecture holds for all degree-3 maps, it holds for all degrees. The entire problem was compressed into degree 3, and still nobody could prove it.</li>
   <li><b>In the plane, it was checked up to degree 100</b> (Moh, 1983, with computer help).</li>
 </ul>
 
-<p>One detail from the list above is worth noticing: in the plane, the undo map always has the <i>same</i> degree as the map. In dimension 3 and higher, the undo can be far more complicated than the map. Higher dimensions play by wilder rules. Remember that.</p>
+<p>One detail is worth noticing. In the plane, the undo map always has the same degree as the map. In dimension 3 and higher, the undo can be far more complicated than the map. Higher dimensions play by wilder rules. Remember that.</p>
 
-<blockquote><p><b>The one thing to remember:</b> every example ever built confirmed the conjecture; degree 2 was proved; the whole problem was squeezed into degree 3 — and there it stayed, unsolved, for four more decades.</p></blockquote>
+<blockquote><p><b>The one thing to remember:</b> every example ever built confirmed the conjecture, degree 2 was proved, and the whole problem was squeezed into degree 3, where it stayed unsolved for four more decades.</p></blockquote>
 
 <h2>11 · Why it was so hard</h2>
 
@@ -444,40 +433,42 @@
 
 <figure>
   <img src="https://raw.githubusercontent.com/Muchmirul/jacobian-conjecture/main/guide/11-why-it-was-so-hard/timeline.gif" alt="">
-  <figcaption>▶ upload animation 24 here — timeline.gif (folder 11-why-it-was-so-hard) — then delete this line</figcaption>
+  <figcaption>▶ upload animation 24 here: timeline.gif (folder 11-why-it-was-so-hard), then delete this line</figcaption>
 </figure>
 
-<p>The same pattern repeated for a century: someone announces a proof; the world gets excited; a subtle hole is found. It happened to Kraus in 1884 (before Keller even asked the question), to Engel in 1955, three times to Segre, to Gröbner, and to many modern attempts.</p>
+<p>The same pattern repeated for a century. Someone announces a proof, the world gets excited, and a subtle hole is found. It happened to Kraus in 1884, before Keller even asked the question, to Engel in 1955, three times to Segre, to Gröbner, and to many modern attempts.</p>
 
-<p><b>Obstacle 1: the statement is false over the real numbers.</b> One hope was that ordinary real-plane geometry — the kind our pictures show — already forces undoability once the local factor never vanishes. It does not. In 1994, Sergey Pinchuk built an explicit pair of polynomials — degrees 10 and 25 — whose local area factor is <b>strictly positive at every real point</b>, and which still sends two different points to the same place.</p>
+<p><b>Obstacle 1: the statement is false over the real numbers.</b> One hope was that ordinary real-plane geometry, the kind our pictures show, already forces undoability once the local factor never vanishes. It does not. In 1994, Sergey Pinchuk built an explicit pair of polynomials, of degrees 10 and 25, whose local area factor is <b>strictly positive at every real point</b>, and which still sends two different points to the same place.</p>
 
 <figure>
   <img src="https://raw.githubusercontent.com/Muchmirul/jacobian-conjecture/main/guide/11-why-it-was-so-hard/pinchuk_det.gif" alt="">
-  <figcaption>▶ upload animation 25 here — pinchuk_det.gif (folder 11-why-it-was-so-hard) — then delete this line</figcaption>
+  <figcaption>▶ upload animation 25 here: pinchuk_det.gif (folder 11-why-it-was-so-hard), then delete this line</figcaption>
 </figure>
 
-<p>No crushing anywhere, no flipping anywhere — and still a collision. So reasoning about real numbers alone can never prove the conjecture: over the reals, the statement is simply not true. <i>(How do we know Pinchuk’s factor is never zero? It equals t² + (t + f(13 + 15h))² + f² for certain helper polynomials t, f, h — a sum of three squares, so it is never negative, and a short argument shows it is never zero. It is positive everywhere but not constant — and over the complex numbers, “never zero” and “constant” would be the same thing. This is why the complex setting in chapter 9 matters.)</i></p>
+<p>There is no crushing anywhere and no flipping anywhere, and yet there is still a collision. So reasoning about real numbers alone can never prove the conjecture, because over the reals the statement is simply not true.</p>
 
-<p><b>Obstacle 2: the statement is false in clock arithmetic.</b> Another hope was that pure symbol manipulation — algebra that works in any number system — might be enough. It is not. On a clock with a prime number p of positions (numbers wrap around), the simple machine F(x) = x − xᵖ has constant slope 1, the perfect condition — yet it sends <i>every</i> clock position to 0. Total collapse. So any proof must use a property that ordinary numbers have and clock arithmetic lacks. Pure symbol-pushing cannot be enough.</p>
+<p><i>(How do we know Pinchuk’s factor is never zero? It equals t² + (t + f(13 + 15h))² + f² for certain helper polynomials t, f, and h. That is a sum of three squares, so it is never negative, and a short argument shows it is never zero. It is positive everywhere but not constant, and over the complex numbers “never zero” and “constant” would be the same thing. This is why the complex setting in chapter 9 matters.)</i></p>
 
-<p><b>Obstacle 3: the danger sits at infinity.</b> A classical theorem (Hadamard) says: a map that is locally undoable everywhere, <b>and</b> does not let points run away to infinity, is globally undoable. Maybe polynomial maps cannot send points to infinity in a bad way? They can. Under the crush map (x, xy), take the points (1/2, 2), (1/3, 3), (1/4, 4), … The points themselves run off to infinity. Their outputs (1/2, 1), (1/3, 1), (1/4, 1), … quietly approach the ordinary point (0, 1):</p>
+<p><b>Obstacle 2: the statement is false in clock arithmetic.</b> Another hope was that pure symbol manipulation, meaning algebra that works in any number system, might be enough. It is not. On a clock with a prime number p of positions, where numbers wrap around, the simple machine F(x) = x − xᵖ has constant slope 1, the perfect condition, yet it sends <i>every</i> clock position to 0. That is a total collapse. So any proof must use a property that ordinary numbers have and clock arithmetic lacks. Pure symbol-pushing cannot be enough.</p>
+
+<p><b>Obstacle 3: the danger sits at infinity.</b> A classical theorem, due to Hadamard, says that a map that is locally undoable everywhere, and that does not let points run away to infinity, is globally undoable. So maybe polynomial maps cannot send points to infinity in a bad way? They can. Under the crush map (x, xy), take the points (1/2, 2), (1/3, 3), (1/4, 4), and so on. The points themselves run off to infinity. Their outputs (1/2, 1), (1/3, 1), (1/4, 1), and so on, quietly approach the ordinary point (0, 1).</p>
 
 <figure>
   <img src="https://raw.githubusercontent.com/Muchmirul/jacobian-conjecture/main/guide/11-why-it-was-so-hard/escape.gif" alt="">
-  <figcaption>▶ upload animation 26 here — escape.gif (folder 11-why-it-was-so-hard) — then delete this line</figcaption>
+  <figcaption>▶ upload animation 26 here: escape.gif (folder 11-why-it-was-so-hard), then delete this line</figcaption>
 </figure>
 
-<p>So the escape route to infinity is open, the important behavior happens “near infinity” — and that is exactly where the mistaken proofs, starting with Kraus in 1884, quietly leaked.</p>
+<p>So the escape route to infinity is open, and the important behavior happens near infinity. That is exactly where the mistaken proofs, starting with Kraus in 1884, quietly leaked.</p>
 
-<p><b>One more warning sign: dimension 3 is stranger than the plane.</b> Every complicated undoable map we built was a stack of shears and straight maps. Until 2004, one could hope that <i>all</i> constant-factor maps, in all dimensions, are secretly such stacks — stacks are always undoable, so the conjecture would follow. In the plane this is a true theorem: every undoable polynomial map of the plane can be broken into shears. But in three dimensions there is Nagata’s map — local factor 1, polynomial undo, perfectly well-behaved — which was proved (Shestakov–Umirbaev, 2004) to be impossible to build from shears and straight maps. Three-dimensional space contains genuinely wilder maps than the plane. Remember that too.</p>
+<p><b>One more warning sign: dimension 3 is stranger than the plane.</b> Every complicated undoable map we built was a stack of shears and straight maps. Until 2004, one could hope that all constant-factor maps, in all dimensions, are secretly such stacks. Stacks are always undoable, so the conjecture would follow. In the plane this is a true theorem, because every undoable polynomial map of the plane can be broken into shears. But in three dimensions there is Nagata’s map, which has local factor 1, a polynomial undo, and is perfectly well-behaved, yet was proved (Shestakov–Umirbaev, 2004) to be impossible to build from shears and straight maps. Three-dimensional space contains genuinely wilder maps than the plane. Remember that too.</p>
 
-<blockquote><p><b>The one thing to remember:</b> a proof had to use all three at once — that the maps are polynomial, that the numbers are complex, and control of what happens at infinity. Real-number reasoning fails (Pinchuk), formal algebra fails (clock arithmetic), and the escape to infinity is real. Almost no argument survives all three.</p></blockquote>
+<blockquote><p><b>The one thing to remember:</b> a proof had to use all three facts at once, that the maps are polynomial, that the numbers are complex, and control of what happens at infinity. Real-number reasoning fails because of Pinchuk, formal algebra fails because of clock arithmetic, and the escape to infinity is real. Almost no argument survives all three.</p></blockquote>
 
 <h2>12 · The fall</h2>
 
-<p>July 2026. The 87-year-old conjecture collapsed — in every dimension except the one where it was born. This chapter shows the actual object that did it. You can check it yourself.</p>
+<p>July 2026. The 87-year-old conjecture collapsed in every dimension except the one where it was born. This chapter shows the actual object that did it. You can check it yourself.</p>
 
-<p>On July 19–20, 2026, an explicit counterexample to the Jacobian Conjecture in <b>three variables</b> was announced. The construction is attributed to the mathematician Levent Alpöge, answering a version of the question raised by a colleague, with the decisive example produced with the help of the AI model Claude Fable. At the time of writing there is no peer-reviewed paper yet — so this article does what mathematics always does with an announcement: <b>verify before trusting.</b> Every claim below is re-checked, independently and exactly, by the open repository. Nothing here asks for your trust.</p>
+<p>On July 19–20, 2026, an explicit counterexample to the Jacobian Conjecture in <b>three variables</b> was announced. The construction is attributed to the mathematician Levent Alpöge, answering a version of the question raised by a colleague, with the decisive example produced with the help of the AI model Claude Fable. At the time of writing there is no peer-reviewed paper yet, so this article does what mathematics always does with an announcement: verify before trusting. Every claim below is re-checked, independently and exactly, by the open repository. Nothing here asks for your trust.</p>
 
 <p><b>The map.</b> Write u = 1 + xy as a shorthand. The map takes a 3D point (x, y, z) to the 3D point (P, Q, R):</p>
 
@@ -487,29 +478,29 @@
 <p>R = 2x − 3x²y − x³z</p>
 </blockquote>
 
-<p>Three short polynomials, of degrees 7, 6 and 4, with small whole-number coefficients.</p>
+<p>These are three short polynomials, of degrees 7, 6, and 4, with small whole-number coefficients.</p>
 
-<p><b>Fact 1 (the condition holds).</b> Its local volume factor — the 3D Jacobian determinant — is exactly the constant −2, everywhere. This is precisely Keller’s condition. (The minus sign only means space comes out mirror-flipped, uniformly. The size of the factor never changes.)</p>
+<p><b>Fact 1: the condition holds.</b> Its local volume factor, the 3D Jacobian determinant, is exactly the constant −2 everywhere. This is precisely Keller’s condition. (The minus sign only means space comes out mirror-flipped, uniformly. The size of the factor never changes.)</p>
 
-<p><b>Fact 2 (and yet):</b></p>
+<p><b>Fact 2: and yet.</b></p>
 
 <figure>
   <img src="https://raw.githubusercontent.com/Muchmirul/jacobian-conjecture/main/guide/12-the-fall/collision_card.gif" alt="">
-  <figcaption>▶ upload animation 27 here — collision_card.gif (folder 12-the-fall) — then delete this line</figcaption>
+  <figcaption>▶ upload animation 27 here: collision_card.gif (folder 12-the-fall), then delete this line</figcaption>
 </figure>
 
-<p>Watch it happen in 3D — each point travels to its output, and all three paths end on the same red X:</p>
+<p>Watch it happen in 3D. Each point travels to its output, and all three paths end on the same red X.</p>
 
 <figure>
   <img src="https://raw.githubusercontent.com/Muchmirul/jacobian-conjecture/main/guide/12-the-fall/collision.gif" alt="">
-  <figcaption>▶ upload animation 28 here — collision.gif (folder 12-the-fall) — then delete this line</figcaption>
+  <figcaption>▶ upload animation 28 here: collision.gif (folder 12-the-fall), then delete this line</figcaption>
 </figure>
 
-<p>Three different points. One landing spot. Standing at (−1/4, 0, 0), you cannot know which of the three points you came from — the collision from chapter 2, and with it, the end of any undo machine. <b>The Jacobian Conjecture is false in three dimensions.</b></p>
+<p>Three different points. One landing spot. Standing at (−1/4, 0, 0), you cannot know which of the three points you came from. This is the collision from chapter 2, and with it, the end of any undo machine. <b>The Jacobian Conjecture is false in three dimensions.</b></p>
 
-<p>It also fails in every higher dimension: in 4D, send the extra coordinate to itself, (x, y, z, w) → (P, Q, R, w). The volume factor is still −2, and the collision is still there. The same works for 5D, 6D, and so on.</p>
+<p>It also fails in every higher dimension. In 4D, send the extra coordinate to itself, so (x, y, z, w) goes to (P, Q, R, w). The volume factor is still −2, and the collision is still there. The same works for 5D, 6D, and so on.</p>
 
-<p><b>Check it yourself — by hand.</b> The third coordinate is the easy one: R = 2x − 3x²y − x³z. Take the three points and plug in:</p>
+<p><b>Check it yourself, by hand.</b> The third coordinate is the easy one: R = 2x − 3x²y − x³z. Take the three points and plug in:</p>
 
 <ul>
   <li>(0, 0, −1/4): R = 0 − 0 − 0 = 0 ✓</li>
@@ -517,29 +508,29 @@
   <li>(−1, 3/2, 13/2): R = −2 − 9/2 + 13/2 = 0 ✓ <i>(here −3x²y = −9/2, and −x³z = +13/2 because x³ = −1)</i></li>
 </ul>
 
-<p>Now the first point in full: at (0, 0, −1/4) we get u = 1, so P = 1·(−1/4) + 0 = −1/4 and Q = 0 + 0 + 0 = 0. So this point maps to (−1/4, 0, 0) — arithmetic you can do in your head.</p>
+<p>Now the first point in full. At (0, 0, −1/4) we get u = 1, so P = 1·(−1/4) + 0 = −1/4 and Q = 0 + 0 + 0 = 0. So this point maps to (−1/4, 0, 0), which is arithmetic you can do in your head.</p>
 
-<p><b>Check it yourself — by computer.</b> The other two points involve fractions like 13/2 raised to powers — doable on paper, but ten lines of Python with sympy confirm everything exactly: the determinant expands to −2, and all three points map to (−1/4, 0, 0). The exact script, and a test suite that re-verifies it, is in the repository: github.com/Muchmirul/jacobian-conjecture.</p>
+<p><b>Check it yourself, by computer.</b> The other two points involve fractions like 13/2 raised to powers, which is doable on paper, but exact algebra settles it in ten lines. It confirms that the determinant expands to −2 and that all three points map to (−1/4, 0, 0). The exact script, and a test suite that re-verifies it, is in the repository: github.com/Muchmirul/jacobian-conjecture.</p>
 
-<p><b>What survives.</b> Keller asked his question in 1939 <b>for the plane</b>. The counterexample lives in dimension 3, and it needs the extra room — remember the warning signs: maps that cannot be broken into shears exist only in dimension 3 and up, and undo-degrees only explode in dimension 3 and up. The plane case — two variables, the original question, checked up to degree 100 — <b>is still open today.</b> The oldest piece of the puzzle is still on the table.</p>
+<p><b>What survives.</b> Keller asked his question in 1939 <b>for the plane</b>. The counterexample lives in dimension 3, and it needs the extra room. Remember the warning signs: maps that cannot be broken into shears exist only in dimension 3 and up, and undo-degrees only explode in dimension 3 and up. The plane case, meaning two variables and the original question, checked up to degree 100, <b>is still open today.</b> The oldest piece of the puzzle is still on the table.</p>
 
-<p><b>What the ending means.</b> For 87 years the question was: which extra condition forces a map to be globally undoable? Everyone believed “polynomial + constant factor” was enough, and many wrong proofs of it were published. The true answer is: <b>it is not enough</b>. The escape-to-infinity obstacle from chapter 11 is real and can be used — by polynomials of degree seven. The conjecture did not need a cleverer proof. It needed a counterexample — and the counterexample is so concrete that a person with no mathematical training can check it by hand.</p>
+<p><b>What the ending means.</b> For 87 years the question was which extra condition forces a map to be globally undoable. Everyone believed “polynomial plus constant factor” was enough, and many wrong proofs of it were published. The true answer is that <b>it is not enough</b>. The escape-to-infinity obstacle from chapter 11 is real, and it can be exploited by polynomials of degree seven. The conjecture did not need a cleverer proof. It needed a counterexample, and the counterexample is so concrete that a person with no mathematical training can check it by hand.</p>
 
 <p>That is what you just did.</p>
 
-<blockquote><p><b>The one thing to remember:</b> an explicit degree-7 map of 3D space has constant volume factor −2, yet three different points land on one spot — the Jacobian Conjecture is <b>false in dimension 3 and above</b>, and <b>still open in the plane</b>, where it began.</p></blockquote>
+<blockquote><p><b>The one thing to remember:</b> an explicit degree-7 map of 3D space has constant volume factor −2, yet three different points land on one spot. So the Jacobian Conjecture is <b>false in dimension 3 and above</b>, and <b>still open in the plane</b>, where it began.</p></blockquote>
 
 <h2>Where to go next</h2>
 
 <ul>
-  <li><b>The companion repository</b>: github.com/Muchmirul/jacobian-conjecture — the code for every animation, the exact-algebra helpers, the full test suite, and research notes with sources.</li>
-  <li>A. van den Essen, <i>Polynomial Automorphisms and the Jacobian Conjecture</i> — the standard book (advanced).</li>
-  <li>T. Tao’s blog post on the Ax–Grothendieck theorem — why “no collisions” automatically gives “no gaps”.</li>
-  <li>L. A. Campbell, <i>Picturing Pinchuk’s Plane Polynomial Pair</i> (arXiv:math/9812032) — the real-numbers counterexample, in pictures.</li>
-  <li>The Wikipedia article <i>Jacobian conjecture</i> — current status and references.</li>
+  <li><b>The companion repository</b>, github.com/Muchmirul/jacobian-conjecture, has the code for every animation, the exact-algebra helpers, the full test suite, and research notes with sources.</li>
+  <li>A. van den Essen, <i>Polynomial Automorphisms and the Jacobian Conjecture</i>, the standard book (advanced).</li>
+  <li>T. Tao’s blog post on the Ax–Grothendieck theorem, on why “no collisions” automatically gives “no gaps”.</li>
+  <li>L. A. Campbell, <i>Picturing Pinchuk’s Plane Polynomial Pair</i> (arXiv:math/9812032), the real-numbers counterexample in pictures.</li>
+  <li>The Wikipedia article <i>Jacobian conjecture</i>, for current status and references.</li>
 </ul>
 
-<p><i>Written July 2026. All figures are animations generated from the open repository; every mathematical claim in this article is re-verified by its test suite.</i></p>
+<p><i>Written July 2026. All figures are animations generated from the open repository, and every mathematical claim in this article is re-verified by its test suite.</i></p>
 
 </main>
 </body>

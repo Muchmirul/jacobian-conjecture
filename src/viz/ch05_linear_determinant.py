@@ -1,4 +1,4 @@
-"""Figures for chapter 5 — straight maps and the area factor (all animated)."""
+"""Figures for chapter 5, straight maps and the area factor (all animated)."""
 
 import matplotlib.colors
 import numpy as np
@@ -18,18 +18,18 @@ OUT = out_dir("05-straight-maps-and-area")
 c, s = sp.cos(sp.rad(35)), sp.sin(sp.rad(35))
 half = sp.Rational(1, 2)
 PANELS = [
-    ("turn — area ×1", linear_map(c, -s, s, c, VARS)),
-    ("grow — area ×4", linear_map(2, 0, 0, 2, VARS)),
-    ("squeeze — area ×1", linear_map(2, 0, 0, half, VARS)),
-    ("lean — area ×1", linear_map(1, sp.Rational(3, 5), 0, 1, VARS)),
-    ("mirror — area ×1, flipped (−1)", linear_map(0, 1, 1, 0, VARS)),
-    ("squash — area ×0 : flattened!", linear_map(1, 1, 1, 1, VARS)),
+    ("turn: area ×1", linear_map(c, -s, s, c, VARS)),
+    ("grow: area ×4", linear_map(2, 0, 0, 2, VARS)),
+    ("squeeze: area ×1", linear_map(2, 0, 0, half, VARS)),
+    ("lean: area ×1", linear_map(1, sp.Rational(3, 5), 0, 1, VARS)),
+    ("mirror: area ×1, flipped (−1)", linear_map(0, 1, 1, 0, VARS)),
+    ("squash: area ×0, flattened!", linear_map(1, 1, 1, 1, VARS)),
 ]
 
 
 def gallery_gif(fps=16, frames=40, hold=16):
     """Six straight maps act on the plane at once; the yellow patch shows
-    each map's area factor — its determinant — including the fatal ×0."""
+    each map's area factor, its determinant, including the fatal ×0."""
     fig, axes = plt.subplots(2, 3, figsize=(11.4, 7.6))
     lines = grid_polylines((-2, 2), (-2, 2), spacing=0.5)
     sq = np.linspace(0, 1, 30)
@@ -52,7 +52,7 @@ def gallery_gif(fps=16, frames=40, hold=16):
         squares.append({"ax": ax, "xx": xx, "yy": yy, "ex": ex, "ey": ey,
                         "art": None})
     fig.suptitle("straight maps: every patch of the plane changes area by "
-                 "the SAME factor — the determinant", color=INK2,
+                 "the SAME factor, the determinant", color=INK2,
                  fontsize=12.5)
     fig.tight_layout()
 
@@ -88,7 +88,7 @@ def squash_gif():
                 hold_frames=10, square=(0.0, 0.0),
                 points=[(1.0, 0.0), (0.0, 1.0), (0.5, 0.5)],
                 color_to=RED,
-                title="det → 0 : the whole plane lands on one line — information destroyed")
+                title="det → 0: the whole plane lands on one line, information destroyed")
 
 
 if __name__ == "__main__":

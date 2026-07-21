@@ -1,4 +1,4 @@
-"""Figures for chapter 1 — functions are machines (all animated)."""
+"""Figures for chapter 1, functions are machines (all animated)."""
 
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation, PillowWriter
@@ -13,7 +13,7 @@ EXAMPLES = [(3, 7), (0, 1), (10, 21)]          # x  ->  2x + 1
 
 def machine_gif(fps=16, t_in=16, t_work=8, t_out=16, t_rest=10, hold=20):
     """One number at a time rides through the machine «double it, then add 1»:
-    blue in on the left, green out on the right, and a growing scoreboard —
+    blue in on the left, green out on the right, and a growing scoreboard , 
     the same input always produces the same output."""
     fig, ax = plt.subplots(figsize=(7.6, 3.1))
     bare_axes(ax, (0, 10), (0, 3.1))
@@ -22,7 +22,7 @@ def machine_gif(fps=16, t_in=16, t_work=8, t_out=16, t_rest=10, hold=20):
     arrow(ax, (6.85, 1.5), (8.5, 1.5), color=GREEN)
     ax.text(1.1, 0.85, "in", fontsize=10, ha="center", color=MUTED)
     ax.text(9.0, 0.85, "out", fontsize=10, ha="center", color=MUTED)
-    ax.text(5.0, 0.32, "same input in, same output out — every single time",
+    ax.text(5.0, 0.32, "same input in, same output out, every single time",
             fontsize=10.5, ha="center", color=MUTED, style="italic")
     ax.set_title("a function is a reliable machine", color=INK2, fontsize=12)
 
@@ -70,7 +70,7 @@ def machine_gif(fps=16, t_in=16, t_work=8, t_out=16, t_rest=10, hold=20):
 def numberline_gif():
     animate_1d(lambda x: 2 * x + 1, xs=[-3, -2, -1, 0, 1, 2, 3],
                out_path=OUT / "numberline.gif",
-               title="the machine  «double, then add 1»  moves every number at once")
+               title="the machine 'double, then add 1' moves every number at once")
 
 
 if __name__ == "__main__":

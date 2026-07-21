@@ -1,4 +1,4 @@
-"""Figures for chapter 11 — the timeline, Pinchuk's heatmap, and the
+"""Figures for chapter 11, the timeline, Pinchuk's heatmap, and the
 escape-to-infinity GIF (trapdoor 3)."""
 
 import numpy as np
@@ -16,7 +16,7 @@ from jacobian_guide.plotting import (BASELINE, BLUE, GOOD, GREEN, INK, INK2,
 OUT = out_dir("11-why-it-was-so-hard")
 
 EVENTS = [
-    ("1884", "Kraus claims a proof —\nflawed at infinity", MUTED),
+    ("1884", "Kraus claims a proof,\nflawed at infinity", MUTED),
     ("1939", "Keller poses\nthe conjecture", BLUE),
     ("1955–61", "wave of published\nproofs… all wrong", MUTED),
     ("1980", "Wang: true for\ndegree ≤ 2", GOOD),
@@ -25,13 +25,13 @@ EVENTS = [
     ("1994", "Pinchuk: REAL\nversion is false", RED),
     ("1998", "Smale lists it as\nProblem 16", BLUE),
     ("2004", "Nagata's map proved\nwild (3D is stranger)", VIOLET),
-    ("2026", "counterexample: FALSE\nfor n ≥ 3 — plane still open", RED),
+    ("2026", "counterexample: FALSE\nfor n ≥ 3, plane still open", RED),
 ]
 
 
 def timeline_gif(step=8, fps=14, hold=30):
     """87 years appear one event at a time: claimed proofs, partial
-    victories, warnings — and the 2026 ending."""
+    victories, warnings, and the 2026 ending."""
     fig, ax = plt.subplots(figsize=(12.6, 3.9))
     n = len(EVENTS)
     bare_axes(ax, (-0.6, n - 0.4), (-2.4, 2.4))
@@ -70,7 +70,7 @@ def timeline_gif(step=8, fps=14, hold=30):
 def pinchuk_gif(frames=96, fps=16):
     """A probe sweeps Pinchuk's plane, reading the local area factor and
     remembering the smallest value it has seen: it dips into deep valleys
-    but NEVER reaches 0 — yet the map still collides."""
+    but NEVER reaches 0, yet the map still collides."""
     dfun = sp.lambdify(VARS, PINCHUK_DET_IDENTITY, "numpy")
     xs = np.linspace(-3, 3, 600)
     xx, yy = np.meshgrid(xs, xs)
@@ -82,7 +82,7 @@ def pinchuk_gif(frames=96, fps=16):
                        shading="auto")
     style_axes(ax, (-3, 3), (-3, 3), show_axes=False)
     ax.set_title("Pinchuk's map: local area factor at every real point\n"
-                 "(log scale — deep valleys, but the floor is never 0)",
+                 "(log scale: deep valleys, but the floor is never 0)",
                  color=INK2, fontsize=11.5)
     cb = fig.colorbar(im, ax=ax, shrink=0.85)
     cb.outline.set_visible(False)
@@ -119,8 +119,8 @@ def escape_gif(frames=70, fps=18, hold=12):
     inputs (1/s, s) march off to infinity along the hyperbola xy = 1, while
     their outputs (1/s, 1) calmly approach the ordinary point (0, 1)."""
     fig, (axL, axR) = plt.subplots(1, 2, figsize=(9.8, 4.7))
-    fig.suptitle("trapdoor 3 — under the crush map $(x, y)\\mapsto(x, xy)$: "
-                 "a sequence flees, its shadow stays",
+    fig.suptitle("obstacle 3 · the crush map $(x, y)\\mapsto(x, xy)$: "
+                 "the points escape, their outputs stay",
                  color=INK2, fontsize=12, y=0.97)
     s0, s1 = 1.05, 60.0
     YLIM = 8.2
@@ -141,7 +141,7 @@ def escape_gif(frames=70, fps=18, hold=12):
         axL.plot(1 / ss, ss, color=BLUE, lw=1.6, alpha=0.4, zorder=3)
         axL.plot([1 / s], [s], "o", ms=8, color=BLUE, zorder=5)
         style_axes(axL, (-0.08, 1.08), (-0.5, YLIM), equal=False)
-        axL.set_title("inputs  $(1/s,\\ s)$ — marching off to infinity",
+        axL.set_title("inputs  $(1/s,\\ s)$ · marching off to infinity",
                       color=INK2, fontsize=11)
         axL.text(0.04, 0.93, f"$s = {s:.1f}$", transform=axL.transAxes,
                  fontsize=11, color=MUTED)
@@ -158,7 +158,7 @@ def escape_gif(frames=70, fps=18, hold=12):
         axR.annotate("(0, 1)", (0, 1), xytext=(0.05, 1.9), color=RED,
                      fontsize=10.5)
         style_axes(axR, (-0.08, 1.08), (-0.5, YLIM), equal=False)
-        axR.set_title("outputs  $(1/s,\\ 1)$ — calmly approaching (0, 1)",
+        axR.set_title("outputs  $(1/s,\\ 1)$ · calmly approaching (0, 1)",
                       color=INK2, fontsize=11)
 
     anim = FuncAnimation(fig, update, frames=total, interval=1000 / fps)

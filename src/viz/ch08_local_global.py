@@ -1,4 +1,4 @@
-"""Figures for chapter 8 — locally fine everywhere, globally broken."""
+"""Figures for chapter 8, locally fine everywhere, globally broken."""
 
 import matplotlib.colors
 import numpy as np
@@ -21,7 +21,7 @@ def _annulus_lines(theta_lo, theta_hi, r_lo=0.55, r_hi=1.45, offset=0.0):
 
     `offset` staggers the radii and ray angles so that when the two halves
     land on the same ring, their webs interleave instead of hiding each
-    other — the double cover stays visible.
+    other, the double cover stays visible.
     """
     lines = []
     for r in np.arange(r_lo + offset * 0.075, r_hi + 1e-9, 0.15):
@@ -45,7 +45,7 @@ def wrap_gif(frames=52, fps=18, hold=10):
 
     fig, ax = plt.subplots(figsize=(6.6, 6.6))
     style_axes(ax, (-2.5, 2.5), (-2.5, 2.5))
-    ax.set_title("each half is fine on its own — together they land on the SAME ring",
+    ax.set_title("each half is fine on its own, but together they land on the SAME ring",
                  color=INK2, fontsize=11.5)
 
     artists, data = [], []
@@ -99,7 +99,7 @@ def one_bad_point_gif(frames=76, fps=16, hold=18):
     trail, = ax.plot([], [], lw=1.2, color=VIOLET, alpha=0.35, zorder=5)
     read = ax.text(0.5, -0.075, "", transform=ax.transAxes, ha="center",
                    fontsize=11.5, family="monospace", color=BLUE)
-    bad = ax.text(0.5, 0.05, "hits 0 HERE — and only here", ha="center",
+    bad = ax.text(0.5, 0.05, "hits 0 HERE, and only here", ha="center",
                   transform=ax.transAxes, fontsize=11.5, color=RED,
                   weight="bold", alpha=0.0)
 

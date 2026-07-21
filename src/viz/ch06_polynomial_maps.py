@@ -1,4 +1,4 @@
-"""Figures for chapter 6 — polynomial maps bend the grid (all animated)."""
+"""Figures for chapter 6, polynomial maps bend the grid (all animated)."""
 
 import matplotlib.colors
 import numpy as np
@@ -20,7 +20,7 @@ def shear_gif():
                 ylim=(-2, 2), spacing=0.4, view=((-2.6, 6.3), (-2.3, 2.3)),
                 frames=48, hold_frames=10, square=(0.0, 0.0),
                 figsize=(7.8, 4.3),
-                title="slide each row right by y² — bent, but the yellow patch keeps area 1")
+                title="slide each row right by y²: bent, but the yellow patch keeps area 1")
 
 
 def fold_gif():
@@ -28,12 +28,12 @@ def fold_gif():
                 ylim=(-1.5, 1.5), spacing=0.25,
                 view=((-1.8, 2.6), (-1.8, 1.8)), frames=48, hold_frames=10,
                 points=[(-1.0, 0.6), (1.0, 0.6)], figsize=(7.2, 5.2),
-                title="(x², y) folds the plane like a book — the two dots crash")
+                title="(x², y) folds the plane like a book, and the two dots crash")
 
 
 def tangled_gif(fps=16, frames=36, hold=14):
     """The 'monster' built live: shear #1 slides columns up by x², then
-    shear #2 slides rows right by y² — wild-looking, yet only two tame
+    shear #2 slides rows right by y², wild-looking, yet only two tame
     stacked moves."""
     f1 = lambdify_map(SHEAR_UP, VARS)
     f2 = lambdify_map(TANGLED, VARS)
@@ -47,9 +47,9 @@ def tangled_gif(fps=16, frames=36, hold=14):
     style_axes(ax, (-1.6, 5.2), (-1.7, 2.3))
     arts = [ax.plot([], [], lw=1.2, solid_capstyle="round", zorder=3)[0]
             for _ in lines]
-    titles = ("stack shear #1 — slide each column up by x²",
-              "stack shear #2 — slide each row right by y²\n"
-              "…a wild-looking map, built from two simple moves")
+    titles = ("stack shear #1: slide each column up by x²",
+              "stack shear #2: slide each row right by y²\n"
+              "a wild-looking map, built from two simple moves")
     c0 = np.array(matplotlib.colors.to_rgb(BLUE))
     c1 = np.array(matplotlib.colors.to_rgb(GREEN))
 
@@ -78,8 +78,8 @@ def tangled_gif(fps=16, frames=36, hold=14):
 
 
 def crush_gif(fps=16, frames=44, hold=14):
-    """(x, x·y): the grid morphs, and the RED vertical line — infinitely many
-    different points — collapses onto the single point (0, 0)."""
+    """(x, x·y): the grid morphs, and the RED vertical line, infinitely many
+    different points, collapses onto the single point (0, 0)."""
     f = lambdify_map(CRUSH, VARS)
     lines = grid_polylines((-2, 2), (-2, 2), spacing=0.4)
     data = []
@@ -91,14 +91,14 @@ def crush_gif(fps=16, frames=44, hold=14):
 
     fig, ax = plt.subplots(figsize=(7.0, 6.2))
     style_axes(ax, (-2.5, 2.5), (-2.5, 2.5))
-    ax.set_title("(x, x·y) — watch the red line: a whole LINE of points\n"
+    ax.set_title("(x, x·y): the red line, a whole LINE of points,\n"
                  "lands on the single point (0, 0)", color=INK2, fontsize=11.5)
     arts = [ax.plot([], [], lw=1.2, color=BLUE, solid_capstyle="round",
                     zorder=3)[0] for _ in lines]
     red_art, = ax.plot([], [], lw=3.0, color=RED, zorder=5,
                        solid_capstyle="round")
     crush_dot, = ax.plot([], [], "o", ms=10, color=RED, zorder=6)
-    caption = ax.text(0.5, 0.04, "an entire line's worth of information — gone",
+    caption = ax.text(0.5, 0.04, "an entire line's worth of information, gone",
                       transform=ax.transAxes, ha="center", fontsize=11,
                       color=RED, alpha=0.0)
     c0 = np.array(matplotlib.colors.to_rgb(BLUE))

@@ -1,4 +1,4 @@
-"""Figure for chapter 10 — the round trip: apply F, then its inverse G."""
+"""Figure for chapter 10, the round trip: apply F, then its inverse G."""
 
 import matplotlib.colors
 import numpy as np

@@ -1,4 +1,4 @@
-"""Figures for chapter 3 — polynomials, the machines made of + and × (animated)."""
+"""Figures for chapter 3, polynomials, the machines made of + and × (animated)."""
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -13,7 +13,7 @@ OUT = out_dir("03-polynomials")
 def gallery_gif(fps=16, seg=18, hold=24):
     """Each machine draws its own graph, one panel at a time: three smooth
     unbroken polynomial sweeps, then the impostors (dashed, gray) that need
-    trig, division or roots — not + and × alone."""
+    trig, division or roots, not + and × alone."""
     xs = np.linspace(-3, 3, 400)
     with np.errstate(divide="ignore", invalid="ignore"):
         inv = 1 / xs

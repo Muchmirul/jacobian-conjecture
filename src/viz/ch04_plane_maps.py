@@ -1,4 +1,4 @@
-"""Figures for chapter 4 — maps of the plane (all animated)."""
+"""Figures for chapter 4, maps of the plane (all animated)."""
 
 import matplotlib.colors
 import numpy as np
@@ -72,7 +72,7 @@ def rubbersheet_gif():
     animate_map(F, VARS, OUT / "rubbersheet.gif", xlim=(-2, 2), ylim=(-2, 2),
                 spacing=0.4, view=((-2.8, 3.2), (-2.8, 3.2)), frames=44,
                 hold_frames=10, points=[(1.0, 0.5), (-1.5, -1.0)],
-                title="a plane map moves every point at once — watch the two travelers")
+                title="a plane map moves every point at once. watch the two dots")
 
 
 if __name__ == "__main__":
