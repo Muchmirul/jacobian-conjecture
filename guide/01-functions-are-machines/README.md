@@ -4,7 +4,7 @@
 
 ## A machine for numbers
 
-<img src="machine.png" width="640" alt="A rounded box labeled 'double it, then add 1' turning the input 3 into the output 7">
+<img src="machine.gif" width="640" alt="Numbers ride through the machine 'double it, then add 1' one at a time: 3 becomes 7, 0 becomes 1, 10 becomes 21 — with a scoreboard recording each trip">
 
 A **function** is a machine. You feed it a number. It gives you back a number. That's all.
 

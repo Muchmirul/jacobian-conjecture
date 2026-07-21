@@ -30,7 +30,7 @@ Do a vertical shear, *then* a horizontal one. The result of the two-layer stack 
 H(x, y) = (\,x + (y + x^2)^2,\; y + x^2\,)
 ```
 
-<img src="tangled.png" width="820" alt="Before and after: the unit grid versus a dramatically curled green swoosh">
+<img src="tangled.gif" width="820" alt="The monster built live: shear one slides columns up by x squared, shear two slides rows right by y squared — the wild swoosh is just two tame moves stacked">
 
 That is the scramble from the very first page of this guide. It looks hopeless — but you know its secret: it is two easy shears stacked, so you undo it by **peeling the layers in reverse order**, like taking off shoes then socks. Its undo map is again polynomial. (In chapter 10 the computer will find it for us.)
 
@@ -44,7 +44,7 @@ Now the other kind of polynomial map.
 
 $F(x, y) = (x^2, y)$ **folds** the plane like closing a book: the left half lands exactly on the right half. The two dots are the collision from chapter 2, now in 2D: two different points, one landing spot. Not undoable.
 
-<img src="crush.png" width="760" alt="Before and after: under (x, xy) the vertical center line collapses to a single point">
+<img src="crush.gif" width="760" alt="Under (x, xy) the grid morphs while the red vertical line — a whole line of different points — collapses onto the single point at the origin">
 
 $F(x, y) = (x, x\cdot y)$ **crushes**: the whole vertical center line collapses onto one single point. Not undoable either.
 

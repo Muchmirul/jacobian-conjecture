@@ -24,7 +24,7 @@ Three polynomials. Degrees 7, 6 and 4. Coefficients a child could copy down.
 
 **Fact 2 (and yet):**
 
-<img src="collision_card.png" width="760" alt="Three input points, (0,0,−1/4), (1,−3/2,13/2) and (−1,3/2,13/2), all mapping to the single output (−1/4, 0, 0)">
+<img src="collision_card.gif" width="760" alt="The three input points appear one by one, then three dots ride the arrows and all arrive at the single output (−1/4, 0, 0)">
 
 Watch it happen in 3D — each point travels to its output, and all three roads end on the same red X:
 

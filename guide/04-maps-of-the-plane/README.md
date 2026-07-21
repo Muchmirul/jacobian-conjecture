@@ -20,7 +20,7 @@ The plane behaves like a rubber sheet. The two dots are travelers: each one is p
 
 ## A small zoo of maps
 
-<img src="gallery.png" width="860" alt="Six panels: untouched plane, slide, turn, grow, lean, bend — each showing the deformed green grid over the faint original">
+<img src="gallery.gif" width="860" alt="Six panels animate at once: the untouched plane, then slide, turn, grow, lean and bend each move the same blue grid into its green result">
 
 Slide, turn, grow, lean — these keep the gridlines straight. The last one, *bend*, does not: its recipe uses $y^2$ and $x^2$, and squaring is what bends lines. Which brings us to the club from chapter 3:
 

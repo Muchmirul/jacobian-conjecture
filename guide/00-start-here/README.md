@@ -20,7 +20,7 @@ This guide takes you from **zero** — no formulas, no algebra memories needed �
 
 ## The journey
 
-<img src="roadmap.png" width="760" alt="Roadmap of chapters 0 to 12, snaking across three rows">
+<img src="roadmap.gif" width="760" alt="The 13 chapter boxes appear one at a time, snaking across three rows from chapter 0 to the fall in chapter 12">
 
 Chapters 1–8 build the ideas. Chapter 9 assembles the famous question. Chapters 10–12 tell you what humanity knows — including the July 2026 twist.
 

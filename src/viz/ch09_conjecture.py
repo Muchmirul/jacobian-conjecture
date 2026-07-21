@@ -15,31 +15,51 @@ from jacobian_guide.plotting import (BLUE, GOOD, GREEN, INK, INK2, MUTED,
 OUT = out_dir("09-the-conjecture")
 
 
-def statement_card():
+def statement_card_gif(step=11, fps=14, hold=34):
+    """The conjecture assembles itself one clause at a time: the setting,
+    the hypothesis, the 87-year question."""
     fig, ax = plt.subplots(figsize=(9.8, 5.6))
     bare_axes(ax, (0, 10), (0, 10))
     card = FancyBboxPatch((0.45, 0.7), 9.1, 8.6,
                           boxstyle="round,pad=0.25,rounding_size=0.35",
                           fc="white", ec=BLUE, lw=2.6, zorder=2)
     ax.add_patch(card)
-    ax.text(5, 8.55, "THE JACOBIAN CONJECTURE", ha="center", fontsize=17,
-            color=INK, weight="bold")
-    ax.text(5, 7.75, "Ott-Heinrich Keller, 1939", ha="center", fontsize=11,
-            color=MUTED, style="italic")
-    ax.text(0.95, 6.6, "Take a map of n-dimensional space in which every "
-            "coordinate\nis computed by a polynomial.", fontsize=12.5,
-            color=INK, va="center")
-    ax.text(0.95, 5.15, "✓", fontsize=16, color=GOOD, weight="bold")
-    ax.text(1.55, 5.15, "Suppose its local area factor (det of the Jacobian) is\n"
-            "the SAME nonzero constant at every single point.", fontsize=12.5,
-            color=INK, va="center")
-    ax.text(0.95, 3.3, "?", fontsize=18, color=VIOLET, weight="bold")
-    ax.text(1.55, 3.3, "Must the map then be perfectly invertible —\n"
-            "with an undo map that is itself polynomial?", fontsize=13.5,
-            color=VIOLET, va="center", weight="bold")
-    ax.text(5, 1.6, "«yes» was believed, but never proved, for 87 years",
-            ha="center", fontsize=11, color=MUTED, style="italic")
-    save_fig(fig, OUT / "statement_card.png")
+    groups = [
+        [card,
+         ax.text(5, 8.55, "THE JACOBIAN CONJECTURE", ha="center", fontsize=17,
+                 color=INK, weight="bold"),
+         ax.text(5, 7.75, "Ott-Heinrich Keller, 1939", ha="center",
+                 fontsize=11, color=MUTED, style="italic")],
+        [ax.text(0.95, 6.6, "Take a map of n-dimensional space in which "
+                 "every coordinate\nis computed by a polynomial.",
+                 fontsize=12.5, color=INK, va="center")],
+        [ax.text(0.95, 5.15, "✓", fontsize=16, color=GOOD, weight="bold"),
+         ax.text(1.55, 5.15, "Suppose its local area factor (det of the "
+                 "Jacobian) is\nthe SAME nonzero constant at every single "
+                 "point.", fontsize=12.5, color=INK, va="center")],
+        [ax.text(0.95, 3.3, "?", fontsize=18, color=VIOLET, weight="bold"),
+         ax.text(1.55, 3.3, "Must the map then be perfectly invertible —\n"
+                 "with an undo map that is itself polynomial?", fontsize=13.5,
+                 color=VIOLET, va="center", weight="bold")],
+        [ax.text(5, 1.6, "«yes» was believed, but never proved, for 87 years",
+                 ha="center", fontsize=11, color=MUTED, style="italic")],
+    ]
+    for g in groups:
+        for art in g:
+            art.set_alpha(0.0)
+
+    total = len(groups) * step + hold
+
+    def update(i):
+        for j, g in enumerate(groups):
+            a = min(max((i - j * step) / step, 0.0), 1.0)
+            for art in g:
+                art.set_alpha(a)
+        return [a for g in groups for a in g]
+
+    anim = FuncAnimation(fig, update, frames=total, interval=1000 / fps)
+    anim.save(OUT / "statement_card.gif", writer=PillowWriter(fps=fps))
+    plt.close(fig)
 
 
 def conjecture_gif(frames=42, fps=18, hold=16):
@@ -103,6 +123,6 @@ def conjecture_gif(frames=42, fps=18, hold=16):
 
 
 if __name__ == "__main__":
-    statement_card()
+    statement_card_gif()
     conjecture_gif()
     print(f"wrote figures to {OUT}")

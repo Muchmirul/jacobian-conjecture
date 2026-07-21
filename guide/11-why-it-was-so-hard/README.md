@@ -4,7 +4,7 @@
 
 ## A graveyard of proofs
 
-<img src="timeline.png" width="900" alt="Timeline from 1884 to 2026: Kraus's flawed proof, Keller's conjecture, false proofs, partial results, Pinchuk, Nagata, and the 2026 counterexample">
+<img src="timeline.gif" width="900" alt="The timeline fills in event by event, 1884 to 2026: flawed proofs, Keller's question, partial victories, Pinchuk's warning, Nagata's omen, and the 2026 counterexample">
 
 The pattern repeats for a century: someone announces a proof; the world gets excited; a subtle hole is found. It happened to Kraus in 1884 (before Keller even stated the problem!), to Engel in 1955, three times to Segre, to Gröbner, and to a steady stream of modern attempts. The conjecture earned a reputation as mathematics' most reliable producer of *almost*-proofs.
 
@@ -16,7 +16,7 @@ Hope: maybe ordinary real-plane geometry — the kind our pictures show — is e
 
 **No.** In 1994, Sergey Pinchuk constructed an explicit pair of polynomials $(p, q)$ — degrees 10 and 25 — whose local area factor is **strictly positive at every real point**… and which still sends two different points to the same place.
 
-<img src="pinchuk_det.png" width="620" alt="Log-scale heatmap of Pinchuk's Jacobian determinant: everywhere positive, dipping low in valleys but never zero">
+<img src="pinchuk_det.gif" width="620" alt="A probe sweeps Pinchuk's log-scale determinant heatmap, its readout dipping into deep valleys while the running minimum shows the floor is never zero">
 
 No crushing anywhere, no mirror-flipping anywhere — and still a collision. Real-variable reasoning alone can *never* prove the conjecture, because the real version of the statement is a lie.
 

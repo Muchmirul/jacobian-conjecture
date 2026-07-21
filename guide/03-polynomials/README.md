@@ -17,7 +17,7 @@ Whatever machine you can build this way is called a **polynomial**.
 
 Here is a family portrait, drawn as graphs — for each input $x$ along the floor, the curve's height shows the output:
 
-<img src="gallery.png" width="880" alt="Graphs of 2x+1, x squared, x cubed minus 2x, and dashed graphs of sin, 1/x and square root labeled 'not polynomials'">
+<img src="gallery.gif" width="880" alt="The graphs of 2x+1, x squared, and x cubed minus 2x draw themselves as smooth unbroken sweeps; then the dashed gray impostors sin x, 1/x and root x appear — not polynomials">
 
 The dashed gray machines — $\sin x$, $1/x$, $\sqrt{x}$ — are **not** polynomials. Each needs a forbidden move: dividing by the input, or an infinite process. They are fine machines; they are just not in our club.
 

@@ -16,7 +16,7 @@ Keller's move, in 1939: play the strongest local card in the deck. Don't just as
 
 Surely — *surely* — such a map must be globally undoable, with a polynomial undo?
 
-<img src="statement_card.png" width="760" alt="Statement card: polynomial map, constant nonzero Jacobian determinant everywhere — must it have a polynomial inverse?">
+<img src="statement_card.gif" width="760" alt="The statement card assembles clause by clause: a polynomial map, constant nonzero local area factor everywhere — must a polynomial undo exist? Believed yes, unproven for 87 years">
 
 The same question, in motion — hypothesis first, then the 87-year question mark:
 

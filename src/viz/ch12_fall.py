@@ -15,24 +15,71 @@ OUT = out_dir("12-the-fall")
 POINTS = ["( 0,  0,  −1/4 )", "( 1,  −3/2,  13/2 )", "( −1,  3/2,  13/2 )"]
 
 
-def collision_card():
+def collision_card_gif(fps=14, step=7, travel=26, hold=30):
+    """The collision, played out: three starting points appear, three dots
+    ride the arrows — and all of them arrive at the SAME landing spot."""
+    from matplotlib.patches import FancyBboxPatch
+
     fig, ax = plt.subplots(figsize=(9.8, 5.2))
     bare_axes(ax, (0, 10), (0, 10))
     ax.text(5, 9.35, "one map, constant det J = −2   …and yet:", ha="center",
             fontsize=13, color=INK2)
+
+    def machine(xy, wh, label, color, fontsize):
+        box = FancyBboxPatch(xy, *wh,
+                             boxstyle="round,pad=0.12,rounding_size=0.18",
+                             fc="white", ec=color, lw=2.2, zorder=3)
+        ax.add_patch(box)
+        txt = ax.text(xy[0] + wh[0] / 2, xy[1] + wh[1] / 2, label,
+                      ha="center", va="center", fontsize=fontsize, color=INK,
+                      zorder=4)
+        return [box, txt]
+
+    groups, dots, paths = [], [], []
     for i, p in enumerate(POINTS):
         y = 6.9 - 2.1 * i
-        draw_machine(ax, (0.7, y), (2.9, 1.05), p, color=BLUE, fontsize=11.5)
-        arrow(ax, (3.85, y + 0.5), (6.05, 4.85 + (y + 0.5 - 4.85) * 0.12),
-              color=MUTED, lw=1.8, curve=0.0)
-    draw_machine(ax, (6.3, 4.28), (3.0, 1.15), "( −1/4,  0,  0 )",
-                 color=RED, fontsize=12.5)
-    ax.text(7.8, 3.35, "three different starting points,\nexactly the same landing spot",
-            ha="center", fontsize=10.5, color=RED)
-    ax.text(5, 1.15, "a perfect undo machine is impossible: standing at (−1/4, 0, 0)\n"
-            "you cannot know which of the three roads you came by",
-            ha="center", fontsize=11.5, color=INK)
-    save_fig(fig, OUT / "collision_card.png")
+        g = machine((0.7, y), (2.9, 1.05), p, BLUE, 11.5)
+        g.append(arrow(ax, (3.85, y + 0.5),
+                       (6.05, 4.85 + (y + 0.5 - 4.85) * 0.12),
+                       color=MUTED, lw=1.8, curve=0.0))
+        groups.append(g)
+        dots.append(ax.plot([], [], "o", ms=9, color=BLUE, zorder=6)[0])
+        paths.append(((3.9, y + 0.5), (6.55, 4.85)))
+    finale = machine((6.3, 4.28), (3.0, 1.15), "( −1/4,  0,  0 )", RED, 12.5)
+    finale.append(ax.text(7.8, 3.35, "three different starting points,\n"
+                          "exactly the same landing spot", ha="center",
+                          fontsize=10.5, color=RED))
+    finale.append(ax.text(5, 1.15, "a perfect undo machine is impossible: "
+                          "standing at (−1/4, 0, 0)\nyou cannot know which "
+                          "of the three roads you came by", ha="center",
+                          fontsize=11.5, color=INK))
+    for g in (*groups, finale):
+        for art in g:
+            art.set_alpha(0.0)
+
+    def ease(t):
+        return 3 * t**2 - 2 * t**3
+
+    t_appear = 3 * step + 6
+    total = t_appear + travel + step + hold
+
+    def update(i):
+        for j, g in enumerate(groups):
+            a = min(max((i - j * step) / step, 0.0), 1.0)
+            for art in g:
+                art.set_alpha(a)
+        t = ease(min(max((i - t_appear) / travel, 0.0), 1.0))
+        for dot, ((x0, y0), (x1, y1)) in zip(dots, paths):
+            dot.set_data([(1 - t) * x0 + t * x1], [(1 - t) * y0 + t * y1])
+            dot.set_color(RED if t >= 1.0 else BLUE)
+        a = min(max((i - t_appear - travel) / step, 0.0), 1.0)
+        for art in finale:
+            art.set_alpha(a)
+        return [*dots, *finale, *[a for g in groups for a in g]]
+
+    anim = FuncAnimation(fig, update, frames=total, interval=1000 / fps)
+    anim.save(OUT / "collision_card.gif", writer=PillowWriter(fps=fps))
+    plt.close(fig)
 
 
 def collision_gif(frames=56, fps=18, hold=16):
@@ -100,6 +147,6 @@ def collision_gif(frames=56, fps=18, hold=16):
 
 
 if __name__ == "__main__":
-    collision_card()
+    collision_card_gif()
     collision_gif()
     print(f"wrote figures to {OUT}")

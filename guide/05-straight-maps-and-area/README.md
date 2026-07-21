@@ -8,7 +8,7 @@ Some plane maps are perfectly disciplined: gridlines stay **straight**, stay **p
 
 Watch what each one does to the yellow patch of paint — one grid cell of area 1:
 
-<img src="gallery.png" width="880" alt="Six panels: turn, grow, squeeze, lean, mirror, squash — each showing a green transformed grid and a yellow image of the unit square">
+<img src="gallery.gif" width="880" alt="Six straight maps morph the grid at once — turn, grow, squeeze, lean, mirror, squash — while a yellow patch shows each area factor, ending in the fatal times-zero squash">
 
 A remarkable pattern hides here. A straight map scales the yellow patch's area by some factor — and it scales **every** patch of the plane, anywhere, by that **same** factor:
 

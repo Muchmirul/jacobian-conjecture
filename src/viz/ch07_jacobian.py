@@ -7,10 +7,8 @@ from matplotlib.animation import FuncAnimation, PillowWriter
 from common import bare_axes, out_dir
 from jacobian_guide.core import jacobian_det
 from jacobian_guide.examples import FOLD, SHEAR_RIGHT, TANGLED, VARS
-from jacobian_guide.plotting import (BASELINE, BLUE, DIV_CMAP, GREEN, INK2,
-                                     MUTED, RED, SURFACE, VIOLET,
-                                     grid_polylines, lambdify_map, save_fig,
-                                     style_axes)
+from jacobian_guide.plotting import (BLUE, DIV_CMAP, GREEN, INK2, MUTED, RED,
+                                     VIOLET, lambdify_map, style_axes)
 import sympy as sp
 
 OUT = out_dir("07-the-microscope")
@@ -19,50 +17,40 @@ P = (0.5, 0.5)                      # where we point the microscope
 F = lambdify_map(TANGLED, VARS)
 
 
-def zoom1d():
-    fig, axes = plt.subplots(1, 3, figsize=(11.4, 3.9))
-    for ax, r, mag in zip(axes, (1.6, 0.4, 0.1), ("×1", "×4", "×16")):
+def zoom1d_gif(frames=56, fps=16, hold=12):
+    """Zoom into the parabola y = x² at (1, 1): the closer you look, the
+    straighter it gets, until it IS a straight line of slope 2."""
+    fig, ax = plt.subplots(figsize=(6.6, 5.2))
+    r0, r1 = 1.6, 0.05
+
+    def ease(t):
+        return 3 * t**2 - 2 * t**3
+
+    total = frames + 2 * hold
+
+    def update(i):
+        ax.clear()
+        t = ease(min(max((i - hold) / (frames - 1), 0.0), 1.0))
+        r = r0 * (r1 / r0) ** t
         xs = np.linspace(1 - r, 1 + r, 300)
         ax.plot(xs, xs**2, color=BLUE, lw=2.4)
+        if t > 0.75:                       # the tangent emerges from the curve
+            a = (t - 0.75) / 0.25
+            ax.plot(xs, 1 + 2 * (xs - 1), ls="--", lw=1.6, color=VIOLET,
+                    alpha=0.8 * a)
+            ax.text(0.97, 0.06, "…just a straight line of slope 2",
+                    transform=ax.transAxes, ha="right", fontsize=11,
+                    color=MUTED, style="italic", alpha=a)
         ax.plot([1], [1], "o", ms=7, color=VIOLET, zorder=5)
         bare_axes(ax, (1 - r, 1 + r), (1 - 2.2 * r, 1 + 2.2 * r))
-        ax.set_title(f"the curve y = x², zoom {mag}", color=INK2, fontsize=11.5)
-    axes[2].text(0.97, 0.08, "…just a straight line of slope 2",
-                 transform=axes[2].transAxes, ha="right", fontsize=11,
-                 color=MUTED, style="italic")
-    fig.tight_layout()
-    save_fig(fig, OUT / "zoom1d.png")
+        ax.set_title("zooming in on the curve y = x² at the point (1, 1)",
+                     color=INK2, fontsize=12)
+        ax.text(0.03, 0.03, f"zoom ×{r0 / r:.0f}", transform=ax.transAxes,
+                fontsize=11, color=MUTED, style="italic")
 
-
-def _mapped_window(ax, r, color=GREEN, lw=1.4):
-    lines = grid_polylines((P[0] - r, P[0] + r), (P[1] - r, P[1] + r),
-                           spacing=r / 3, samples=120)
-    all_pts = []
-    for pts in lines:
-        u, v = F(pts[:, 0], pts[:, 1])
-        ax.plot(u, v, color=color, lw=lw, solid_capstyle="round", zorder=3)
-        all_pts.append(np.column_stack([u, v]))
-    q = F(np.array([P[0]]), np.array([P[1]]))
-    ax.plot(q[0], q[1], "o", ms=7, color=VIOLET, zorder=6)
-    return np.vstack(all_pts)
-
-
-def zoom2d():
-    fig, axes = plt.subplots(1, 3, figsize=(11.4, 4.1))
-    for ax, r, mag in zip(axes, (0.9, 0.22, 0.055), ("×1", "×4", "×16")):
-        pts = _mapped_window(ax, r)
-        lo, hi = pts.min(axis=0), pts.max(axis=0)
-        pad = 0.06 * (hi - lo)
-        style_axes(ax, (lo[0] - pad[0], hi[0] + pad[0]),
-                   (lo[1] - pad[1], hi[1] + pad[1]), show_axes=False,
-                   equal=False)
-        ax.set_title(f"the bent grid near p, zoom {mag}", color=INK2,
-                     fontsize=11.5)
-    axes[2].text(0.97, 0.06, "…straight, parallel, evenly spaced",
-                 transform=axes[2].transAxes, ha="right", fontsize=11,
-                 color=MUTED, style="italic")
-    fig.tight_layout()
-    save_fig(fig, OUT / "zoom2d.png")
+    anim = FuncAnimation(fig, update, frames=total, interval=1000 / fps)
+    anim.save(OUT / "zoom1d.gif", writer=PillowWriter(fps=fps))
+    plt.close(fig)
 
 
 def microscope_gif(frames=64, fps=16, hold=10):
@@ -133,14 +121,19 @@ def microscope_gif(frames=64, fps=16, hold=10):
     plt.close(fig)
 
 
-def det_heatmaps():
-    fig, axes = plt.subplots(1, 2, figsize=(11.6, 4.9))
+def det_heatmaps_gif(frames=88, fps=16):
+    """A probe wanders over two maps at once.  Over the shear its local area
+    factor reads 1.00 wherever it goes; over the fold the readout is 2x —
+    positive, negative, and exactly 0 on the crease."""
+    fig, axes = plt.subplots(1, 2, figsize=(11.6, 5.1))
+    dfuns = []
     for ax, Fm, title in ((axes[0], SHEAR_RIGHT,
                            "(x + y², y)   local area factor ≡ 1 everywhere"),
                           (axes[1], FOLD,
                            "(x², y)   local area factor = 2x")):
         d = jacobian_det(Fm, VARS)
         dfun = sp.lambdify(VARS, d, "numpy")
+        dfuns.append(dfun)
         xs = np.linspace(-2, 2, 400)
         xx, yy = np.meshgrid(xs, xs)
         zz = np.broadcast_to(np.asarray(dfun(xx, yy), float), xx.shape)
@@ -155,12 +148,34 @@ def det_heatmaps():
     cb.outline.set_visible(False)
     cb.ax.tick_params(color=MUTED, labelcolor=INK2)
     cb.set_label("local area factor (det J)", color=INK2)
-    save_fig(fig, OUT / "det_heatmaps.png")
+
+    probes = [ax.plot([], [], "o", ms=10, color=VIOLET, mec="white",
+                      mew=1.5, zorder=6)[0] for ax in axes]
+    reads = [ax.text(0.5, -0.075, "", transform=ax.transAxes, ha="center",
+                     fontsize=11.5, family="monospace") for ax in axes]
+
+    def update(i):
+        t = i / frames
+        px = 1.55 * np.sin(2 * np.pi * t)
+        py = 1.55 * np.sin(4 * np.pi * t + np.pi / 3)
+        for probe, read, dfun in zip(probes, reads, dfuns):
+            probe.set_data([px], [py])
+            v = float(dfun(px, py))
+            if abs(v) < 0.12:
+                read.set_text("area factor here = 0 — crushed!")
+                read.set_color(RED)
+            else:
+                read.set_text(f"area factor here = {v:+.2f}")
+                read.set_color(RED if v < 0 else BLUE)
+        return [*probes, *reads]
+
+    anim = FuncAnimation(fig, update, frames=frames, interval=1000 / fps)
+    anim.save(OUT / "det_heatmaps.gif", writer=PillowWriter(fps=fps))
+    plt.close(fig)
 
 
 if __name__ == "__main__":
-    zoom1d()
-    zoom2d()
+    zoom1d_gif()
     microscope_gif()
-    det_heatmaps()
+    det_heatmaps_gif()
     print(f"wrote figures to {OUT}")

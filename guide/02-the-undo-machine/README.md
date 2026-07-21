@@ -14,7 +14,7 @@ When a second machine walks every output back to its original input, we call it 
 
 Now try to undo *«square it»* (multiply the number by itself):
 
-<img src="collision.png" width="760" alt="Left: arrows from −3 and 3 both landing on 9, marked as a crash. Right: doubling arrows never colliding">
+<img src="collision.gif" width="760" alt="Left: the dots −3 and 3 ride their arrows and crash onto the same output 9. Right: the doubling dots land on separate outputs, so every arrow can be traced back">
 
 Feed it −3: you get 9. Feed it 3: you also get 9. Now stand at 9 and try to walk back. **Which input did you come from?** You cannot know. The information "was it negative?" has been destroyed.
 

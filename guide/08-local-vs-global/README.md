@@ -24,7 +24,7 @@ Collisions — but not the local kind. Each collision pairs two points from *opp
 
 On the whole plane, this map's local area factor is $4(x^2 + y^2)$:
 
-<img src="one_bad_point.png" width="600" alt="Heatmap of 4 times x squared plus y squared: zero only at the marked origin">
+<img src="one_bad_point.gif" width="600" alt="A probe spirals inward over the heatmap of 4 times x squared plus y squared, its readout shrinking until it hits exactly 0 at the origin — the only bad point">
 
 Zero at **one single point** — the center — and healthy everywhere else. One bad point out of infinitely many, and the map exploits it to wrap the plane around twice. That is how delicate this game is.
 
