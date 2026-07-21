@@ -1,4 +1,4 @@
-# Research notes — how to deliver the guide (visuals, tooling, format)
+# Research notes, how to deliver the guide (visuals, tooling, format)
 
 Condensed from a web-research pass (July 2026). URLs at bottom.
 
@@ -13,7 +13,7 @@ Condensed from a web-research pass (July 2026). URLs at bottom.
 - **Explorable explanations** (Bret Victor, Nicky Case): reader active, toys
   before formalism. Static-GitHub approximation: looping GIFs as toys +
   "change this line and re-render" scripts + `<details>` blocks for optional depth.
-- **ADEPT** (BetterExplained): per concept — Analogy → Diagram → Example →
+- **ADEPT** (BetterExplained): per concept, Analogy → Diagram → Example →
   Plain-English → Technical. Symbols come last.
 - Recommended concept order (one per chapter): function → inverse → polynomial →
   2D map → linear map → determinant → derivative-as-local-linear-map → Jacobian →
@@ -23,10 +23,9 @@ Condensed from a web-research pass (July 2026). URLs at bottom.
 ## Tooling facts (verified against PyPI / docs, July 2026)
 
 - **Manim CE** stable v0.20.1, needs Python ≥ 3.11. Since v0.19.0 no external
-  ffmpeg binary (uses pyav wheels). LaTeX only needed for `Tex`/`MathTex` —
-  `Text`/`MarkupText` use Pango, no LaTeX. Headless rendering is the default
+  ffmpeg binary (uses pyav wheels). LaTeX only needed for `Tex`/`MathTex`, `Text`/`MarkupText` use Pango, no LaTeX. Headless rendering is the default
   (Cairo). Flags: `-qm` 720p30, `--format=gif`, `-s` last-frame PNG.
-- **ManimPango 0.6.1 ships NO Linux wheels** — Linux builds from source and needs
+- **ManimPango 0.6.1 ships NO Linux wheels**, Linux builds from source and needs
   `libpango1.0-dev libcairo2-dev pkg-config python3-dev`. (This machine has no
   sudo ⇒ manim scenes ship as optional code, all committed media rendered with
   matplotlib.)
@@ -48,9 +47,9 @@ Condensed from a web-research pass (July 2026). URLs at bottom.
 - GIFs referenced by relative path autoplay in READMEs; committed MP4s do NOT
   render a player. Ship GIFs (modest size: ~720 px, ≤ 20 fps, few seconds).
 - Width control needs HTML: `<img src="..." width="600">`.
-- **Folder-per-chapter, each with its own README.md** — GitHub auto-renders it
+- **Folder-per-chapter, each with its own README.md**, GitHub auto-renders it
   when you click the folder. End chapters with "Next →" links.
-- Notebooks on GitHub: diff noise, stale outputs, flaky rendering — prefer
+- Notebooks on GitHub: diff noise, stale outputs, flaky rendering, prefer
   markdown + runnable scripts + committed media (pattern of Jam3/math-as-code,
   microsoft/ML-For-Beginners).
 

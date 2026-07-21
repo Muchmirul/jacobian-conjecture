@@ -10,7 +10,7 @@ Render examples:
     manim -qm --format=gif scenes.py TangledWarp
     manim -qh scenes.py FoldCollision
 
-Scenes use Text (Pango) only — no LaTeX installation required.
+Scenes use Text (Pango) only, no LaTeX installation required.
 """
 
 import numpy as np
@@ -92,7 +92,7 @@ class FoldCollision(Scene):
             d2.animate.move_to(f(d2.get_center())),
             run_time=3,
         )
-        crash = Text("crash — undo impossible", font_size=26, color=RED)
+        crash = Text("crash, undo impossible", font_size=26, color=RED)
         crash.next_to(d1, DOWN)
         self.play(FadeIn(crash))
         self.wait()

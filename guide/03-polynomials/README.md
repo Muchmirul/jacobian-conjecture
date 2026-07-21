@@ -1,6 +1,6 @@
 # 3 · Polynomials
 
-*By the end of this page you will know which machines this whole story is about — the ones built from nothing but plus and times.*
+*By the end of this page you will know which machines this whole story is about, the ones built from nothing but plus and times.*
 
 ## The simplest possible machines
 
@@ -11,15 +11,15 @@ Take an input $x$. Allow yourself only two moves:
 
 Whatever machine you can build this way is called a **polynomial**.
 
-- $2x + 1$ — double, add one. Polynomial.
-- $x^2$ — $x$ times $x$. Polynomial. (A power is just repeated multiplication.)
-- $x^3 - 2x$ — build $x \cdot x \cdot x$, build $2x$, subtract. Polynomial. (Subtracting is adding a negative.)
+- $2x + 1$: double, add one. Polynomial.
+- $x^2$: $x$ times $x$. Polynomial. (A power is just repeated multiplication.)
+- $x^3 - 2x$: build $x \cdot x \cdot x$, build $2x$, subtract. Polynomial. (Subtracting is adding a negative.)
 
-Here is a family portrait, drawn as graphs — for each input $x$ along the floor, the curve's height shows the output:
+Here is a family portrait, drawn as graphs, for each input $x$ along the floor, the curve's height shows the output:
 
-<img src="gallery.gif" width="880" alt="The graphs of 2x+1, x squared, and x cubed minus 2x draw themselves as smooth unbroken sweeps; then the dashed gray impostors sin x, 1/x and root x appear — not polynomials">
+<img src="gallery.gif" width="880" alt="The graphs of 2x+1, x squared, and x cubed minus 2x draw themselves as smooth unbroken sweeps; then the dashed gray impostors sin x, 1/x and root x appear, not polynomials">
 
-The dashed gray machines — $\sin x$, $1/x$, $\sqrt{x}$ — are **not** polynomials. Each needs a forbidden move: dividing by the input, or an infinite process. They are fine machines; they are just not in our club.
+The dashed gray machines, $\sin x$, $1/x$, $\sqrt{x}$, are **not** polynomials. Each needs a forbidden move: dividing by the input, or an infinite process. They are fine machines; they are just not in our club.
 
 ## Why the club matters
 

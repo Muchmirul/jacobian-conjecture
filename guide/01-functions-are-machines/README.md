@@ -1,10 +1,10 @@
 # 1 · Functions are machines
 
-*By the end of this page you will know what mathematicians mean by a "function" — and it is nothing scary.*
+*By the end of this page you will know what mathematicians mean by a "function", and it is nothing scary.*
 
 ## A machine for numbers
 
-<img src="machine.gif" width="640" alt="Numbers ride through the machine 'double it, then add 1' one at a time: 3 becomes 7, 0 becomes 1, 10 becomes 21 — with a scoreboard recording each trip">
+<img src="machine.gif" width="640" alt="Numbers ride through the machine 'double it, then add 1' one at a time: 3 becomes 7, 0 becomes 1, 10 becomes 21, with a scoreboard recording each trip">
 
 A **function** is a machine. You feed it a number. It gives you back a number. That's all.
 
@@ -21,7 +21,7 @@ Here is the trick that powers this whole guide. Instead of feeding the machine o
 
 <img src="numberline.gif" width="640" alt="Dots on a number line all travel simultaneously to their outputs on a second line below">
 
-Same machine, new point of view: a function *moves the whole line*. Keep this "everything moves at once" picture — we will use it on bigger and bigger stages.
+Same machine, new point of view: a function *moves the whole line*. Keep this "everything moves at once" picture, we will use it on bigger and bigger stages.
 
 ## The nametag
 
@@ -39,10 +39,10 @@ Read it out loud as: "$f$ eats a number $x$ and returns $2x + 1$." The letter $x
 python src/viz/ch01_functions.py
 ```
 
-Open the script and change `2 * x + 1` to any recipe you like — then watch how *your* machine moves the line.
+Open the script and change `2 * x + 1` to any recipe you like, then watch how *your* machine moves the line.
 
 ---
 
-> **The one thing to remember:** a function is a machine that turns each input into exactly one output — and you can picture it moving every number at once.
+> **The one thing to remember:** a function is a machine that turns each input into exactly one output, and you can picture it moving every number at once.
 
 [← Start here](../00-start-here/README.md) · [Next: the undo machine →](../02-the-undo-machine/README.md)

@@ -1,6 +1,6 @@
 # 4 · Maps of the plane
 
-*By the end of this page your machines will eat **points** instead of numbers — and you will see a map move an entire plane at once.*
+*By the end of this page your machines will eat **points** instead of numbers, and you will see a map move an entire plane at once.*
 
 ## From the line to the plane
 
@@ -22,11 +22,11 @@ The plane behaves like a rubber sheet. The two dots are travelers: each one is p
 
 <img src="gallery.gif" width="860" alt="Six panels animate at once: the untouched plane, then slide, turn, grow, lean and bend each move the same blue grid into its green result">
 
-Slide, turn, grow, lean — these keep the gridlines straight. The last one, *bend*, does not: its recipe uses $y^2$ and $x^2$, and squaring is what bends lines. Which brings us to the club from chapter 3:
+Slide, turn, grow, lean, these keep the gridlines straight. The last one, *bend*, does not: its recipe uses $y^2$ and $x^2$, and squaring is what bends lines. Which brings us to the club from chapter 3:
 
-> A **polynomial map** of the plane is one where *both* output slots are polynomials — built from $x$ and $y$ with only plus and times.
+> A **polynomial map** of the plane is one where *both* output slots are polynomials, built from $x$ and $y$ with only plus and times.
 >
-> Example: $F(x, y) = (x + \tfrac{1}{4}y^2,\; y + \tfrac{1}{4}x^2)$ — the *bend* panel above.
+> Example: $F(x, y) = (x + \tfrac{1}{4}y^2,\; y + \tfrac{1}{4}x^2)$, the *bend* panel above.
 
 The whole rest of this guide lives inside this zoo: polynomial maps of flat space.
 
@@ -36,7 +36,7 @@ The whole rest of this guide lives inside this zoo: polynomial maps of flat spac
 python src/viz/ch04_plane_maps.py
 ```
 
-Change the recipes in `PANELS` and re-run — invent your own warp.
+Change the recipes in `PANELS` and re-run, invent your own warp.
 
 ---
 

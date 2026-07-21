@@ -1,8 +1,7 @@
-# Curriculum design — "Zero to the Jacobian Conjecture"
+# Curriculum design, "Zero to the Jacobian Conjecture"
 
 **Goal.** A reader with no math background reads short chapters, looks at pictures and
-animations, and ends up genuinely understanding what the Jacobian Conjecture says —
-and why it is surprising that nobody can prove it.
+animations, and ends up genuinely understanding what the Jacobian Conjecture says, and why it is surprising that nobody can prove it.
 
 **Design principles** (to be refined by research notes in this folder):
 
@@ -21,7 +20,7 @@ and why it is surprising that nobody can prove it.
 
 | # | Chapter | The one idea | Flagship visual |
 |---|---------|--------------|-----------------|
-| 0 | Start here | A 1939 puzzle nobody has solved — and you can understand it | "scrambled grid" hero image + roadmap |
+| 0 | Start here | A 1939 puzzle nobody has solved, and you can understand it | "scrambled grid" hero image + roadmap |
 | 1 | Functions are machines | A function turns each input into exactly one output | number-line mapping animation |
 | 2 | Undo: inverse machines | Invertible = no two inputs collide + every output reachable | arrow collision diagram (squaring loses the sign) |
 | 3 | Polynomials | Machines built only from + and × ; tame and predictable | graph gallery |
@@ -81,20 +80,19 @@ and spaces touching `$` in inline math, no math inside tables.
   GitHub, no LaTeX needed.
 - **manim (Community Edition)** for the flagship scenes (grid morphs, zoom); use
   `Text` (Pango) rather than `Tex` to avoid a LaTeX dependency. ffmpeg is available.
-- **sympy** computes every Jacobian, determinant and inverse that the guide claims —
-  tests assert them, so the guide can't drift from the math.
+- **sympy** computes every Jacobian, determinant and inverse that the guide claims, tests assert them, so the guide can't drift from the math.
 - GitHub markdown renders `$…$` math; keep formulas few and small anyway.
 
 ## Correctness guardrails (facts the text must respect)
 
 - Over ℂ, "det J F is a nonzero constant" ⟺ "det J F vanishes nowhere" (a
-  non-vanishing polynomial is constant). Over ℝ these differ — Pinchuk's map has
+  non-vanishing polynomial is constant). Over ℝ these differ, Pinchuk's map has
   det > 0 everywhere yet is not injective, so the real version of the conjecture
   is FALSE with "nowhere zero", which is why the statement lives over ℂ / uses
   "constant".
 - Char p > 0 fails: F(x) = x − xᵖ has F′ = 1 but is not injective (all of 𝔽ₚ maps to 0).
 - Injectivity of a polynomial map ℂⁿ→ℂⁿ already implies surjectivity
-  (Ax–Grothendieck) and the inverse is automatically polynomial — so the hard part
+  (Ax–Grothendieck) and the inverse is automatically polynomial, so the hard part
   is injectivity.
 - Known: n = 1; degree 2 (Wang 1980); reduction to degree 3 (Bass–Connell–Wright
   1982); status: open for all n ≥ 2 (as of 2026).

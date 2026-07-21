@@ -43,7 +43,7 @@ CRUSH = (X, X * Y)
 # --- The cautionary tale: locally fine almost everywhere, globally 2-to-1 ---
 
 #: z^2 viewed as a real plane map: (x^2 - y^2, 2xy).  det J = 4(x^2 + y^2):
-#: zero ONLY at the origin — and that lone bad point is enough to let the
+#: zero ONLY at the origin, and that lone bad point is enough to let the
 #: map wrap the plane around twice.
 Z_SQUARED = complex_poly_as_real_map(sp.Symbol("z") ** 2, sp.Symbol("z"), VARS)
 
@@ -79,7 +79,7 @@ _u = 1 + X3 * Y3
 
 #: The map that DISPROVED the Jacobian Conjecture for n >= 3 (announced
 #: 2026-07-19/20, attributed to Levent Alpöge, found with the AI model Claude
-#: Fable; peer review pending — but the certificates below re-verify in
+#: Fable; peer review pending, but the certificates below re-verify in
 #: milliseconds, see tests/test_counterexample.py).
 #: det J = -2 (constant!), yet three different points share one image.
 COUNTEREXAMPLE_2026 = (

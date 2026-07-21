@@ -1,4 +1,4 @@
-# Research notes — the explicit Pinchuk map
+# Research notes, the explicit Pinchuk map
 
 Source: L. A. Campbell, *Picturing Pinchuk's Plane Polynomial Pair*,
 arXiv:math/9812032 (citing Pinchuk, Math. Z. 217 (1994) 1–4, and van den
@@ -28,7 +28,7 @@ det J(p, q) = t² + (t + f·(13 + 15h))² + f²
 ```
 
 Vanishing would need t = 0 and f = 0; but on t = 0 (the hyperbola xy = 1),
-f = y ≠ 0. So det J > 0 at every real point — yet the map is NOT injective.
+f = y ≠ 0. So det J > 0 at every real point, yet the map is NOT injective.
 
 ## Non-injectivity
 
@@ -44,6 +44,6 @@ f = y ≠ 0. So det J > 0 at every real point — yet the map is NOT injective.
 ## Teaching use (chapter 11)
 
 Real plane + "det never 0" (even "det > 0 everywhere") is NOT enough for
-global invertibility — the complex/constant hypothesis in the Jacobian
+global invertibility, the complex/constant hypothesis in the Jacobian
 Conjecture is doing real work. Show the det heatmap (all positive), state the
 witness pair, link Campbell's paper for the pictures.

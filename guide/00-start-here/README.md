@@ -8,9 +8,9 @@ It looks like someone grabbed the flat grid of graph paper and smeared it across
 
 In 1939, a mathematician named Ott-Heinrich Keller asked an innocent question about scrambles like this one. His question became one of the most famous unsolved problems in mathematics. Generations of mathematicians attacked it. Many published proofs. **Every single proof turned out to be wrong.**
 
-The problem stood for 87 years — and then, in July 2026, days before this guide was written, it fell. Partly. In a way nobody expected. (The most stubborn piece of it is *still* open.)
+The problem stood for 87 years, and then, in July 2026, days before this guide was written, it fell. Partly. In a way nobody expected. (The most stubborn piece of it is *still* open.)
 
-This guide takes you from **zero** — no formulas, no algebra memories needed — to genuinely understanding what Keller asked, why it is hard, and what just happened. You will not watch from a distance: at the end you can check the decisive discovery **with your own hands**, by plain arithmetic.
+This guide takes you from **zero**, no formulas, no algebra memories needed, to genuinely understanding what Keller asked, why it is hard, and what just happened. You will not watch from a distance: at the end you can check the decisive discovery **with your own hands**, by plain arithmetic.
 
 ## What you need
 
@@ -22,12 +22,12 @@ This guide takes you from **zero** — no formulas, no algebra memories needed �
 
 <img src="roadmap.gif" width="760" alt="The 13 chapter boxes appear one at a time, snaking across three rows from chapter 0 to the fall in chapter 12">
 
-Chapters 1–8 build the ideas. Chapter 9 assembles the famous question. Chapters 10–12 tell you what humanity knows — including the July 2026 twist.
+Chapters 1–8 build the ideas. Chapter 9 assembles the famous question. Chapters 10–12 tell you what humanity knows, including the July 2026 twist.
 
 ## How to read
 
-Read in order. Look at each picture before reading the text around it. If a sentence feels obvious, good — that is the design, not an accident.
+Read in order. Look at each picture before reading the text around it. If a sentence feels obvious, good, that is the design, not an accident.
 
 ---
 
-[Begin: chapter 1 — functions are machines →](../01-functions-are-machines/README.md)
+[Begin: chapter 1, functions are machines →](../01-functions-are-machines/README.md)

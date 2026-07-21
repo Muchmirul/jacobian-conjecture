@@ -1,4 +1,4 @@
-# Research notes — Jacobian Conjecture content
+# Research notes, Jacobian Conjecture content
 
 Condensed from a web-research pass (2026-07-20) plus **independent symbolic
 verification run in this repo** (see tests/). Verification tags:
@@ -36,7 +36,7 @@ constant, then F is invertible and the inverse is polynomial. [V-web]
 
 | Result | Who / when |
 |---|---|
-| n = 1 (trivial: F′ const ⇒ deg 1) | — |
+| n = 1 (trivial: F′ const ⇒ deg 1) |, |
 | deg F ≤ 2, all n | Wang 1980 |
 | Enough to prove deg 3 (cubic homogeneous F = X + H), all n | Bass–Connell–Wright 1982 |
 | Enough: cubic-linear Fᵢ = xᵢ + (linear)³ | Drużkowski 1983 |
@@ -51,7 +51,7 @@ constant, then F is invertible and the inverse is polynomial. [V-web]
 
 Announced 2026-07-19/20 (attributed to Levent Alpöge, with the question posed
 by "Akhil" and the example produced with the AI model Claude Fable; not yet
-peer-reviewed, no arXiv paper at time of writing — treat the *narrative*
+peer-reviewed, no arXiv paper at time of writing, treat the *narrative*
 cautiously and the *math* confidently, because it re-verifies instantly):
 
 With u = 1 + xy:
@@ -81,11 +81,11 @@ zzhang-iu.github.io consequences note.
 - Fold (x², y): det = 2x, folds along the line where det = 0.
 - Crush (x, xy): det = x, crushes the y-axis to a point; also the standard
   NON-PROPER example: (1/k, k) ↦ (1/k, 1).
-- z² as real map (x²−y², 2xy): real det = 4(x²+y²) = |2z|² — zero only at the
+- z² as real map (x²−y², 2xy): real det = 4(x²+y²) = |2z|², zero only at the
   origin, yet the map is globally 2-to-1: ONE bad point is enough. General
   fact: holomorphic F as real map has real Jacobian det = |det_ℂ JF|²
   (n = 1 proof via Cauchy–Riemann: u_x v_y − u_y v_x = u_x² + v_x² = |f′|²). [STD]
-- eᶻ as real map (eˣcos y, eˣsin y): det = e²ˣ > 0 everywhere, ∞-to-1 — shows
+- eᶻ as real map (eˣcos y, eˣsin y): det = e²ˣ > 0 everywhere, ∞-to-1, shows
   the conjecture is really about POLYNOMIALS.
 - Nagata (w = y² + xz): N = (x − 2yw − zw², y + zw, z), det ≡ 1, preserves w,
   explicit polynomial inverse; provably not a composition of elementary maps
@@ -96,16 +96,16 @@ zzhang-iu.github.io consequences note.
 - Inverse function theorem is LOCAL; global injectivity can fail across distant
   points (z², exp, Pinchuk).
 - Hadamard: local diffeo + proper ⇒ global diffeo. So any counterexample must
-  be non-proper — all difficulty hides at infinity. The 2026 map exploits
+  be non-proper, all difficulty hides at infinity. The 2026 map exploits
   exactly this.
 - Degree is a red herring: deg 2 is a theorem; deg 3 already fully general.
 
 ## Existing treatments (positioning)
 
-- van den Essen, *Polynomial Automorphisms and the JC* (2000) + 2021 sequel — graduate.
-- Garland, UChicago REU 2018 intro — undergraduate.
-- Drużkowski survey — false-proof history.
+- van den Essen, *Polynomial Automorphisms and the JC* (2000) + 2021 sequel, graduate.
+- Garland, UChicago REU 2018 intro, undergraduate.
+- Drużkowski survey, false-proof history.
 - Tao's blog on Ax–Grothendieck; "Picturing Pinchuk's Plane Polynomial Pair"
-  (arXiv:math/9812032) — visual real-case treatment.
+  (arXiv:math/9812032), visual real-case treatment.
 - Post-counterexample: jacobianfun.org (assumes calculus+linear algebra).
-- **Gap: nothing for a zero-math-background audience — this guide's niche.**
+- **Gap: nothing for a zero-math-background audience, this guide's niche.**
