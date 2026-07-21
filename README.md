@@ -28,6 +28,8 @@ This repo teaches you the whole story from absolute zero: pictures first, simple
 
 **Start reading: [chapter 0 →](guide/00-start-here/README.md)**
 
+Prefer one continuous page? The whole guide — every chapter and every animation, joined with smooth transitions — lives in a single copy-paste-ready file: **[ARTICLE.md](ARTICLE.md)**.
+
 ## Run the code
 
 Every figure and animation in the guide is produced by a script in this repo, and **every mathematical claim about the example maps is enforced by a test**:
