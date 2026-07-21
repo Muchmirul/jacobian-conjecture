@@ -28,7 +28,11 @@ This repo teaches you the whole story from absolute zero: pictures first, simple
 
 **Start reading: [chapter 0 →](guide/00-start-here/README.md)**
 
-Prefer one continuous page? The whole guide — every chapter and every animation, joined with smooth transitions — lives in a single copy-paste-ready file: **[ARTICLE.md](ARTICLE.md)**.
+Prefer one continuous page? The whole guide is also assembled as a single article, in three formats:
+
+- **[docs/index.html](docs/index.html)** — the polished web version: real LaTeX math (MathJax), playing animations, article typography. Servable via GitHub Pages.
+- **[docs/x-article.html](docs/x-article.html)** — the X (Twitter) Article source: all math converted to clean Unicode text, no markup to clean up — open it in a browser, select all below the instructions box, and paste into X's article editor; upload each GIF at its orange marker.
+- **[ARTICLE.md](ARTICLE.md)** — plain GitHub-flavored Markdown.
 
 ## Run the code
 
