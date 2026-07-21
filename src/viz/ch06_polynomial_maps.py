@@ -49,7 +49,7 @@ def tangled_gif(fps=16, frames=36, hold=14):
             for _ in lines]
     titles = ("stack shear #1 — slide each column up by x²",
               "stack shear #2 — slide each row right by y²\n"
-              "…the 'monster' is just these two tame moves, stacked")
+              "…a wild-looking map, built from two simple moves")
     c0 = np.array(matplotlib.colors.to_rgb(BLUE))
     c1 = np.array(matplotlib.colors.to_rgb(GREEN))
 

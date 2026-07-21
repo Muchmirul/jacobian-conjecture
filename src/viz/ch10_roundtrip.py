@@ -42,9 +42,9 @@ def roundtrip_gif(frames=40, fps=18, hold=12):
         if stage >= 2:
             stage, t = 1, 1.0
         u = t if stage == 0 else 1 - t
-        titles = ("step 1 · the monster map  $H(x,y) = (x+(y+x^2)^2,\\; y+x^2)$\n"
+        titles = ("step 1 · the map  $H(x,y) = (x+(y+x^2)^2,\\; y+x^2)$\n"
                   "tangles the blue grid into the green one",
-                  "step 2 · its polynomial undo  $G(x,y) = (x-y^2,\\; y-(x-y^2)^2)$\n"
+                  "step 2 · its undo map  $G(x,y) = (x-y^2,\\; y-(x-y^2)^2)$\n"
                   "walks every point exactly back home")
         ax.set_title(titles[stage], color=INK2, fontsize=11.5)
         c = matplotlib.colors.to_hex((1 - u) * c0 + u * c1)
