@@ -26,6 +26,10 @@ Three polynomials. Degrees 7, 6 and 4. Coefficients a child could copy down.
 
 <img src="collision_card.png" width="760" alt="Three input points, (0,0,−1/4), (1,−3/2,13/2) and (−1,3/2,13/2), all mapping to the single output (−1/4, 0, 0)">
 
+Watch it happen in 3D — each point travels to its output, and all three roads end on the same red X:
+
+<img src="collision.gif" width="620" alt="Three points in 3D space travel along dotted roads that all converge on one red X at (−1/4, 0, 0) on the ground plane, while the camera slowly circles">
+
 Three different points. One landing spot. Standing at $(-1/4,\, 0,\, 0)$, you cannot know which road you came by — the collision from chapter 2, and with it, the death of any undo machine. **The Jacobian Conjecture is false in three dimensions.**
 
 And it topples in every higher dimension too: in 4D, map the extra coordinate to itself, $(x,y,z,w) \mapsto (P, Q, R, w)$ — the volume factor is still $-2$, the collision still collides. Same for 5D, 6D, forever.

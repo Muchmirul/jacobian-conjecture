@@ -23,7 +23,8 @@ def roundtrip_gif(frames=40, fps=18, hold=12):
     c0 = np.array(matplotlib.colors.to_rgb(BLUE))
     c1 = np.array(matplotlib.colors.to_rgb(GREEN))
 
-    fig, ax = plt.subplots(figsize=(7.8, 4.6))
+    fig, ax = plt.subplots(figsize=(7.8, 4.8))
+    fig.subplots_adjust(top=0.84)
     style_axes(ax, (-1.7, 5.3), (-1.7, 2.4))
     artists = [ax.plot([], [], lw=1.2, solid_capstyle="round", zorder=3)[0]
                for _ in lines]
@@ -41,9 +42,11 @@ def roundtrip_gif(frames=40, fps=18, hold=12):
         if stage >= 2:
             stage, t = 1, 1.0
         u = t if stage == 0 else 1 - t
-        titles = ("apply F — the plane tangles up",
-                  "apply G, the undo map — every point walks home")
-        ax.set_title(titles[stage], color=INK2, fontsize=12)
+        titles = ("step 1 · the monster map  $H(x,y) = (x+(y+x^2)^2,\\; y+x^2)$\n"
+                  "tangles the blue grid into the green one",
+                  "step 2 · its polynomial undo  $G(x,y) = (x-y^2,\\; y-(x-y^2)^2)$\n"
+                  "walks every point exactly back home")
+        ax.set_title(titles[stage], color=INK2, fontsize=11.5)
         c = matplotlib.colors.to_hex((1 - u) * c0 + u * c1)
         for art, (x0, y0), (x1, y1) in zip(artists, starts, ends):
             art.set_data((1 - u) * x0 + u * x1, (1 - u) * y0 + u * y1)

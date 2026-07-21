@@ -27,7 +27,7 @@ Constant 1 — at every one of the infinitely many points, certified by algebra.
 
 There it is: an explicit polynomial undo, and the round trip is *exactly* the identity — every point walks home:
 
-<img src="roundtrip.gif" width="720" alt="Grid tangles under F, then untangles perfectly back to the start under G">
+<img src="roundtrip.gif" width="720" alt="Step 1: the monster map H tangles the blue grid into the green one; step 2: its polynomial undo G walks every point exactly back home">
 
 And a villain, for contrast: the fold $(x^2, y)$ has `jacobian_det` $= 2x$ — **not** constant, so it never claimed to satisfy the hypothesis. The conjecture predicts nothing about it. Consistent.
 

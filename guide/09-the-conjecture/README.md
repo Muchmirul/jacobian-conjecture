@@ -18,6 +18,10 @@ Surely — *surely* — such a map must be globally undoable, with a polynomial 
 
 <img src="statement_card.png" width="760" alt="Statement card: polynomial map, constant nonzero Jacobian determinant everywhere — must it have a polynomial inverse?">
 
+The same question, in motion — hypothesis first, then the 87-year question mark:
+
+<img src="conjecture.gif" width="720" alt="A polynomial map tangles the grid while a yellow patch keeps exactly the same area (local factor 1 everywhere); then the motion reverses under the question: must a polynomial undo always exist?">
+
 That is the **Jacobian Conjecture**. Not a theorem — a conjecture: a belief nobody could prove.
 
 ## The fine print (read once, then relax)

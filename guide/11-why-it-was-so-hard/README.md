@@ -43,7 +43,11 @@ Hope: maybe pure algebra — just formal manipulation of polynomial symbols, val
 
 Hope: a classical theorem (Hadamard) says a map that is locally undoable everywhere **and** doesn't let points "escape to infinity" is globally undoable. Maybe polynomial maps can't escape?
 
-**They can.** Take the crush map $(x, xy)$ and the points $(1/2, 2), (1/3, 3), (1/4, 4), \dots$ — they march off to infinity, while their outputs $(1/2, 1), (1/3, 1), (1/4, 1), \dots$ calmly approach an ordinary point. A sequence flees; its shadow stays. So the escape hatch is open, all the interesting action happens "near infinity", and that is exactly where every naive argument — starting with Kraus's in 1884 — silently leaked.
+**They can.** Take the crush map $(x, xy)$ and the points $(1/2, 2), (1/3, 3), (1/4, 4), \dots$ — they march off to infinity, while their outputs $(1/2, 1), (1/3, 1), (1/4, 1), \dots$ calmly approach an ordinary point. A sequence flees; its shadow stays:
+
+<img src="escape.gif" width="820" alt="Two panels: on the left the input point (1/s, s) rides the hyperbola out of the top of every window as s grows; on the right its output (1/s, 1) slides gently along the line y = 1 toward the ordinary point (0, 1)">
+
+So the escape hatch is open, all the interesting action happens "near infinity", and that is exactly where every naive argument — starting with Kraus's in 1884 — silently leaked.
 
 ## And one more omen: dimension 3 is stranger
 
