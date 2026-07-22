@@ -1,4 +1,4 @@
-# The Rise and Fall of the Jacobian Conjecture
+# Jacobian Conjecture for Baby
 
 *A step-by-step guide, starting from zero, to a famous math problem that stayed open for 87 years and then fell in July 2026. Every idea is shown as an animation, and you can check the final discovery yourself.*
 
@@ -17,8 +17,6 @@ This article explains the whole story from zero. You do not need any math backgr
 (Everything here is backed by an open repository: [github.com/Muchmirul/jacobian-conjecture](https://github.com/Muchmirul/jacobian-conjecture). It contains the code for every animation and a test suite that re-checks every mathematical claim.)
 
 Here is the plan. Chapters 1 to 8 build the ideas one by one. Chapter 9 states the famous question. Chapters 10 to 12 tell what happened to it.
-
-![The 13 chapter boxes appear one at a time, snaking across three rows](https://raw.githubusercontent.com/Muchmirul/jacobian-conjecture/main/guide/00-start-here/roadmap.gif)
 
 ---
 
