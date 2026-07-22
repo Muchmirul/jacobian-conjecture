@@ -10,15 +10,17 @@ The pattern repeats for a century: someone announces a proof; the world gets exc
 
 Why? Because any successful proof must squeeze through three trapdoors at once.
 
-## Trapdoor 1: it is false over the real numbers
+## Trapdoor 1: the strong real analogue is false
 
-Hope: maybe ordinary real-plane geometry, the kind our pictures show, is enough to force undoability once the local factor never vanishes.
+The **strong real Jacobian conjecture** asks whether a real polynomial map must be globally undoable whenever its local factor never vanishes. Unlike Keller's conjecture, it does not require that factor to be constant.
+
+Hope: maybe ordinary real-plane geometry, the kind our pictures show, is enough to prove this stronger claim.
 
 **No.** In 1994, Sergey Pinchuk constructed an explicit pair of polynomials $(p, q)$, degrees 10 and 25, whose local area factor is **strictly positive at every real point**… and which still sends two different points to the same place.
 
 <img src="pinchuk_det.gif" width="620" alt="A probe sweeps Pinchuk's log-scale determinant heatmap, its readout dipping into deep valleys while the running minimum shows the floor is never zero">
 
-No crushing anywhere, no mirror-flipping anywhere, and still a collision. Real-variable reasoning alone can *never* prove the conjecture, because the real version of the statement is a lie.
+No crushing anywhere, no mirror-flipping anywhere, and still a collision. Pinchuk shows that a nowhere-zero real Jacobian alone is insufficient. Any proof of the plane Keller statement must exploit additional structure, such as constancy of the determinant, characteristic-zero algebra, complexification, or control at infinity.
 
 <details>
 <summary>How can we be sure the factor is never zero? (a gem, optional)</summary>
@@ -27,7 +29,7 @@ Pinchuk's local area factor obeys an exact algebraic identity: with his auxiliar
 
 ```math
 \det J = t^2 + \big(t + f\,(13 + 15h)\big)^2 + f^2
-```, a **sum of three squares**, so it can never be negative; and a two-line argument shows $t$ and $f$ can't vanish together, so it is never zero. This repo verifies the identity symbolically: `tests/test_pinchuk.py`. The conjecture survives because Pinchuk's factor, while never zero, is not *constant*, over the complex numbers those would be the same thing (chapter 9), but over the reals they are not. The complex setting is doing real work.
+```, a **sum of three squares**, so it can never be negative; and a two-line argument shows $t$ and $f$ can't vanish together, so it is never zero. This repo verifies the identity symbolically: `tests/test_pinchuk.py`. Pinchuk does not contradict Keller's Jacobian Conjecture: his factor, while never zero, is not *constant*. Over the complex numbers those would be the same thing (chapter 9), but over the reals they are not. The complex setting is doing real work.
 
 </details>
 
