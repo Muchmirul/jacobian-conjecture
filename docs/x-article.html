@@ -27,7 +27,7 @@
 <ol>
   <li>Select everything <strong>below this box</strong> (from “Look at this animation” to the end) and copy. Paste into the X Article body. Headings, bold, italics, lists and quotes carry over as tidy rich text. All math is plain text, so nothing breaks.</li>
   <li>Type the title into X’s title field: <strong>Jacobian Conjecture for Baby</strong>.</li>
-  <li>The animations do not paste, because X only takes media through its own uploader. Wherever you see an orange marker line like “▶ upload animation N here: file.gif”, click X’s image button, upload that GIF, then delete the marker line. Download all 27 GIFs from the <a href="https://github.com/Muchmirul/jacobian-conjecture/tree/main/guide">guide folders</a>. Each marker names its file and chapter folder.</li>
+  <li>The animations do not paste, because X only takes media through its own uploader. Wherever you see an orange marker line like “▶ upload animation N here: file.gif”, click X’s image button, upload that GIF, then delete the marker line. Download all 28 GIFs from the <a href="https://github.com/Muchmirul/jacobian-conjecture/tree/main/guide">guide folders</a>. Each marker names its file and chapter folder.</li>
 </ol>
 </div>
 
@@ -69,7 +69,7 @@
 
 <p>Two rules make a machine a function. First, it always gives an answer. Second, the same input always gives the same output, with no randomness and no “it depends”.</p>
 
-<p>Now one change of viewpoint, which we will use for the rest of the article. Instead of feeding the machine one number at a time, imagine it moving <b>every number on the number line at the same time</b>.</p>
+<p>Now change the viewpoint. This new picture powers the rest of the article. Instead of feeding the machine one number at a time, imagine it moving <b>every number on the number line at the same time</b>.</p>
 
 <figure>
   <img src="https://raw.githubusercontent.com/Muchmirul/jacobian-conjecture/main/guide/01-functions-are-machines/numberline.gif" alt="">
@@ -336,7 +336,7 @@
 
 <p><i>(It gets worse. There are smooth non-polynomial maps whose local factor is nonzero at every point, with no exception at all, that still hit target points infinitely often. So for general smooth maps, “locally fine everywhere” is very far from “globally undoable”. If any hope remains, it must come from using very special machines, such as polynomials.)</i></p>
 
-<p>So “local factor never zero” is not enough on its own. If we want a local condition to guarantee global undoability, we must add something. Keller’s choice was to demand the strongest possible local condition, that the local area factor is not just nonzero but <b>the same constant at every point</b>, and to demand that the map be <b>polynomial</b>. Is that enough?</p>
+<p>So “local factor never zero” is not enough on its own. If we want a local condition that guarantees a global undo, we must add something. Keller’s choice was to demand the strongest possible local condition, that the local area factor is not just nonzero but <b>the same constant at every point</b>, and to demand that the map be <b>polynomial</b>. Is that enough?</p>
 
 <p>That is the Jacobian Conjecture. The next chapter states it fully.</p>
 
@@ -390,7 +390,7 @@
 
 <p>Before seeing what happened to the conjecture, you can test it, using a computer that does exact algebra rather than approximations.</p>
 
-<p>Python’s sympy library works with polynomials exactly, the way you would with a pencil and unlimited patience. Ask it for the local area factor of the stacked-shear map H(x, y) = (x + (y + x²)², y + x²), and it answers <b>constant 1</b>, at every one of the infinitely many points, certified by algebra. So H satisfies Keller’s condition.</p>
+<p>Python’s sympy library works with polynomials exactly, the way you would with a pencil and unlimited patience. Ask it for the local area factor of the stacked-shear map H(x, y) = (x + (y + x²)², y + x²), and it answers: the factor is the <b>constant 1</b>. Algebra checked the formula itself, so this covers every one of the infinitely many points at once. So H satisfies Keller’s condition.</p>
 
 <p>Now the real test. Ask the computer to invert H. It returns an explicit polynomial undo, G(x, y) = (x − y², y − (x − y²)²), and composing G after H simplifies to exactly (x, y), the do-nothing map. The round trip is perfect, and every point walks back home.</p>
 
@@ -433,7 +433,7 @@
 
 <p>The same pattern repeated for a century. Someone announces a proof, the world gets excited, and a subtle hole is found. It happened to Kraus in 1884, before Keller even asked the question, to Engel in 1955, three times to Segre, to Gröbner, and to many modern attempts.</p>
 
-<p><b>Obstacle 1: the statement is false over the real numbers.</b> One hope was that ordinary real-plane geometry, the kind our pictures show, already forces undoability once the local factor never vanishes. It does not. In 1994, Sergey Pinchuk built an explicit pair of polynomials, of degrees 10 and 25, whose local area factor is <b>strictly positive at every real point</b>, and which still sends two different points to the same place.</p>
+<p><b>Obstacle 1: the statement is false over the real numbers.</b> One hope was that ordinary real-plane geometry, the kind our pictures show, already forces a map to be undoable once the local factor is never zero. It does not. In 1994, Sergey Pinchuk built an explicit pair of polynomials, of degrees 10 and 25, whose local area factor is <b>strictly positive at every real point</b>, and which still sends two different points to the same place. Watch the probe below read his factor everywhere: the running minimum dips low, but it never touches 0.</p>
 
 <figure>
   <img src="https://raw.githubusercontent.com/Muchmirul/jacobian-conjecture/main/guide/11-why-it-was-so-hard/pinchuk_det.gif" alt="">
@@ -446,11 +446,18 @@
 
 <p><b>Obstacle 2: the statement is false in clock arithmetic.</b> Another hope was that pure symbol manipulation, meaning algebra that works in any number system, might be enough. It is not. On a clock with a prime number p of positions, where numbers wrap around, the simple machine F(x) = x − xᵖ has constant slope 1, the perfect condition, yet it sends <i>every</i> clock position to 0. That is a total collapse. So any proof must use a property that ordinary numbers have and clock arithmetic lacks. Pure symbol-pushing cannot be enough.</p>
 
+<p>Watch the collapse on a clock with 5 positions.</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/Muchmirul/jacobian-conjecture/main/guide/11-why-it-was-so-hard/clock.gif" alt="">
+  <figcaption>▶ upload animation 25 here: clock.gif (folder 11-why-it-was-so-hard), then delete this line</figcaption>
+</figure>
+
 <p><b>Obstacle 3: the danger sits at infinity.</b> A classical theorem, due to Hadamard, says that a map that is locally undoable everywhere, and that does not let points run away to infinity, is globally undoable. So maybe polynomial maps cannot send points to infinity in a bad way? They can. Under the crush map (x, xy), take the points (1/2, 2), (1/3, 3), (1/4, 4), and so on. The points themselves run off to infinity. Their outputs (1/2, 1), (1/3, 1), (1/4, 1), and so on, quietly approach the ordinary point (0, 1).</p>
 
 <figure>
   <img src="https://raw.githubusercontent.com/Muchmirul/jacobian-conjecture/main/guide/11-why-it-was-so-hard/escape.gif" alt="">
-  <figcaption>▶ upload animation 25 here: escape.gif (folder 11-why-it-was-so-hard), then delete this line</figcaption>
+  <figcaption>▶ upload animation 26 here: escape.gif (folder 11-why-it-was-so-hard), then delete this line</figcaption>
 </figure>
 
 <p>So the escape route to infinity is open, and the important behavior happens near infinity. That is exactly where the mistaken proofs, starting with Kraus in 1884, quietly leaked.</p>
@@ -481,14 +488,14 @@
 
 <figure>
   <img src="https://raw.githubusercontent.com/Muchmirul/jacobian-conjecture/main/guide/12-the-fall/collision_card.gif" alt="">
-  <figcaption>▶ upload animation 26 here: collision_card.gif (folder 12-the-fall), then delete this line</figcaption>
+  <figcaption>▶ upload animation 27 here: collision_card.gif (folder 12-the-fall), then delete this line</figcaption>
 </figure>
 
 <p>Watch it happen in 3D. Each point travels to its output, and all three paths end on the same red X.</p>
 
 <figure>
   <img src="https://raw.githubusercontent.com/Muchmirul/jacobian-conjecture/main/guide/12-the-fall/collision.gif" alt="">
-  <figcaption>▶ upload animation 27 here: collision.gif (folder 12-the-fall), then delete this line</figcaption>
+  <figcaption>▶ upload animation 28 here: collision.gif (folder 12-the-fall), then delete this line</figcaption>
 </figure>
 
 <p>Three different points. One landing spot. Standing at (−1/4, 0, 0), you cannot know which of the three points you came from. This is the collision from chapter 2, and with it, the end of any undo machine. <b>The Jacobian Conjecture is false in three dimensions.</b></p>

@@ -114,6 +114,59 @@ def pinchuk_gif(frames=96, fps=16):
     plt.close(fig)
 
 
+def clock_gif(fps=16, appear=10, travel=30, hold=26):
+    """Obstacle 2 as a picture.  On a clock with 5 positions, the machine
+    F(x) = x - x^5 has constant slope 1, the perfect condition, yet by
+    Fermat's little theorem it sends every position to 0: total collapse."""
+    P = 5
+    ang = {k: np.pi / 2 - 2 * np.pi * k / P for k in range(P)}
+    R = 1.0
+
+    fig, ax = plt.subplots(figsize=(6.4, 6.6))
+    style_axes(ax, (-1.75, 1.75), (-1.75, 1.95), show_axes=False)
+    th = np.linspace(0, 2 * np.pi, 200)
+    ax.plot(R * np.cos(th), R * np.sin(th), color=BASELINE, lw=2, zorder=1)
+    for k in range(P):
+        x, y = R * np.cos(ang[k]), R * np.sin(ang[k])
+        ax.plot([0.94 * x, x], [0.94 * y, y], color=BASELINE, lw=2, zorder=1)
+        ax.text(1.22 * x, 1.22 * y, str(k), ha="center", va="center",
+                fontsize=15, color=INK)
+    ax.set_title("a clock with 5 positions · the machine  $F(x) = x - x^5$\n"
+                 "has constant slope 1, yet it sends EVERY position to 0",
+                 color=INK2, fontsize=11.5)
+    caption = ax.text(0.5, 0.02, "all five numbers land on 0: total collapse",
+                      transform=ax.transAxes, ha="center", fontsize=11.5,
+                      color=RED, alpha=0.0)
+    dots = [ax.plot([], [], "o", ms=11, color=BLUE, zorder=6)[0]
+            for _ in range(P)]
+    trails = [ax.plot([], [], lw=1.2, color=BLUE, alpha=0.3, zorder=4)[0]
+              for _ in range(P)]
+
+    def ease(t):
+        return 3 * t**2 - 2 * t**3
+
+    x0y0 = {k: (0.82 * R * np.cos(ang[k]), 0.82 * R * np.sin(ang[k]))
+            for k in range(P)}
+    target = x0y0[0]
+    total = appear + travel + hold
+
+    def update(i):
+        t = ease(min(max((i - appear) / travel, 0.0), 1.0))
+        for k, (dot, trail) in enumerate(zip(dots, trails)):
+            x0, y0 = x0y0[k]
+            x1, y1 = target
+            dot.set_data([(1 - t) * x0 + t * x1], [(1 - t) * y0 + t * y1])
+            dot.set_color(RED if t >= 1.0 else BLUE)
+            trail.set_data([x0, (1 - t) * x0 + t * x1],
+                           [y0, (1 - t) * y0 + t * y1])
+        caption.set_alpha(1.0 if t >= 1.0 else 0.0)
+        return [*dots, *trails, caption]
+
+    anim = FuncAnimation(fig, update, frames=total, interval=1000 / fps)
+    anim.save(OUT / "clock.gif", writer=PillowWriter(fps=fps))
+    plt.close(fig)
+
+
 def escape_gif(frames=70, fps=18, hold=12):
     """Trapdoor 3 in motion.  Under the crush map (x, y) -> (x, xy), the
     inputs (1/s, s) march off to infinity along the hyperbola xy = 1, while
@@ -169,5 +222,6 @@ def escape_gif(frames=70, fps=18, hold=12):
 if __name__ == "__main__":
     timeline_gif()
     pinchuk_gif()
+    clock_gif()
     escape_gif()
     print(f"wrote figures to {OUT}")

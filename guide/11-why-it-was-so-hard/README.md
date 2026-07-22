@@ -37,6 +37,8 @@ Hope: maybe pure algebra, just formal manipulation of polynomial symbols, valid 
 
 **No.** In arithmetic on a clock with a prime number $p$ of positions (add, multiply, wrap around), the innocent one-variable machine $F(x) = x - x^p$ has constant slope 1, the perfect Keller hypothesis, yet it maps *every* clock position to 0. Total collapse. So any proof must genuinely use a property that ordinary numbers have and clock arithmetic lacks (*characteristic zero*, in the jargon). Purely formal symbol-pushing cannot be enough.
 
+<img src="clock.gif" width="520" alt="Five numbers around a clock face all travel to position 0; the machine x minus x to the fifth has slope 1 yet collapses the whole clock">
+
 ## Trapdoor 3: the danger hides at infinity
 
 Hope: a classical theorem (Hadamard) says a map that is locally undoable everywhere **and** doesn't let points "escape to infinity" is globally undoable. Maybe polynomial maps can't escape?

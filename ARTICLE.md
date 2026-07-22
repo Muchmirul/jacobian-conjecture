@@ -32,7 +32,7 @@ The machine above uses the rule "double the number, then add 1." Feed it 3, you 
 
 Two rules make a machine a function. First, it always gives an answer. Second, the same input always gives the same output, with no randomness and no "it depends".
 
-Now one change of viewpoint, which we will use for the rest of the article. Instead of feeding the machine one number at a time, imagine it moving **every number on the number line at the same time**.
+Now change the viewpoint. This new picture powers the rest of the article. Instead of feeding the machine one number at a time, imagine it moving **every number on the number line at the same time**.
 
 ![Dots on a number line all travel simultaneously to their outputs on a second line below](https://raw.githubusercontent.com/Muchmirul/jacobian-conjecture/main/guide/01-functions-are-machines/numberline.gif)
 
@@ -265,7 +265,7 @@ It is zero at **one single point**, the center, and healthy everywhere else. One
 
 *(It gets worse. There are smooth non-polynomial maps whose local factor is nonzero at every point, with no exception at all, that still hit target points infinitely often. So for general smooth maps, "locally fine everywhere" is very far from "globally undoable". If any hope remains, it must come from using very special machines, such as polynomials.)*
 
-So "local factor never zero" is not enough on its own. If we want a local condition to guarantee global undoability, we must add something. Keller's choice was to demand the strongest possible local condition, that the local area factor is not just nonzero but **the same constant at every point**, and to demand that the map be **polynomial**. Is that enough?
+So "local factor never zero" is not enough on its own. If we want a local condition that guarantees a global undo, we must add something. Keller's choice was to demand the strongest possible local condition, that the local area factor is not just nonzero but **the same constant at every point**, and to demand that the map be **polynomial**. Is that enough?
 
 That is the Jacobian Conjecture. The next chapter states it fully.
 
@@ -323,7 +323,7 @@ Python's `sympy` library works with polynomials exactly, the way you would with 
 1
 ```
 
-It answers constant 1, at every one of the infinitely many points, certified by algebra. So $H$ satisfies Keller's condition. Now the real test. Ask for the undo map:
+It answers: the factor is the constant 1. Algebra checked the formula itself, so this covers every one of the infinitely many points at once. So $H$ satisfies Keller's condition. Now the real test. Ask for the undo map:
 
 ```python
 >>> G = invert(TANGLED, VARS)
@@ -369,7 +369,7 @@ If every test passes and the statement looks true, why could nobody prove it? Be
 
 The same pattern repeated for a century. Someone announces a proof, the world gets excited, and a subtle hole is found. It happened to Kraus in 1884, before Keller even asked the question, to Engel in 1955, three times to Segre, to Gröbner, and to many modern attempts.
 
-**Obstacle 1: the statement is false over the real numbers.** One hope was that ordinary real-plane geometry, the kind our pictures show, already forces undoability once the local factor never vanishes. It does not. In 1994, Sergey Pinchuk built an explicit pair of polynomials, of degrees 10 and 25, whose local area factor is **strictly positive at every real point**, and which still sends two different points to the same place.
+**Obstacle 1: the statement is false over the real numbers.** One hope was that ordinary real-plane geometry, the kind our pictures show, already forces a map to be undoable once the local factor is never zero. It does not. In 1994, Sergey Pinchuk built an explicit pair of polynomials, of degrees 10 and 25, whose local area factor is **strictly positive at every real point**, and which still sends two different points to the same place. Watch the probe below read his factor everywhere: the running minimum dips low, but it never touches 0.
 
 ![A probe sweeps Pinchuk's log-scale determinant heatmap; the running minimum never reaches zero](https://raw.githubusercontent.com/Muchmirul/jacobian-conjecture/main/guide/11-why-it-was-so-hard/pinchuk_det.gif)
 
@@ -378,6 +378,10 @@ There is no crushing anywhere and no flipping anywhere, and yet there is still a
 *(How do we know Pinchuk's factor is never zero? It equals $\det J = t^2 + (t + f\,(13 + 15h))^2 + f^2$ for certain helper polynomials $t, f, h$. That is a sum of three squares, so it is never negative, and a short argument shows it is never zero. It is positive everywhere but not constant, and over the complex numbers "never zero" and "constant" would be the same thing. This is why the complex setting in chapter 9 matters. The repo verifies the identity symbolically in `tests/test_pinchuk.py`.)*
 
 **Obstacle 2: the statement is false in clock arithmetic.** Another hope was that pure symbol manipulation, meaning algebra that works in any number system, might be enough. It is not. On a clock with a prime number $p$ of positions, where numbers wrap around, the simple machine $F(x) = x - x^p$ has constant slope 1, the perfect condition, yet it sends *every* clock position to 0. That is a total collapse. So any proof must use a property that ordinary numbers have and clock arithmetic lacks (*characteristic zero*, in the jargon). Pure symbol-pushing cannot be enough.
+
+Watch the collapse on a clock with 5 positions.
+
+![Five numbers around a clock face all travel to position 0; the machine x minus x to the fifth has slope 1 yet collapses the whole clock](https://raw.githubusercontent.com/Muchmirul/jacobian-conjecture/main/guide/11-why-it-was-so-hard/clock.gif)
 
 **Obstacle 3: the danger sits at infinity.** A classical theorem, due to Hadamard, says that a map that is locally undoable everywhere, and that does not let points run away to infinity, is globally undoable. So maybe polynomial maps cannot send points to infinity in a bad way? They can. Under the crush map $(x, xy)$, take the points $(1/2, 2), (1/3, 3), (1/4, 4), \dots$ The points themselves run off to infinity. Their outputs $(1/2, 1), (1/3, 1), (1/4, 1), \dots$ quietly approach the ordinary point $(0, 1)$.
 
