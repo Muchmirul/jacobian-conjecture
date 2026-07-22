@@ -376,7 +376,7 @@
 
 <ul>
   <li><b>All dimensions.</b> The question is asked for the plane, for 3D space, for 4D space, and so on. Each output coordinate is a polynomial in all the input coordinates. Our pictures are 2D because that is what eyes can see.</li>
-  <li><b>Complex numbers.</b> Officially the conjecture is asked over the complex numbers, a larger number system where every polynomial equation has solutions. Over the complex numbers, “the local factor is never zero” and “the local factor is a nonzero constant” turn out to be the same condition. Chapter 11 shows that over the ordinary real numbers the conjecture is actually <b>false</b>, so this choice of number system genuinely matters.</li>
+  <li><b>Complex numbers.</b> Officially the conjecture is asked over the complex numbers, a larger number system where every polynomial equation has solutions. Over the complex numbers, “the local factor is never zero” and “the local factor is a nonzero constant” turn out to be the same condition. Chapter 11 shows that a different statement, the <b>strong real analogue</b> with a merely nowhere-zero factor, is false. This does not disprove Keller’s constant-Jacobian conjecture, so the distinction genuinely matters.</li>
   <li><b>Only collisions matter.</b> A deep theorem (Ax–Grothendieck) helps here. If a complex polynomial map has no collisions, then it automatically has no gaps. Its undo map is automatically a polynomial too. So the entire 87-year battle was about one question: <b>can two different points share an output?</b></li>
 </ul>
 
@@ -433,16 +433,16 @@
 
 <p>The same pattern repeated for a century. Someone announces a proof, the world gets excited, and a subtle hole is found. It happened to Kraus in 1884, before Keller even asked the question, to Engel in 1955, three times to Segre, to Gröbner, and to many modern attempts.</p>
 
-<p><b>Obstacle 1: the statement is false over the real numbers.</b> One hope was that ordinary real-plane geometry, the kind our pictures show, already forces a map to be undoable once the local factor is never zero. It does not. In 1994, Sergey Pinchuk built an explicit pair of polynomials, of degrees 10 and 25. Their local area factor is <b>positive at every real point</b>. And the map still sends two different points to the same place. Watch the probe below read this factor everywhere: the running minimum dips low, but it never touches 0.</p>
+<p><b>Obstacle 1: the strong real analogue is false.</b> This analogue asks whether a real polynomial map must be globally undoable whenever its local factor never vanishes. Unlike Keller’s conjecture, it does not require that factor to be constant. In 1994, Sergey Pinchuk built an explicit pair of polynomials, of degrees 10 and 25. Their local area factor is <b>positive at every real point</b>. And the map still sends two different points to the same place. Watch the probe below read this factor everywhere: the running minimum dips low, but it never touches 0.</p>
 
 <figure>
   <img src="https://raw.githubusercontent.com/Muchmirul/jacobian-conjecture/main/guide/11-why-it-was-so-hard/pinchuk_det.gif" alt="">
   <figcaption>▶ upload animation 24 here: pinchuk_det.gif (folder 11-why-it-was-so-hard), then delete this line</figcaption>
 </figure>
 
-<p>There is no crushing anywhere and no flipping anywhere, and yet there is still a collision. So reasoning about real numbers alone can never prove the conjecture, because over the reals the statement is simply not true.</p>
+<p>There is no crushing anywhere and no flipping anywhere, and yet there is still a collision. Pinchuk shows that a nowhere-zero real Jacobian alone is insufficient. Any proof of the plane Keller statement must exploit additional structure, such as constancy of the determinant, characteristic-zero algebra, complexification, or control at infinity.</p>
 
-<p><i>(How do we know Pinchuk’s factor is never zero? It equals t² + (t + f(13 + 15h))² + f² for certain helper polynomials t, f, and h. That is a sum of three squares, so it is never negative, and a short argument shows it is never zero. It is positive everywhere but not constant, and over the complex numbers “never zero” and “constant” would be the same thing. This is why the complex setting in chapter 9 matters.)</i></p>
+<p><i>(How do we know Pinchuk’s factor is never zero? It equals t² + (t + f(13 + 15h))² + f² for certain helper polynomials t, f, and h. That is a sum of three squares, so it is never negative, and a short argument shows it is never zero. Pinchuk does not contradict Keller’s Jacobian Conjecture: his factor is positive everywhere but not constant. Over the complex numbers “never zero” and “constant” would be the same thing. This is why the complex setting in chapter 9 matters.)</i></p>
 
 <p><b>Obstacle 2: the statement is false in clock arithmetic.</b> Another hope was that pure symbol manipulation, meaning algebra that works in any number system, might be enough. It is not. Take a clock with a prime number p of positions, where numbers wrap around. The simple machine F(x) = x − xᵖ has constant slope 1, the perfect condition. Yet it sends <i>every</i> clock position to 0. That is a total collapse. So any proof must use a property that ordinary numbers have and clock arithmetic lacks. Pure symbol-pushing cannot be enough.</p>
 
