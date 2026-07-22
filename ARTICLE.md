@@ -65,7 +65,7 @@ An undo machine cannot exist when either of two things happens:
 1. **Collisions:** two different inputs land on the same output. (−3 and 3 both land on 9.)
 2. **Gaps:** some outputs are never produced, so the undo machine would have nothing to say there. (Squaring never outputs −4.)
 
-If there are no collisions and no gaps, then every output has exactly one origin, and "walk back where you came from" is a well-defined machine.
+If there are no collisions and no gaps, then every output has exactly one origin. So "walk back where you came from" is itself a machine.
 
 *(The official words, if you want them: no collisions is called **injective**, no gaps is called **surjective**, both together is called **invertible**. You can forget these words. "No collisions, no gaps" is all you need.)*
 
@@ -103,7 +103,7 @@ One more word: the **degree** of a polynomial is its biggest power. So $x^3 - 2x
 
 Machines that eat one number were the warm-up. Now our machines eat **points**.
 
-A **point** of the plane is a pair of numbers $(x, y)$: how far right, and how far up. A **plane map** is a machine that takes a point and returns a point. Since a point is two numbers, the machine has two output slots, and each slot may use both inputs: $F(x, y) = (\text{rule using } x, y,\ \text{rule using } x, y)$.
+A **point** of the plane is a pair of numbers $(x, y)$: how far right, and how far up. A **plane map** is a machine that takes a point and returns a point. A point is two numbers, so the machine has two output slots. Each slot may use both inputs: $F(x, y) = (\text{rule using } x, y,\ \text{rule using } x, y)$.
 
 In chapter 1, a machine moved the whole number line. A plane map moves the **whole plane**. To see it, draw a grid on the plane and watch the map carry it.
 
@@ -154,7 +154,7 @@ And if the determinant is not zero? Then a straight map has no collisions and no
 
 > **A straight map can be undone exactly when its determinant is not zero.**
 
-*(Where the number comes from: a straight map is fully described by four numbers, $F(x, y) = (ax + by,\; cx + dy)$, and its determinant is $ad - bc$. You will never need to compute this by hand here.)*
+*(Where the number comes from: a straight map is fully described by four numbers, $F(x, y) = (ax + by,\; cx + dy)$. Its determinant is $ad - bc$. You will never need to compute this by hand here.)*
 
 > **The one thing to remember:** a straight map scales all areas by one fixed factor, the determinant. If the factor is nonzero, the map can be undone. If the factor is zero, the plane is crushed and information is lost.
 
@@ -202,7 +202,7 @@ Compare the two kinds. The shear and stacked shears bend but never crush, so the
 
 This looks like chapter 5's rule, that a map can be undone exactly when its area factor is nonzero, trying to extend from straight maps to bent maps. But a bent map stretches area by different amounts in different places. So what plays the role of "the" area factor? For that we need a microscope.
 
-> **The one thing to remember:** stacked shears bend the plane into complicated shapes that are still easy to undo, while folds and crushes press area to zero somewhere and can never be undone.
+> **The one thing to remember:** stacked shears bend the plane into complicated shapes that are still easy to undo. Folds and crushes press area to zero somewhere, and they can never be undone.
 
 ---
 
@@ -245,7 +245,7 @@ The microscope looks like the perfect tool. Here is the trap at the heart of the
 
 The tempting shortcut goes like this. To know if a map can be undone, check the local area factor everywhere. If it is never zero, the map never crushes anything, so surely it can be undone. Can it?
 
-Part of this is true. If the local factor at a point $p$ is not zero, the map can be undone **near $p$**, because if you zoom in enough it is a healthy straight map. This fact is called the *inverse function theorem*, and it is solid.
+Part of this is true. If the local factor at a point $p$ is not zero, then near $p$ the map can be undone. Zoom in enough and it is a healthy straight map. This fact is called the *inverse function theorem*, and it is solid.
 
 But look at what it does **not** promise.
 
@@ -265,7 +265,7 @@ It is zero at **one single point**, the center, and healthy everywhere else. One
 
 *(It gets worse. There are smooth non-polynomial maps whose local factor is nonzero at every point, with no exception at all, that still hit target points infinitely often. So for general smooth maps, "locally fine everywhere" is very far from "globally undoable". If any hope remains, it must come from using very special machines, such as polynomials.)*
 
-So "local factor never zero" is not enough on its own. If we want a local condition that guarantees a global undo, we must add something. Keller's choice was to demand the strongest possible local condition, that the local area factor is not just nonzero but **the same constant at every point**, and to demand that the map be **polynomial**. Is that enough?
+So "local factor never zero" is not enough on its own. If we want a local condition that guarantees a global undo, we must add something. Keller chose the strongest possible local condition: the local area factor must be **the same constant at every point**, not just nonzero. And the map must be **polynomial**. Is that enough?
 
 That is the Jacobian Conjecture. The next chapter states it fully.
 
@@ -297,9 +297,9 @@ That is the **Jacobian Conjecture**. It is not a theorem but a conjecture: a sta
 
 **Three details, for completeness:**
 
-- **All dimensions.** The question is asked not only for the plane but for 3-dimensional space, 4-dimensional space, and so on, with each output coordinate a polynomial in all the input coordinates. Our pictures are 2D because that is what eyes can see.
+- **All dimensions.** The question is asked for the plane, for 3D space, for 4D space, and so on. Each output coordinate is a polynomial in all the input coordinates. Our pictures are 2D because that is what eyes can see.
 - **Complex numbers.** Officially the conjecture is asked over the complex numbers, a larger number system where every polynomial equation has solutions. Over ℂ, "the local factor is never zero" and "the local factor is a nonzero constant" turn out to be the same condition. Chapter 11 shows that over the ordinary real numbers the conjecture is actually **false**, so this choice of number system genuinely matters.
-- **Only collisions matter.** A deep theorem, called Ax–Grothendieck, says that if a complex polynomial map has no collisions, then it automatically has no gaps, and its undo map is automatically a polynomial. So the entire 87-year battle was about one question: **can two different points share an output?**
+- **Only collisions matter.** A deep theorem (Ax–Grothendieck) helps here. If a complex polynomial map has no collisions, then it automatically has no gaps. Its undo map is automatically a polynomial too. So the entire 87-year battle was about one question: **can two different points share an output?**
 
 Why did it look provable? Every no-crush map we met satisfies the condition, with factor 1 everywhere, and can be undone. The next chapter shows that every example anyone ever built confirmed the conjecture, and that for degree-2 maps it was actually proved. It looked close to certain.
 
@@ -357,7 +357,7 @@ Every example anyone ever built agreed with the conjecture. Theory added more:
 
 One detail is worth noticing. In the plane, the undo map always has the *same* degree as the map. In dimension 3 and higher, the undo can be far more complicated than the map. Higher dimensions play by wilder rules. Remember that.
 
-> **The one thing to remember:** every example ever built confirmed the conjecture, degree 2 was proved, and the whole problem was squeezed into degree 3, where it stayed unsolved for four more decades.
+> **The one thing to remember:** every example ever built confirmed the conjecture. Degree 2 was proved. The whole problem was squeezed into degree 3, and there it stayed unsolved for four more decades.
 
 ---
 
@@ -369,7 +369,7 @@ If every test passes and the statement looks true, why could nobody prove it? Be
 
 The same pattern repeated for a century. Someone announces a proof, the world gets excited, and a subtle hole is found. It happened to Kraus in 1884, before Keller even asked the question, to Engel in 1955, three times to Segre, to Gröbner, and to many modern attempts.
 
-**Obstacle 1: the statement is false over the real numbers.** One hope was that ordinary real-plane geometry, the kind our pictures show, already forces a map to be undoable once the local factor is never zero. It does not. In 1994, Sergey Pinchuk built an explicit pair of polynomials, of degrees 10 and 25, whose local area factor is **strictly positive at every real point**, and which still sends two different points to the same place. Watch the probe below read his factor everywhere: the running minimum dips low, but it never touches 0.
+**Obstacle 1: the statement is false over the real numbers.** One hope was that ordinary real-plane geometry, the kind our pictures show, already forces a map to be undoable once the local factor is never zero. It does not. In 1994, Sergey Pinchuk built an explicit pair of polynomials, of degrees 10 and 25. Their local area factor is **positive at every real point**. And the map still sends two different points to the same place. Watch the probe below read this factor everywhere: the running minimum dips low, but it never touches 0.
 
 ![A probe sweeps Pinchuk's log-scale determinant heatmap; the running minimum never reaches zero](https://raw.githubusercontent.com/Muchmirul/jacobian-conjecture/main/guide/11-why-it-was-so-hard/pinchuk_det.gif)
 
@@ -377,7 +377,7 @@ There is no crushing anywhere and no flipping anywhere, and yet there is still a
 
 *(How do we know Pinchuk's factor is never zero? It equals $\det J = t^2 + (t + f\,(13 + 15h))^2 + f^2$ for certain helper polynomials $t, f, h$. That is a sum of three squares, so it is never negative, and a short argument shows it is never zero. It is positive everywhere but not constant, and over the complex numbers "never zero" and "constant" would be the same thing. This is why the complex setting in chapter 9 matters. The repo verifies the identity symbolically in `tests/test_pinchuk.py`.)*
 
-**Obstacle 2: the statement is false in clock arithmetic.** Another hope was that pure symbol manipulation, meaning algebra that works in any number system, might be enough. It is not. On a clock with a prime number $p$ of positions, where numbers wrap around, the simple machine $F(x) = x - x^p$ has constant slope 1, the perfect condition, yet it sends *every* clock position to 0. That is a total collapse. So any proof must use a property that ordinary numbers have and clock arithmetic lacks (*characteristic zero*, in the jargon). Pure symbol-pushing cannot be enough.
+**Obstacle 2: the statement is false in clock arithmetic.** Another hope was that pure symbol manipulation, meaning algebra that works in any number system, might be enough. It is not. Take a clock with a prime number $p$ of positions, where numbers wrap around. The simple machine $F(x) = x - x^p$ has constant slope 1, the perfect condition. Yet it sends *every* clock position to 0. That is a total collapse. So any proof must use a property that ordinary numbers have and clock arithmetic lacks (*characteristic zero*, in the jargon). Pure symbol-pushing cannot be enough.
 
 Watch the collapse on a clock with 5 positions.
 
@@ -389,9 +389,9 @@ Watch the collapse on a clock with 5 positions.
 
 So the escape route to infinity is open, and the important behavior happens near infinity. That is exactly where the mistaken proofs, starting with Kraus in 1884, quietly leaked.
 
-**One more warning sign: dimension 3 is stranger than the plane.** Every complicated undoable map we built was a stack of shears and straight maps. Until 2004, one could hope that all constant-factor maps, in all dimensions, are secretly such stacks. Stacks are always undoable, so the conjecture would follow. In the plane this is a true theorem, because every undoable polynomial map of the plane can be broken into shears. But in three dimensions there is Nagata's map, which has local factor 1, a polynomial undo, and is perfectly well-behaved, yet was proved (Shestakov–Umirbaev, 2004) to be impossible to build from shears and straight maps. Three-dimensional space contains genuinely wilder maps than the plane. Remember that too.
+**One more warning sign: dimension 3 is stranger than the plane.** Every complicated undoable map we built was a stack of shears and straight maps. Until 2004, one could hope that all constant-factor maps, in all dimensions, are secretly such stacks. Stacks are always undoable, so the conjecture would follow. In the plane this is a true theorem, because every undoable polynomial map of the plane can be broken into shears. But three dimensions holds Nagata's map. It has local factor 1, a polynomial undo, and perfect behavior everywhere. Yet in 2004 it was proved (Shestakov–Umirbaev) impossible to build from shears and straight maps. Three-dimensional space contains genuinely wilder maps than the plane. Remember that too.
 
-> **The one thing to remember:** a proof had to use all three facts at once, that the maps are polynomial, that the numbers are complex, and control of what happens at infinity. Real-number reasoning fails because of Pinchuk, formal algebra fails because of clock arithmetic, and the escape to infinity is real. Almost no argument survives all three.
+> **The one thing to remember:** a proof had to use all three at once: the maps are polynomial, the numbers are complex, and infinity is kept under control. Real-number reasoning fails because of Pinchuk, formal algebra fails because of clock arithmetic, and the escape to infinity is real. Almost no argument survives all three.
 
 ---
 
@@ -399,7 +399,7 @@ So the escape route to infinity is open, and the important behavior happens near
 
 July 2026. The 87-year-old conjecture collapsed in every dimension except the one where it was born. This chapter shows the actual object that did it. You can check it yourself.
 
-On July 19–20, 2026, an explicit counterexample to the Jacobian Conjecture in **three variables** was announced. The construction is attributed to the mathematician Levent Alpöge, answering a version of the question raised by a colleague, with the decisive example produced with the help of the AI model Claude Fable. At the time of writing there is no peer-reviewed paper yet, so this article does what mathematics always does with an announcement: verify before trusting. Every claim below is re-checked, independently and exactly, by the companion repository (`tests/test_counterexample.py`). Nothing here asks for your trust.
+On July 19–20, 2026, an explicit counterexample to the Jacobian Conjecture in **three variables** was announced. The construction is credited to the mathematician Levent Alpöge, answering a version of the question raised by a colleague. The final example was produced with the help of the AI model Claude Fable. At the time of writing there is no peer-reviewed paper yet, so this article does what mathematics always does with an announcement: verify before trusting. Every claim below is re-checked, independently and exactly, by the companion repository (`tests/test_counterexample.py`). Nothing here asks for your trust.
 
 **The map.** Write $u = 1 + xy$ as a shorthand. The map takes a 3D point $(x, y, z)$ to the 3D point $(P, Q, R)$:
 
@@ -435,7 +435,7 @@ It also fails in every higher dimension. In 4D, send the extra coordinate to its
 
 Now the first point in full. At $(0, 0, -\tfrac14)$ we get $u = 1$, so $P = 1 \cdot (-\tfrac14) + 0 = -\tfrac14$ and $Q = 0 + 0 + 0 = 0$. So this point maps to $(-\tfrac14, 0, 0)$, which is arithmetic you can do in your head.
 
-**Check it yourself, by computer.** The other two points involve fractions like $\tfrac{13}{2}$ raised to powers, which is doable on paper, but exact algebra settles it in ten lines:
+**Check it yourself, by computer.** The other two points involve fractions like $\tfrac{13}{2}$ raised to powers. That is doable on paper, but exact algebra settles it in ten lines:
 
 ```python
 from sympy import symbols, Matrix, Rational

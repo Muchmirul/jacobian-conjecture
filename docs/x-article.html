@@ -110,7 +110,7 @@
   <li><b>Gaps:</b> some outputs are never produced, so the undo machine would have nothing to say there. (Squaring never outputs −4.)</li>
 </ol>
 
-<p>If there are no collisions and no gaps, then every output has exactly one origin, and “walk back where you came from” is a well-defined machine.</p>
+<p>If there are no collisions and no gaps, then every output has exactly one origin. So “walk back where you came from” is itself a machine.</p>
 
 <p><i>(The official words, if you want them: no collisions is called injective, no gaps is called surjective, both together is called invertible. You can forget these words. “No collisions, no gaps” is all you need.)</i></p>
 
@@ -149,7 +149,7 @@
 
 <p>Machines that eat one number were the warm-up. Now our machines eat <b>points</b>.</p>
 
-<p>A <b>point</b> of the plane is a pair of numbers (x, y): how far right, and how far up. A <b>plane map</b> is a machine that takes a point and returns a point. Since a point is two numbers, the machine has two output slots, and each slot may use both inputs. So F(x, y) is (a rule using x and y, another rule using x and y).</p>
+<p>A <b>point</b> of the plane is a pair of numbers (x, y): how far right, and how far up. A <b>plane map</b> is a machine that takes a point and returns a point. A point is two numbers, so the machine has two output slots. Each slot may use both inputs: F(x, y) is (a rule using x and y, another rule using x and y).</p>
 
 <p>In chapter 1, a machine moved the whole number line. A plane map moves the <b>whole plane</b>. To see it, draw a grid on the plane and watch the map carry it.</p>
 
@@ -212,7 +212,7 @@
 
 <blockquote><p><b>A straight map can be undone exactly when its determinant is not zero.</b></p></blockquote>
 
-<p><i>(Where the number comes from: a straight map is fully described by four numbers, F(x, y) = (ax + by, cx + dy), and its determinant is ad − bc. You will never need to compute this by hand here.)</i></p>
+<p><i>(Where the number comes from: a straight map is fully described by four numbers, F(x, y) = (ax + by, cx + dy). Its determinant is ad − bc. You will never need to compute this by hand here.)</i></p>
 
 <blockquote><p><b>The one thing to remember:</b> a straight map scales all areas by one fixed factor, the determinant. If the factor is nonzero, the map can be undone. If the factor is zero, the plane is crushed and information is lost.</p></blockquote>
 
@@ -260,7 +260,7 @@
 
 <p>This looks like chapter 5’s rule, that a map can be undone exactly when its area factor is nonzero, trying to extend from straight maps to bent maps. But a bent map stretches area by different amounts in different places. So what plays the role of “the” area factor? For that we need a microscope.</p>
 
-<blockquote><p><b>The one thing to remember:</b> stacked shears bend the plane into complicated shapes that are still easy to undo, while folds and crushes press area to zero somewhere and can never be undone.</p></blockquote>
+<blockquote><p><b>The one thing to remember:</b> stacked shears bend the plane into complicated shapes that are still easy to undo. Folds and crushes press area to zero somewhere, and they can never be undone.</p></blockquote>
 
 <h2>7 · The microscope</h2>
 
@@ -310,7 +310,7 @@
 
 <p>The tempting shortcut goes like this. To know if a map can be undone, check the local area factor everywhere. If it is never zero, the map never crushes anything, so surely it can be undone. Can it?</p>
 
-<p>Part of this is true. If the local factor at a point p is not zero, the map can be undone <b>near p</b>, because if you zoom in enough it is a healthy straight map. This fact is called the inverse function theorem, and it is solid.</p>
+<p>Part of this is true. If the local factor at a point p is not zero, then near p the map can be undone. Zoom in enough and it is a healthy straight map. This fact is called the inverse function theorem, and it is solid.</p>
 
 <p>But look at what it does <b>not</b> promise.</p>
 
@@ -336,7 +336,7 @@
 
 <p><i>(It gets worse. There are smooth non-polynomial maps whose local factor is nonzero at every point, with no exception at all, that still hit target points infinitely often. So for general smooth maps, “locally fine everywhere” is very far from “globally undoable”. If any hope remains, it must come from using very special machines, such as polynomials.)</i></p>
 
-<p>So “local factor never zero” is not enough on its own. If we want a local condition that guarantees a global undo, we must add something. Keller’s choice was to demand the strongest possible local condition, that the local area factor is not just nonzero but <b>the same constant at every point</b>, and to demand that the map be <b>polynomial</b>. Is that enough?</p>
+<p>So “local factor never zero” is not enough on its own. If we want a local condition that guarantees a global undo, we must add something. Keller chose the strongest possible local condition: the local area factor must be <b>the same constant at every point</b>, not just nonzero. And the map must be <b>polynomial</b>. Is that enough?</p>
 
 <p>That is the Jacobian Conjecture. The next chapter states it fully.</p>
 
@@ -375,9 +375,9 @@
 <p><b>Three details, for completeness:</b></p>
 
 <ul>
-  <li><b>All dimensions.</b> The question is asked not only for the plane but for 3-dimensional space, 4-dimensional space, and so on, with each output coordinate a polynomial in all the input coordinates. Our pictures are 2D because that is what eyes can see.</li>
+  <li><b>All dimensions.</b> The question is asked for the plane, for 3D space, for 4D space, and so on. Each output coordinate is a polynomial in all the input coordinates. Our pictures are 2D because that is what eyes can see.</li>
   <li><b>Complex numbers.</b> Officially the conjecture is asked over the complex numbers, a larger number system where every polynomial equation has solutions. Over the complex numbers, “the local factor is never zero” and “the local factor is a nonzero constant” turn out to be the same condition. Chapter 11 shows that over the ordinary real numbers the conjecture is actually <b>false</b>, so this choice of number system genuinely matters.</li>
-  <li><b>Only collisions matter.</b> A deep theorem, called Ax–Grothendieck, says that if a complex polynomial map has no collisions, then it automatically has no gaps, and its undo map is automatically a polynomial. So the entire 87-year battle was about one question: <b>can two different points share an output?</b></li>
+  <li><b>Only collisions matter.</b> A deep theorem (Ax–Grothendieck) helps here. If a complex polynomial map has no collisions, then it automatically has no gaps. Its undo map is automatically a polynomial too. So the entire 87-year battle was about one question: <b>can two different points share an output?</b></li>
 </ul>
 
 <p>Why did it look provable? Every no-crush map we met satisfies the condition, with factor 1 everywhere, and can be undone. The next chapter shows that every example anyone ever built confirmed the conjecture, and that for degree-2 maps it was actually proved. It looked close to certain.</p>
@@ -420,7 +420,7 @@
 
 <p>One detail is worth noticing. In the plane, the undo map always has the same degree as the map. In dimension 3 and higher, the undo can be far more complicated than the map. Higher dimensions play by wilder rules. Remember that.</p>
 
-<blockquote><p><b>The one thing to remember:</b> every example ever built confirmed the conjecture, degree 2 was proved, and the whole problem was squeezed into degree 3, where it stayed unsolved for four more decades.</p></blockquote>
+<blockquote><p><b>The one thing to remember:</b> every example ever built confirmed the conjecture. Degree 2 was proved. The whole problem was squeezed into degree 3, and there it stayed unsolved for four more decades.</p></blockquote>
 
 <h2>11 · Why it was so hard</h2>
 
@@ -433,7 +433,7 @@
 
 <p>The same pattern repeated for a century. Someone announces a proof, the world gets excited, and a subtle hole is found. It happened to Kraus in 1884, before Keller even asked the question, to Engel in 1955, three times to Segre, to Gröbner, and to many modern attempts.</p>
 
-<p><b>Obstacle 1: the statement is false over the real numbers.</b> One hope was that ordinary real-plane geometry, the kind our pictures show, already forces a map to be undoable once the local factor is never zero. It does not. In 1994, Sergey Pinchuk built an explicit pair of polynomials, of degrees 10 and 25, whose local area factor is <b>strictly positive at every real point</b>, and which still sends two different points to the same place. Watch the probe below read his factor everywhere: the running minimum dips low, but it never touches 0.</p>
+<p><b>Obstacle 1: the statement is false over the real numbers.</b> One hope was that ordinary real-plane geometry, the kind our pictures show, already forces a map to be undoable once the local factor is never zero. It does not. In 1994, Sergey Pinchuk built an explicit pair of polynomials, of degrees 10 and 25. Their local area factor is <b>positive at every real point</b>. And the map still sends two different points to the same place. Watch the probe below read this factor everywhere: the running minimum dips low, but it never touches 0.</p>
 
 <figure>
   <img src="https://raw.githubusercontent.com/Muchmirul/jacobian-conjecture/main/guide/11-why-it-was-so-hard/pinchuk_det.gif" alt="">
@@ -444,7 +444,7 @@
 
 <p><i>(How do we know Pinchuk’s factor is never zero? It equals t² + (t + f(13 + 15h))² + f² for certain helper polynomials t, f, and h. That is a sum of three squares, so it is never negative, and a short argument shows it is never zero. It is positive everywhere but not constant, and over the complex numbers “never zero” and “constant” would be the same thing. This is why the complex setting in chapter 9 matters.)</i></p>
 
-<p><b>Obstacle 2: the statement is false in clock arithmetic.</b> Another hope was that pure symbol manipulation, meaning algebra that works in any number system, might be enough. It is not. On a clock with a prime number p of positions, where numbers wrap around, the simple machine F(x) = x − xᵖ has constant slope 1, the perfect condition, yet it sends <i>every</i> clock position to 0. That is a total collapse. So any proof must use a property that ordinary numbers have and clock arithmetic lacks. Pure symbol-pushing cannot be enough.</p>
+<p><b>Obstacle 2: the statement is false in clock arithmetic.</b> Another hope was that pure symbol manipulation, meaning algebra that works in any number system, might be enough. It is not. Take a clock with a prime number p of positions, where numbers wrap around. The simple machine F(x) = x − xᵖ has constant slope 1, the perfect condition. Yet it sends <i>every</i> clock position to 0. That is a total collapse. So any proof must use a property that ordinary numbers have and clock arithmetic lacks. Pure symbol-pushing cannot be enough.</p>
 
 <p>Watch the collapse on a clock with 5 positions.</p>
 
@@ -462,15 +462,15 @@
 
 <p>So the escape route to infinity is open, and the important behavior happens near infinity. That is exactly where the mistaken proofs, starting with Kraus in 1884, quietly leaked.</p>
 
-<p><b>One more warning sign: dimension 3 is stranger than the plane.</b> Every complicated undoable map we built was a stack of shears and straight maps. Until 2004, one could hope that all constant-factor maps, in all dimensions, are secretly such stacks. Stacks are always undoable, so the conjecture would follow. In the plane this is a true theorem, because every undoable polynomial map of the plane can be broken into shears. But in three dimensions there is Nagata’s map, which has local factor 1, a polynomial undo, and is perfectly well-behaved, yet was proved (Shestakov–Umirbaev, 2004) to be impossible to build from shears and straight maps. Three-dimensional space contains genuinely wilder maps than the plane. Remember that too.</p>
+<p><b>One more warning sign: dimension 3 is stranger than the plane.</b> Every complicated undoable map we built was a stack of shears and straight maps. Until 2004, one could hope that all constant-factor maps, in all dimensions, are secretly such stacks. Stacks are always undoable, so the conjecture would follow. In the plane this is a true theorem, because every undoable polynomial map of the plane can be broken into shears. But three dimensions holds Nagata’s map. It has local factor 1, a polynomial undo, and perfect behavior everywhere. Yet in 2004 it was proved (Shestakov–Umirbaev) impossible to build from shears and straight maps. Three-dimensional space contains genuinely wilder maps than the plane. Remember that too.</p>
 
-<blockquote><p><b>The one thing to remember:</b> a proof had to use all three facts at once, that the maps are polynomial, that the numbers are complex, and control of what happens at infinity. Real-number reasoning fails because of Pinchuk, formal algebra fails because of clock arithmetic, and the escape to infinity is real. Almost no argument survives all three.</p></blockquote>
+<blockquote><p><b>The one thing to remember:</b> a proof had to use all three at once: the maps are polynomial, the numbers are complex, and infinity is kept under control. Real-number reasoning fails because of Pinchuk, formal algebra fails because of clock arithmetic, and the escape to infinity is real. Almost no argument survives all three.</p></blockquote>
 
 <h2>12 · The fall</h2>
 
 <p>July 2026. The 87-year-old conjecture collapsed in every dimension except the one where it was born. This chapter shows the actual object that did it. You can check it yourself.</p>
 
-<p>On July 19–20, 2026, an explicit counterexample to the Jacobian Conjecture in <b>three variables</b> was announced. The construction is attributed to the mathematician Levent Alpöge, answering a version of the question raised by a colleague, with the decisive example produced with the help of the AI model Claude Fable. At the time of writing there is no peer-reviewed paper yet, so this article does what mathematics always does with an announcement: verify before trusting. Every claim below is re-checked, independently and exactly, by the open repository. Nothing here asks for your trust.</p>
+<p>On July 19–20, 2026, an explicit counterexample to the Jacobian Conjecture in <b>three variables</b> was announced. The construction is credited to the mathematician Levent Alpöge, answering a version of the question raised by a colleague. The final example was produced with the help of the AI model Claude Fable. At the time of writing there is no peer-reviewed paper yet, so this article does what mathematics always does with an announcement: verify before trusting. Every claim below is re-checked, independently and exactly, by the open repository. Nothing here asks for your trust.</p>
 
 <p><b>The map.</b> Write u = 1 + xy as a shorthand. The map takes a 3D point (x, y, z) to the 3D point (P, Q, R):</p>
 
@@ -512,7 +512,7 @@
 
 <p>Now the first point in full. At (0, 0, −1/4) we get u = 1, so P = 1·(−1/4) + 0 = −1/4 and Q = 0 + 0 + 0 = 0. So this point maps to (−1/4, 0, 0), which is arithmetic you can do in your head.</p>
 
-<p><b>Check it yourself, by computer.</b> The other two points involve fractions like 13/2 raised to powers, which is doable on paper, but exact algebra settles it in ten lines. It confirms that the determinant expands to −2 and that all three points map to (−1/4, 0, 0). The exact script, and a test suite that re-verifies it, is in the repository: github.com/Muchmirul/jacobian-conjecture.</p>
+<p><b>Check it yourself, by computer.</b> The other two points involve fractions like 13/2 raised to powers. That is doable on paper, but exact algebra settles it in ten lines. It confirms that the determinant expands to −2 and that all three points map to (−1/4, 0, 0). The exact script, and a test suite that re-verifies it, is in the repository: github.com/Muchmirul/jacobian-conjecture.</p>
 
 <p><b>What survives.</b> Keller asked his question in 1939 <b>for the plane</b>. The counterexample lives in dimension 3, and it needs the extra room. Remember the warning signs: maps that cannot be broken into shears exist only in dimension 3 and up, and undo-degrees only explode in dimension 3 and up. The plane case, meaning two variables and the original question, checked up to degree 100, <b>is still open today.</b> The oldest piece of the puzzle is still on the table.</p>
 
